@@ -41,6 +41,9 @@
 		941DE7331C8A424C00F4A4A4 /* EnteringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7321C8A424C00F4A4A4 /* EnteringViewController.swift */; };
 		941DE7361C8A43A000F4A4A4 /* FlightStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7351C8A43A000F4A4A4 /* FlightStatusService.swift */; };
 		941DE7381C8A43E800F4A4A4 /* FlightStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7371C8A43E800F4A4A4 /* FlightStatus.swift */; };
+		944A31F51C8B117800D2AA9F /* TimeLineContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31F41C8B117800D2AA9F /* TimeLineContainer.swift */; };
+		944A31F71C8B13A100D2AA9F /* AsyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31F61C8B13A100D2AA9F /* AsyncManager.swift */; };
+		944A31FA1C8B17D600D2AA9F /* CarDriveDurationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31F91C8B17D600D2AA9F /* CarDriveDurationPoint.swift */; };
 		94B939F91C7F294200F36C2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B939F81C7F294200F36C2D /* AppDelegate.swift */; };
 		94B939FE1C7F294200F36C2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B939FC1C7F294200F36C2D /* Main.storyboard */; };
 		94B93A001C7F294200F36C2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B939FF1C7F294200F36C2D /* Assets.xcassets */; };
@@ -50,6 +53,8 @@
 		94F196D41C8ACDF200ED526E /* RMVTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F196D31C8ACDF200ED526E /* RMVTrip.swift */; };
 		94F196D61C8ACF2400ED526E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F196D51C8ACF2400ED526E /* Location.swift */; };
 		94F196D81C8AE36A00ED526E /* Location+CLLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F196D71C8AE36A00ED526E /* Location+CLLocation.swift */; };
+		94F196DA1C8B07C800ED526E /* FraportAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F196D91C8B07C800ED526E /* FraportAPI.swift */; };
+		94F196DC1C8B086A00ED526E /* ParkingFacility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F196DB1C8B086A00ED526E /* ParkingFacility.swift */; };
 		94F8C3FA1C8AA96E00A6A911 /* JSONFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F8C3F91C8AA96E00A6A911 /* JSONFetcher.swift */; };
 		94F8C3FC1C8ABBFF00A6A911 /* FlightInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F8C3FB1C8ABBFF00A6A911 /* FlightInfoView.swift */; };
 /* End PBXBuildFile section */
@@ -141,6 +146,9 @@
 		941DE7321C8A424C00F4A4A4 /* EnteringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnteringViewController.swift; sourceTree = "<group>"; };
 		941DE7351C8A43A000F4A4A4 /* FlightStatusService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightStatusService.swift; sourceTree = "<group>"; };
 		941DE7371C8A43E800F4A4A4 /* FlightStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightStatus.swift; sourceTree = "<group>"; };
+		944A31F41C8B117800D2AA9F /* TimeLineContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineContainer.swift; sourceTree = "<group>"; };
+		944A31F61C8B13A100D2AA9F /* AsyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncManager.swift; sourceTree = "<group>"; };
+		944A31F91C8B17D600D2AA9F /* CarDriveDurationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarDriveDurationPoint.swift; sourceTree = "<group>"; };
 		94B939F51C7F294200F36C2D /* TimeTraveler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTraveler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B939F81C7F294200F36C2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94B939FD1C7F294200F36C2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +162,8 @@
 		94F196D31C8ACDF200ED526E /* RMVTrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMVTrip.swift; sourceTree = "<group>"; };
 		94F196D51C8ACF2400ED526E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		94F196D71C8AE36A00ED526E /* Location+CLLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CLLocation.swift"; sourceTree = "<group>"; };
+		94F196D91C8B07C800ED526E /* FraportAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FraportAPI.swift; sourceTree = "<group>"; };
+		94F196DB1C8B086A00ED526E /* ParkingFacility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingFacility.swift; sourceTree = "<group>"; };
 		94F8C3F91C8AA96E00A6A911 /* JSONFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFetcher.swift; sourceTree = "<group>"; };
 		94F8C3FB1C8ABBFF00A6A911 /* FlightInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -289,6 +299,8 @@
 				941DE7301C8A3D6D00F4A4A4 /* TravelerInformation.swift */,
 				941DE7371C8A43E800F4A4A4 /* FlightStatus.swift */,
 				94F196D31C8ACDF200ED526E /* RMVTrip.swift */,
+				94F196DB1C8B086A00ED526E /* ParkingFacility.swift */,
+				944A31F41C8B117800D2AA9F /* TimeLineContainer.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -296,11 +308,21 @@
 		941DE7341C8A437500F4A4A4 /* service */ = {
 			isa = PBXGroup;
 			children = (
+				944A31F61C8B13A100D2AA9F /* AsyncManager.swift */,
 				94F8C3F91C8AA96E00A6A911 /* JSONFetcher.swift */,
 				941DE7351C8A43A000F4A4A4 /* FlightStatusService.swift */,
 				94F196D11C8ACDE500ED526E /* RMVService.swift */,
+				94F196D91C8B07C800ED526E /* FraportAPI.swift */,
 			);
 			path = service;
+			sourceTree = "<group>";
+		};
+		944A31F81C8B17A500D2AA9F /* DurationPoint */ = {
+			isa = PBXGroup;
+			children = (
+				944A31F91C8B17D600D2AA9F /* CarDriveDurationPoint.swift */,
+			);
+			name = DurationPoint;
 			sourceTree = "<group>";
 		};
 		94B939EC1C7F294200F36C2D = {
@@ -330,6 +352,7 @@
 		94B939F71C7F294200F36C2D /* TimeTraveler */ = {
 			isa = PBXGroup;
 			children = (
+				944A31F81C8B17A500D2AA9F /* DurationPoint */,
 				941DE7341C8A437500F4A4A4 /* service */,
 				3688197E1C8A3F9600665DA3 /* assets */,
 				941DE72F1C8A3D4B00F4A4A4 /* model */,
@@ -587,6 +610,7 @@
 			files = (
 				94B939F91C7F294200F36C2D /* AppDelegate.swift in Sources */,
 				94F196D21C8ACDE500ED526E /* RMVService.swift in Sources */,
+				94F196DA1C8B07C800ED526E /* FraportAPI.swift in Sources */,
 				94F196D41C8ACDF200ED526E /* RMVTrip.swift in Sources */,
 				36054A961C8ADDFB00877412 /* JourneyViewController.swift in Sources */,
 				941DE72C1C8A35D700F4A4A4 /* EnterKindOfFligherViewVontroller.swift in Sources */,
@@ -606,6 +630,10 @@
 				941DE7331C8A424C00F4A4A4 /* EnteringViewController.swift in Sources */,
 				941DE7261C8A335300F4A4A4 /* SignUpPageViewController.swift in Sources */,
 				94F8C3FA1C8AA96E00A6A911 /* JSONFetcher.swift in Sources */,
+				94F196DC1C8B086A00ED526E /* ParkingFacility.swift in Sources */,
+				944A31F71C8B13A100D2AA9F /* AsyncManager.swift in Sources */,
+				944A31FA1C8B17D600D2AA9F /* CarDriveDurationPoint.swift in Sources */,
+				944A31F51C8B117800D2AA9F /* TimeLineContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
