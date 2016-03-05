@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class EnterTransportTypeViewController: UIViewController {
+class EnterTransportTypeViewController: EnteringViewController {
     var transportType: TransportType?
     @IBOutlet weak var carETALabel: UILabel!
     @IBOutlet weak var TrainETALabel: UILabel!

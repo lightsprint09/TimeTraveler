@@ -77,12 +77,17 @@ protocol JSONParsering {
 public struct JSONParser: JSONParsering{
     
     internal func parseRawObject<T: CollectionType>(data: NSData, JSONKeyPath: String ) throws -> T {
-        guard let rootJSON = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as? NSDictionary,
-        let tagetJSON = rootJSON.valueForKeyPath(JSONKeyPath) as? T else {
+        guard let rootJSON = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as? NSDictionary else {
             throw NSError(domain: "Worng type", code: 0, userInfo: nil)
         }
-        return tagetJSON
-    }
+        if let tagetJSON = rootJSON.valueForKeyPath(JSONKeyPath) as? T where JSONKeyPath.characters.count > 0 {
+            return tagetJSON
+        }
+        if let tagetJSON = rootJSON as? T {
+            return tagetJSON
+        }
+        throw NSError(domain: "Worng type", code: 0, userInfo: nil)
+}
     
     public func parseList<T: JSONParsable>(data: NSData, JSONKeyPath: String) throws -> Array<T> {
         let jsonObjects = try parseRawObject(data, JSONKeyPath: JSONKeyPath) as Array<Dictionary<String, AnyObject>>
@@ -125,7 +130,7 @@ public struct JSONFetcher: JSONFetching {
                 onSucess(obj)
             }
             catch {
-                onError(.Parse("Error Parsing Data"))
+                onError(.Parse(NSString(data: data, encoding: NSUTF8StringEncoding) as? (String) ?? "Error") )
             }
         }
         
@@ -139,7 +144,7 @@ public struct JSONFetcher: JSONFetching {
                 onSucess(obj)
             }
             catch {
-                onError(.Parse("Error Parsing Data"))
+                onError(.Parse(NSString(data: data, encoding: NSUTF8StringEncoding) as? (String) ?? "Error") )
             }
         }
         
@@ -153,7 +158,7 @@ public struct JSONFetcher: JSONFetching {
                 onSucess(obj)
             }
             catch {
-                onError(.Parse("Error Parsing Data"))
+                onError(.Parse(NSString(data: data, encoding: NSUTF8StringEncoding) as? (String) ?? "Error"))
             }
         }
         

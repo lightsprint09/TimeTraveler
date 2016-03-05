@@ -17,12 +17,29 @@ struct FlightStatus {
     var to: TimePoint? {
         return segments.last?.arrival
     }
-    
 }
 
 struct TimePoint {
     let airportCode: String
     let date: NSDate
+    
+    private static var dateFormatter: NSDateFormatter = {
+        let dateParser = NSDateFormatter()
+        dateParser.dateFormat = "yyyy-MM-dd"
+        
+        return dateParser
+    }()
+    
+    private static var timeFormatter: NSDateFormatter = {
+        let dateParser = NSDateFormatter()
+        dateParser.dateFormat = "HH:mm"
+        
+        return dateParser
+    }()
+    
+    var timeString: String {
+        return TimePoint.timeFormatter.stringFromDate(date)
+    }
 }
 
 struct FlightStatusSegment {

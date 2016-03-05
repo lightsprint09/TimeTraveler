@@ -92,7 +92,7 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         currentControllerIndex += 1
         let destnationViewController = controllers[currentControllerIndex] as! EnteringViewController
         destnationViewController.travelerInformation = travelerInformation
-        self.setViewControllers([destnationViewController], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+        self.setViewControllers([destnationViewController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
     }
 }
 

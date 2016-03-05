@@ -103,7 +103,23 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1h-I3-9P1">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vj-4p-zQv">
+                                        <rect key="frame" x="180" y="496" width="235" height="40"/>
+                                        <color key="backgroundColor" red="0.99215686274509807" green="0.6470588235294118" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="5EH-E4-xrn"/>
+                                            <constraint firstAttribute="width" constant="235" id="RqA-YO-DVh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Weiter">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="finishEnertingData:" destination="378-xc-Sa8" eventType="touchUpInside" id="HZd-QD-Ue8"/>
+                                        </connections>
+                                    </button>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1h-I3-9P1" customClass="FlightInfoView" customModule="TimeTraveler" customModuleProvider="target">
                                         <rect key="frame" x="136" y="320" width="322" height="154"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Frankfurt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgi-x0-l0H">
@@ -168,22 +184,6 @@
                                             <action selector="didChangeFlightID:" destination="378-xc-Sa8" eventType="editingChanged" id="2Ju-z1-NkQ"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vj-4p-zQv">
-                                        <rect key="frame" x="180" y="496" width="235" height="40"/>
-                                        <color key="backgroundColor" red="0.99215686274509807" green="0.6470588235294118" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="5EH-E4-xrn"/>
-                                            <constraint firstAttribute="width" constant="235" id="RqA-YO-DVh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
-                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Weiter">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="finishEnertingData:" destination="378-xc-Sa8" eventType="touchUpInside" id="P3j-kz-srN"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -241,10 +241,17 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="arrivalAirportLabel" destination="66U-F2-1g3" id="1WH-pg-KCj"/>
+                        <outlet property="arrivaleTimeLabel" destination="B0O-Qh-NUU" id="RFT-np-lnE"/>
                         <outlet property="backgroundView" destination="8xj-4W-3ag" id="yZ0-bY-nQo"/>
                         <outlet property="boockingReferenceIDInput" destination="Kag-Ev-zrq" id="o27-NJ-hgK"/>
+                        <outlet property="countOfTravelersLabel" destination="1pz-4k-xJi" id="0MW-fN-16g"/>
+                        <outlet property="depatureAirportLabel" destination="vgi-x0-l0H" id="aIP-gq-KL3"/>
+                        <outlet property="depatureTimeLabel" destination="5X7-xf-yow" id="mKL-8f-nLh"/>
                         <outlet property="flightIDInput" destination="19R-aS-RIX" id="TNK-5m-WLU"/>
+                        <outlet property="flightViewContainer" destination="Y1h-I3-9P1" id="K8f-8G-vxT"/>
                         <outlet property="nextButton" destination="3vj-4p-zQv" id="v6s-N2-Lnl"/>
+                        <outlet property="passegngerNameLabel" destination="Asd-XZ-qfd" id="Ng4-sa-xAL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5D-Cg-BpL" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -31,16 +31,17 @@ struct FlightStatusService {
     }()
     
     let jsonFetcher = JSONFetcher()
-    func fetchFlightStatus(flightReference: FlightReference, onSucces: (FlightStatus)->(), onErrror: (NSError)->()) {
+    func fetchFlightStatus(flightReference: FlightReference, onSucces: (FlightStatus)->(), onErrror: (JSONFetcherErrorType)->()) {
         let url = NSURL(string: "https://timetraveler-server.herokuapp.com/flightInfo/\(flightReference.boockingReferenceID)")
-        func sucess(result: Array<FlightStatusSegment>) {
-            let flightStatus = FlightStatus(segments: result)
-            onSucces(flightStatus)
+        func sucess(result: FlightStatusSegment) {
+            let flightStatus = FlightStatus(segments: [result])
+            dispatch_async(dispatch_get_main_queue(),{
+                onSucces(flightStatus)
+            })
+
         }
         
-        jsonFetcher.loadArray(url!, onSucess: sucess, onError: { err in
-            
-        })
+        jsonFetcher.loadObject(url!, onSucess: sucess, onError: onErrror)
     }
 }
 

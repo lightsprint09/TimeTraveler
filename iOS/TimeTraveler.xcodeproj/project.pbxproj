@@ -45,6 +45,7 @@
 		94B93A031C7F294200F36C2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B93A011C7F294200F36C2D /* LaunchScreen.storyboard */; };
 		94B93A0E1C7F294300F36C2D /* TimeTravelerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B93A0D1C7F294300F36C2D /* TimeTravelerTests.swift */; };
 		94F8C3FA1C8AA96E00A6A911 /* JSONFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F8C3F91C8AA96E00A6A911 /* JSONFetcher.swift */; };
+		94F8C3FC1C8ABBFF00A6A911 /* FlightInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F8C3FB1C8ABBFF00A6A911 /* FlightInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		94B93A0D1C7F294300F36C2D /* TimeTravelerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelerTests.swift; sourceTree = "<group>"; };
 		94B93A0F1C7F294300F36C2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94F8C3F91C8AA96E00A6A911 /* JSONFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFetcher.swift; sourceTree = "<group>"; };
+		94F8C3FB1C8ABBFF00A6A911 /* FlightInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +316,7 @@
 				3688197E1C8A3F9600665DA3 /* assets */,
 				941DE72F1C8A3D4B00F4A4A4 /* model */,
 				941DE7271C8A343D00F4A4A4 /* constant */,
+				94F8C3FD1C8ABC0A00A6A911 /* view */,
 				941DE71E1C8A328200F4A4A4 /* controller */,
 				94B939F81C7F294200F36C2D /* AppDelegate.swift */,
 				94B939FC1C7F294200F36C2D /* Main.storyboard */,
@@ -332,6 +335,14 @@
 				94B93A0F1C7F294300F36C2D /* Info.plist */,
 			);
 			path = TimeTravelerTests;
+			sourceTree = "<group>";
+		};
+		94F8C3FD1C8ABC0A00A6A911 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				94F8C3FB1C8ABBFF00A6A911 /* FlightInfoView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -560,6 +571,7 @@
 				941DE72C1C8A35D700F4A4A4 /* EnterKindOfFligherViewVontroller.swift in Sources */,
 				941DE7311C8A3D6D00F4A4A4 /* FlightInformation.swift in Sources */,
 				941DE7381C8A43E800F4A4A4 /* FlightStatus.swift in Sources */,
+				94F8C3FC1C8ABBFF00A6A911 /* FlightInfoView.swift in Sources */,
 				941DE7361C8A43A000F4A4A4 /* FlightStatusService.swift in Sources */,
 				941DE7231C8A330500F4A4A4 /* StandardPageViewController.swift in Sources */,
 				941DE7291C8A346100F4A4A4 /* UIColor+StandardColors.swift in Sources */,
