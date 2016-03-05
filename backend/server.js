@@ -36,6 +36,26 @@ app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080;        // set our port
 
+// Class for each little part of our Journey
+function JourneyPart (options)  {
+  this.start = options.start || null;
+  this.end = options.end || null;
+  this.location = new Position(options.location);
+  this.name = options.name || null;
+  this.distance = new Distance(options.distance);
+}
+
+function Position (options) {
+  this.lat = options.lat|| null;
+  this.long = options.long|| null;
+  this.name = options.name|| null;
+}
+
+function Distance (options) {
+  this.minutes = options.minutes || null;
+  this.kilometers = options.kilometers || null;
+}
+
 // Functions for our Routes
 // =============================================================================
 
@@ -261,8 +281,133 @@ router.route('/distance')
 
 router.route('/getJourney')
 .get(function(req, res){
+  routeGetJourney({booking_code: req.params.booking_code}, function(err, response) {
+    res.json(response);
+  });
+});
+
+var async = require('async');
+
+var routeGetJourney = function(data, callback){
   // TODO:
-})
+  var journey = [];
+  // Flight
+  var now = new Date();
+  var loc = new Position({lat:'1', long:'2', name: 'A2'});
+  var dist = new Distance({minutes: '11', kilometers: '1'});
+
+  async.waterfall([
+    function flightPart(next) {
+      routeFlightInfoBookinCode({booking_code: data.booking_code}, function(err, response) {
+        console.log(response);
+
+        // TODO: get Location of Gate, get Distance, Customize name
+        var date = new Date(response.Departure.Date + ' ' + response.Departure.Time);
+        journey.unshift(
+          new JourneyPart({
+            start: date,
+            end: date,
+            name: 'Departure Flight',
+            location: loc,
+            distance: dist
+          })
+        );
+        next(null, date, 'two');
+      })
+    },
+    function idControll(startTime, arg2, next) {
+      // TODO:
+      journey.unshift(
+        new JourneyPart({
+          start: now,
+          end: now,
+          name: 'ID Check',
+          location: loc,
+          distance: dist
+        })
+      );
+      next(null, 'one', 'three');
+    },
+    function securityControll(startTime, arg2, next) {
+      // TODO:
+      journey.unshift(
+        new JourneyPart({
+          start: now,
+          end: now,
+          name: 'Security Check',
+          location: loc,
+          distance: dist
+        })
+      );
+      next(null, 'one', 'three');
+    },
+    function checking(startTime, arg2, next) {
+      // TODO:
+      journey.unshift(
+        new JourneyPart({
+          start: now,
+          end: now,
+          name: 'Check-In',
+          location: loc,
+          distance: dist
+        })
+      );
+      next(null, 'one', 'three');
+    },
+    function arrivalAirport(startTime, arg2, next) {
+      // TODO:
+      journey.unshift(
+        new JourneyPart({
+          start: now,
+          end: now,
+          name: 'Arrival Airport',
+          location: loc,
+          distance: dist
+        })
+      );
+      next(null, 'one', 'three');
+    },
+    function publicTransport(startTime, arg2, next) {
+      // TODO:
+      /* TODO: Zwischenschritte des ÖPNV */
+      journey.unshift(
+        new JourneyPart({
+          start: now,
+          end: now,
+          name: 'Changing to Train',
+          location: loc,
+          distance: dist
+        })
+      );
+      journey.unshift(
+        new JourneyPart({
+          start: now,
+          end: now,
+          name: 'Departure Bus',
+          location: loc,
+          distance: dist
+        })
+      );
+      next(null, 'one', 'three');
+    },
+    function startAtHome(arg1, arg2, next) {
+      // arg1 now equals 'three'
+
+      journey.unshift(
+        new JourneyPart({
+          start: now,
+          end: now,
+          name: 'Leaving Home',
+          location: loc,
+          distance: dist
+        })
+      );
+      next(null, 'done');
+    }
+  ], function (err, result) {
+    callback(err, journey);
+  });
+};
 
 // more routes for our API will happen here
 
@@ -276,5 +421,8 @@ apicalls.initApis(function () {
   app.listen(port);
   console.log('Magic happens on port ' + port);
 
+  routeGetJourney({booking_code: '267MDE'}, function(err, response) {
+    console.log(response);
+  });
 
 });
