@@ -94,10 +94,8 @@ router.route('/tripToAirport')
 router.route('/trainStation')
     .get(function(req, res) {
         var station = req.query.station;
-        apicalls.initApis(function () {
-            apicalls.performDbRequest('/location.name', {input: station}, function(response) {
-              res.json(response);
-            });
+          apicalls.performDbRequest('/location.name', {input: station}, function(response) {
+            res.json(response);
         });
     });
 
@@ -106,10 +104,8 @@ router.route('/departureSchedule')
         var stationId = req.query.station_id;
         var date = req.query.date;
         var time = req.query.time;
-        apicalls.initApis(function () {
-            apicalls.performDbRequest('/departureBoard', {id: stationId, date: date, time: time}, function(response) {
-              res.json(response);
-            });
+          apicalls.performDbRequest('/departureBoard', {id: stationId, date: date, time: time}, function(response) {
+            res.json(response);
         });
     });
 
