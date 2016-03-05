@@ -16,7 +16,9 @@ class EnterFlightInfoViewController: EnteringViewController {
     
     let flightStatusService = FlightStatusService()
     
-    
+    override func viewDidLoad() {
+        travelerInformation = TravelerInformation()
+    }
 
     @IBAction func didChangeBoockingRederence(sender: UITextField) {
         guard let boockingReferenceID = sender.text else { return }
@@ -31,6 +33,7 @@ class EnterFlightInfoViewController: EnteringViewController {
     
     func didChangeFlightStatus(flightStatus: FlightStatus) {
         travelerInformation.flightStatus = flightStatus
+
         //Activate Next button
     }
 
@@ -39,7 +42,7 @@ class EnterFlightInfoViewController: EnteringViewController {
     }
     
     @IBAction func finishEnertingData(sender: AnyObject) {
-        
+        passToNextViewController()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -44,6 +44,7 @@
 		94B93A001C7F294200F36C2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B939FF1C7F294200F36C2D /* Assets.xcassets */; };
 		94B93A031C7F294200F36C2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B93A011C7F294200F36C2D /* LaunchScreen.storyboard */; };
 		94B93A0E1C7F294300F36C2D /* TimeTravelerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B93A0D1C7F294300F36C2D /* TimeTravelerTests.swift */; };
+		94F8C3FA1C8AA96E00A6A911 /* JSONFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F8C3F91C8AA96E00A6A911 /* JSONFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		94B93A091C7F294300F36C2D /* TimeTravelerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTravelerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B93A0D1C7F294300F36C2D /* TimeTravelerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelerTests.swift; sourceTree = "<group>"; };
 		94B93A0F1C7F294300F36C2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94F8C3F91C8AA96E00A6A911 /* JSONFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 		941DE7341C8A437500F4A4A4 /* service */ = {
 			isa = PBXGroup;
 			children = (
+				94F8C3F91C8AA96E00A6A911 /* JSONFetcher.swift */,
 				941DE7351C8A43A000F4A4A4 /* FlightStatusService.swift */,
 			);
 			path = service;
@@ -566,6 +569,7 @@
 				3688198D1C8A47F200665DA3 /* UIFont+CustomFonts.swift in Sources */,
 				941DE7331C8A424C00F4A4A4 /* EnteringViewController.swift in Sources */,
 				941DE7261C8A335300F4A4A4 /* SignUpPageViewController.swift in Sources */,
+				94F8C3FA1C8AA96E00A6A911 /* JSONFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

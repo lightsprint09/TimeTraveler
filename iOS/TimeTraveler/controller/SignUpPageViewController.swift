@@ -9,7 +9,7 @@ import AVFoundation
 import UIKit
 
 class SignUpPageViewController: UIPageViewController, StandardPageViewController, UIGestureRecognizerDelegate {
-    var controllers:Array<UIViewController> = []
+    var controllers: Array<UIViewController> = []
     var currentControllerIndex = 0
     var player: AVPlayer?
     
@@ -20,9 +20,9 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let keptVc: UIViewController = instantiateViewControllerWithIdentifier("enter_flight_controller")
-        let mainVc: UIViewController = instantiateViewControllerWithIdentifier("enter_traveler_kind_controller")
-        let tidiedOutVc: UIViewController = instantiateViewControllerWithIdentifier("enter_transport_controller")
+        let keptVc: EnteringViewController = instantiateViewControllerWithIdentifier("enter_flight_controller")
+        let mainVc: EnteringViewController = instantiateViewControllerWithIdentifier("enter_traveler_kind_controller")
+        let tidiedOutVc: EnteringViewController = instantiateViewControllerWithIdentifier("enter_transport_controller")
 
                 
         
@@ -88,7 +88,10 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
     }
     
     func passToNextInputViewController(travelerInformation: TravelerInformation) {
-        
+        currentControllerIndex += 1
+        let destnationViewController = controllers[currentControllerIndex] as! EnteringViewController
+        destnationViewController.travelerInformation = travelerInformation
+        self.setViewControllers([destnationViewController], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     }
 }
 
