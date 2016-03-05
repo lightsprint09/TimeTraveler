@@ -38,11 +38,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykd-rr-OLf">
                                 <rect key="frame" x="538" y="20" width="39" height="30"/>
                                 <state key="normal" title="Reset">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.99215686270000003" green="0.64705882349999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="ykd-rr-OLf" secondAttribute="trailing" constant="3" id="gjf-yX-pCv"/>
                             <constraint firstItem="ykd-rr-OLf" firstAttribute="top" secondItem="MMb-Es-Gmk" secondAttribute="bottom" id="hZx-ZN-hwR"/>

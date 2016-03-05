@@ -39,7 +39,10 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         // load video
         playBackgroundvideo()
         
+        
+        
     }
+    
     
     func playBackgroundvideo() {
         
@@ -87,7 +90,6 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         
         pageControl.currentPageIndicatorTintColor = .orangeUIColor()
         pageControl.backgroundColor = UIColor.clearColor()
-        
         
      
         self.view.layer.backgroundColor = UIColor.clearColor().CGColor
