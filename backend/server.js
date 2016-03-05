@@ -191,6 +191,12 @@ var routeParkingAvailability = function(data, callback){
   });
 };
 
+var routeParkingAvailabilityForecast = function(data, callback){
+  apicalls.performFraportRequest('parking','/parking/forecast/', null, function(response) {
+    callback(null, response);
+  });
+};
+
 // ROUTES FOR OUR API
 // =============================================================================
 
@@ -295,6 +301,13 @@ router.route('/getJourney')
 router.route('/parkingAvailability')
 .get(function(req, res){
   routeParkingAvailability({}, function(err, response) {
+    res.json(response);
+  });
+});
+
+router.route('/parkingAvailabilityForecast')
+.get(function(req, res){
+  routeParkingAvailabilityForecast({}, function(err, response) {
     res.json(response);
   });
 });
