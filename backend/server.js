@@ -107,7 +107,44 @@ router.route('/departureSchedule')
           apicalls.performDbRequest('/departureBoard', {id: stationId, date: date, time: time}, function(response) {
             res.json(response);
         });
+      });
+
+router.route('/waitingperiod/security')
+  .get(function(req, res) {
+    //TODO: Reduce Api-Querys
+    var airline = req.query.airline;
+    var flightnumber = req.query.flightnumber;
+    var departuredate = req.query.date;
+    // var airline = 'LH';
+    // var flightnumber = '400';
+    // var departuredate = '2016-03-05';
+    apicalls.performLufthansaRequest('operations/flightstatus/'+airline+flightnumber+'/'+departuredate, null, function(response) {
+      var gate = response.FlightStatusResource.Flights.Flight.Departure.Terminal.Gate;
+      apicalls.performFraportRequest('gates','/gates/'+gate, null, function(response2) {
+        var securityCheckName = response2[0].gate.departure_securitycheck;
+        apicalls.performFraportRequest('waitingperiods', '/waitingperiod/' + securityCheckName, null, function(response3){
+          //var waitingTime = response2[0].processSite.waitingTime;
+          res.json(response3[0].processSite);
+        });
+      });
     });
+  });
+
+router.route('/waitingperiod/checkin')
+  .get(function(req, res) {
+    //var airline = 'LH';
+    //var flightnumber = '400';
+    var airline = req.query.airline;
+    var flightnumber = req.query.flightnumber;
+    apicalls.performFraportRequest('checkininfo','/checkininfo/'+airline, null, function(response) {
+      var checkIns = response[0].airline.checkIns;
+      var firstCheckIn = checkIns[0].checkIn.name;
+      apicalls.performFraportRequest('waitingperiods', '/waitingperiod/' + firstCheckIn, null, function(response2){
+        //var waitingTime = response2[0].processSite.waitingTime;
+        res.json(response2[0].processSite);
+      });
+    });
+  });
 
 // more routes for our API will happen here
 
@@ -120,4 +157,8 @@ app.use('/', router);
 apicalls.initApis(function () {
   app.listen(port);
   console.log('Magic happens on port ' + port);
+
+
+
+
 });
