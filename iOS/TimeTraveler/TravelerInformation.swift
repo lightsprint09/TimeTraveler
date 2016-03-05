@@ -36,6 +36,7 @@ class TravelerInformation {
     var laguageType: LaguageType?
     var transportType: TransportType?
     var travelSpeed: TravelSpeed?
+    var flightStatusInfo: FlightStatusInfo?
     
     var timeLineContainer: TimelineContainer!
     

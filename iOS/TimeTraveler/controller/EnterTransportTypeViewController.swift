@@ -105,9 +105,12 @@ class EnterTransportTypeViewController: EnteringViewController {
         
     }
         func didFetchRMVTrip(rmvTrip: RMVRoute) {
-            for (_, trip) in rmvTrip.trips.enumerate() {
-                //print((trip.duration ?? 0) / 60)
+            let sortedTrips = rmvTrip.trips.sort { trip1, trip2 in
+                return trip1.duration < trip2.duration
             }
+            guard let trainDuration = sortedTrips.first?.duration else { return }
+            trainETALabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(trainDuration)
+            
         }
         
         func onErrorFetchingRMVTrip(error: JSONFetcherErrorType) {

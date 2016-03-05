@@ -49,6 +49,12 @@ struct FlightStatusSegment {
     let marketingCarrier: MarketingCarrier
 }
 
+struct FlightStatusInfo {
+    let terminal: String
+    let gate: String
+    let status: String
+}
+
 struct MarketingCarrier {
     let airlineID: String
     let flightNumber: String

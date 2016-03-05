@@ -31,7 +31,7 @@ struct FlightStatusService {
     }()
     
     let jsonFetcher = JSONFetcher()
-    func fetchFlightStatus(flightReference: FlightReference, onSucces: (FlightStatus)->(), onErrror: (JSONFetcherErrorType)->()) {
+    func fetchFlightInformation(flightReference: FlightReference, onSucces: (FlightStatus)->(), onErrror: (JSONFetcherErrorType)->()) {
         let url = NSURL(string: "https://timetraveler-server.herokuapp.com/flightInfo/\(flightReference.boockingReferenceID)")
         func sucess(result: FlightStatusSegment) {
             let flightStatus = FlightStatus(segments: [result])
@@ -42,6 +42,29 @@ struct FlightStatusService {
         }
         
         jsonFetcher.loadObject(url!, onSucess: sucess, onError: onErrror)
+    }
+    
+    func fetchFlightStatus(status: FlightStatus, onSucces: (FlightStatusInfo)->(), onErrror: (JSONFetcherErrorType)->()) {
+        let url = NSURL(string: "https://timetraveler-server.herokuapp.com/flightStatus?airline_code=LH&flight_number=\(status.segments.first!.marketingCarrier.flightNumber)&departure_date=2016-03-05")
+        func sucess(result: FlightStatusInfo) {
+            
+            dispatch_async(dispatch_get_main_queue(),{
+                onSucces(result)
+            })
+            
+        }
+        
+        jsonFetcher.loadObject(url!, JSONKeyPath: "Departure", onSucess: sucess, onError: onErrror)
+        
+    }
+}
+
+extension FlightStatusInfo: JSONParsable {
+    init(JSON: Dictionary<String, AnyObject>) {
+        let terminalData = JSON["Terminal"] as! Dictionary<String, AnyObject>
+        self.terminal = "\(terminalData["Name"] as! Int)"
+        self.gate = terminalData["Gate"] as! String
+        self.status = (JSON["TimeStatus"] as! Dictionary<String, AnyObject>)["Code"] as! String
     }
 }
 
@@ -65,7 +88,7 @@ extension TimePoint: JSONParsable {
 extension MarketingCarrier: JSONParsable {
     init(JSON: Dictionary<String, AnyObject>) {
         self.airlineID = JSON["AirlineID"] as! String
-        self.flightNumber = JSON["FlightNumber"] as? String ?? ""
+        self.flightNumber = "\(JSON["FlightNumber"] as! Int)"
     }
 }
 

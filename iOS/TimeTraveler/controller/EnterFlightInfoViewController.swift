@@ -29,7 +29,7 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
     @IBAction func didChangeBoockingRederence(sender: UITextField) {
         guard let boockingReferenceID = sender.text where boockingReferenceID.characters.count > 4 else { return }
         travelerInformation.flightReference = FlightReference(boockingReferenceID: boockingReferenceID, isValid: false)
-        flightStatusService.fetchFlightStatus(travelerInformation.flightReference!, onSucces: didChangeFlightStatus, onErrror: isInvalidFlightID)
+        flightStatusService.fetchFlightInformation(travelerInformation.flightReference!, onSucces: didChangeFlightStatus, onErrror: isInvalidFlightID)
         
     }
     
@@ -49,6 +49,12 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
     
     func didChangeFlightStatus(flightStatus: FlightStatus) {
         travelerInformation.flightStatus = flightStatus
+        flightStatusService.fetchFlightStatus(flightStatus, onSucces: {info in
+            self.travelerInformation.flightStatusInfo = info
+            //fill in data
+            }, onErrror: { err in
+        
+        })
         displayFlightStatus(flightStatus)
         nextButton.enabled = true 
         boockingReferenceIDInput.resignFirstResponder()
