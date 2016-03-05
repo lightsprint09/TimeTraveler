@@ -12,6 +12,9 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
     var laguageType: LaguageType?
     var travelSpeed: TravelSpeed?
     
+    var handLuggageOn: Bool = false
+    var checkinLuggageOn: Bool = false
+    
     @IBOutlet var speedSlider: UISlider!
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var backgroundView: UIView!
@@ -27,10 +30,24 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
         sender.setValue(Float(lroundf(speedSlider.value)), animated: true)
     }
     
+    
+    
     @IBAction func onCheckinLuggage(sender: AnyObject) {
+        checkinLuggageOn = !checkinLuggageOn
+        
+        let buttonImage = UIImage(named: "Check in luggage" + (checkinLuggageOn ? " selected" : ""));
+        sender.setImage(buttonImage, forState: .Normal)
+        
+        
     }
     @IBAction func onHandLuggage(sender: AnyObject) {
+        handLuggageOn = !handLuggageOn
+        
+        let buttonImage = UIImage(named: "Hand Luggage" + (handLuggageOn ? " Selected" : ""));
+        sender.setImage(buttonImage, forState: .Normal)
+        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundView.backgroundColor = UIColor.clearColor()
