@@ -1,0 +1,15 @@
+{
+  "name": "Central Security-Check A",
+  "type": "Security-Check",
+  "longitude": 8.568924,
+  "latitude": 50.04928,
+  "terminal": null,
+  "area": null,
+  "direction": "Open",
+  "status": "Open",
+  "waitingTime": {
+    "currentWait": "406",
+    "germanText": "5-10 min",
+    "englishText": "5-10 min"
+  }
+}

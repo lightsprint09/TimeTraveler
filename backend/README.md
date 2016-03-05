@@ -117,3 +117,30 @@ It will response all the possible trips from HOLM to FRA.
 `curl -XGET 'http://localhost:8080/departureSchedule?station_id=008096021&date=2016-03-06&time=07:02'`
 
 [example file](json-objects/examples/departure_schedule.json)
+
+## Waiting time at Checkin and Security
+
+### URL
+`GET /waitingperiod/checkin?airline=LH&flightnumber=400`
+
+`GET /waitingperiod/security?airline=LH&flightnumber=400&date=2016-03-06`
+
+### cURL
+
+`curl -XGET 'http://localhost:8080/waitingperiod/checkin?airline=LH&flightnumber=400'`
+
+`curl -XGET 'http://localhost:8080/waitingperiod/security?airline=LH&flightnumber=400&date=2016-03-06'`
+
+[example file](json-objects/examples/waitingperiod.json)
+
+## Get the distance and time between two locations
+
+### URL
+`GET /distance?start=Check-In%20A&end=Central%20Security-Check%20A`
+
+
+### cURL
+
+`curl -XGET 'http://localhost:8080/distance?start=Check-In%20A&end=Central%20Security-Check%20A'`
+
+[example file](json-objects/examples/distance.json)

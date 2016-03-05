@@ -161,7 +161,7 @@ var performRmvRequest = function(endpoint, data, callback) {
   if (data){
     url += '&' + querystring.stringify(data);
   }
-  console.log(url);
+  //console.log(url);
   request.get({
     url:  url ,
     headers: {
@@ -195,7 +195,7 @@ var performDbRequest = function(endpoint, data, callback) {
   if (data){
     url += '&' + querystring.stringify(data);
   }
-  console.log(url);
+  // console.log(url);
   request.get({
     url:  url 
   }, function(err, httpResponse, body){
