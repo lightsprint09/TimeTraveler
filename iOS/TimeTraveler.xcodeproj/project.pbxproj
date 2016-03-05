@@ -44,6 +44,10 @@
 		94B93A001C7F294200F36C2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B939FF1C7F294200F36C2D /* Assets.xcassets */; };
 		94B93A031C7F294200F36C2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B93A011C7F294200F36C2D /* LaunchScreen.storyboard */; };
 		94B93A0E1C7F294300F36C2D /* TimeTravelerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B93A0D1C7F294300F36C2D /* TimeTravelerTests.swift */; };
+		94F196D21C8ACDE500ED526E /* RMVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F196D11C8ACDE500ED526E /* RMVService.swift */; };
+		94F196D41C8ACDF200ED526E /* RMVTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F196D31C8ACDF200ED526E /* RMVTrip.swift */; };
+		94F196D61C8ACF2400ED526E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F196D51C8ACF2400ED526E /* Location.swift */; };
+		94F196D81C8AE36A00ED526E /* Location+CLLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F196D71C8AE36A00ED526E /* Location+CLLocation.swift */; };
 		94F8C3FA1C8AA96E00A6A911 /* JSONFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F8C3F91C8AA96E00A6A911 /* JSONFetcher.swift */; };
 		94F8C3FC1C8ABBFF00A6A911 /* FlightInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F8C3FB1C8ABBFF00A6A911 /* FlightInfoView.swift */; };
 /* End PBXBuildFile section */
@@ -142,6 +146,10 @@
 		94B93A091C7F294300F36C2D /* TimeTravelerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTravelerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B93A0D1C7F294300F36C2D /* TimeTravelerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelerTests.swift; sourceTree = "<group>"; };
 		94B93A0F1C7F294300F36C2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94F196D11C8ACDE500ED526E /* RMVService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMVService.swift; sourceTree = "<group>"; };
+		94F196D31C8ACDF200ED526E /* RMVTrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMVTrip.swift; sourceTree = "<group>"; };
+		94F196D51C8ACF2400ED526E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		94F196D71C8AE36A00ED526E /* Location+CLLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CLLocation.swift"; sourceTree = "<group>"; };
 		94F8C3F91C8AA96E00A6A911 /* JSONFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFetcher.swift; sourceTree = "<group>"; };
 		94F8C3FB1C8ABBFF00A6A911 /* FlightInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -270,8 +278,11 @@
 		941DE72F1C8A3D4B00F4A4A4 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				94F196D71C8AE36A00ED526E /* Location+CLLocation.swift */,
+				94F196D51C8ACF2400ED526E /* Location.swift */,
 				941DE7301C8A3D6D00F4A4A4 /* FlightInformation.swift */,
 				941DE7371C8A43E800F4A4A4 /* FlightStatus.swift */,
+				94F196D31C8ACDF200ED526E /* RMVTrip.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -281,6 +292,7 @@
 			children = (
 				94F8C3F91C8AA96E00A6A911 /* JSONFetcher.swift */,
 				941DE7351C8A43A000F4A4A4 /* FlightStatusService.swift */,
+				94F196D11C8ACDE500ED526E /* RMVService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -568,10 +580,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				94B939F91C7F294200F36C2D /* AppDelegate.swift in Sources */,
+				94F196D21C8ACDE500ED526E /* RMVService.swift in Sources */,
+				94F196D41C8ACDF200ED526E /* RMVTrip.swift in Sources */,
 				941DE72C1C8A35D700F4A4A4 /* EnterKindOfFligherViewVontroller.swift in Sources */,
+				94F196D61C8ACF2400ED526E /* Location.swift in Sources */,
 				941DE7311C8A3D6D00F4A4A4 /* FlightInformation.swift in Sources */,
 				941DE7381C8A43E800F4A4A4 /* FlightStatus.swift in Sources */,
 				94F8C3FC1C8ABBFF00A6A911 /* FlightInfoView.swift in Sources */,
+				94F196D81C8AE36A00ED526E /* Location+CLLocation.swift in Sources */,
 				941DE7361C8A43A000F4A4A4 /* FlightStatusService.swift in Sources */,
 				941DE7231C8A330500F4A4A4 /* StandardPageViewController.swift in Sources */,
 				941DE7291C8A346100F4A4A4 /* UIColor+StandardColors.swift in Sources */,

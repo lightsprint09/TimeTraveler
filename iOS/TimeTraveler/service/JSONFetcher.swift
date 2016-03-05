@@ -167,7 +167,7 @@ public struct JSONFetcher: JSONFetching {
     
     
     private func loadJSONData(url: NSURL, onSucess: (NSData)->(), onError: (JSONFetcherErrorType)->()) {
-        let request = NSURLRequest(URL: url)
+        let request = NSURLRequest(URL: url, cachePolicy: .ReturnCacheDataElseLoad, timeoutInterval: 10)
         
         let task = urlSession.dataTaskWithRequest(request) {data, response, error in
             if let error = error {
