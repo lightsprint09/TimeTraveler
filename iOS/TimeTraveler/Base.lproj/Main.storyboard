@@ -36,7 +36,7 @@
         <!--Sign Up Page View Controller-->
         <scene sceneID="aPZ-DE-P5C">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Flt-oO-C67" customClass="SignUpPageViewController" customModule="TimeTraveler" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="20" navigationOrientation="horizontal" spineLocation="none" id="Flt-oO-C67" customClass="SignUpPageViewController" customModule="TimeTraveler" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3r-8j-udn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1562" y="1306"/>
@@ -279,10 +279,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7z-qF-o1R" userLabel="Hand Luggage">
                                                 <rect key="frame" x="36" y="0.0" width="102" height="102"/>
                                                 <state key="normal" image="Hand Luggage"/>
+                                                <connections>
+                                                    <action selector="onHandLuggage:" destination="jzZ-Dh-A5a" eventType="touchUpInside" id="XKG-kx-VJM"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfg-6t-RiQ" userLabel="Check in Luggage">
                                                 <rect key="frame" x="192" y="0.0" width="102" height="102"/>
                                                 <state key="normal" image="Check in luggage"/>
+                                                <connections>
+                                                    <action selector="onCheckinLuggage:" destination="jzZ-Dh-A5a" eventType="touchUpInside" id="4zT-o0-le1"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Handgepäck" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOj-35-cjc">
                                                 <rect key="frame" x="28" y="110" width="118" height="21"/>
@@ -423,6 +429,7 @@
                     <connections>
                         <outlet property="backgroundView" destination="qY2-QY-UE9" id="9kZ-oW-mN8"/>
                         <outlet property="nextButton" destination="SdM-Jj-nhO" id="hUB-Xl-io3"/>
+                        <outlet property="onCheckinLuggage" destination="dfg-6t-RiQ" id="DI9-O3-eFB"/>
                         <outlet property="speedSlider" destination="aGa-C3-AZB" id="gE3-ag-z00"/>
                     </connections>
                 </viewController>

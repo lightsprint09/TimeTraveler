@@ -27,6 +27,10 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
         sender.setValue(Float(lroundf(speedSlider.value)), animated: true)
     }
     
+    @IBAction func onCheckinLuggage(sender: AnyObject) {
+    }
+    @IBAction func onHandLuggage(sender: AnyObject) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundView.backgroundColor = UIColor.clearColor()
