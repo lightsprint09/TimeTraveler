@@ -16,14 +16,8 @@ app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080;        // set our port
 
-// ROUTES FOR OUR API
+// Functions for our Routes
 // =============================================================================
-var router = express.Router();              // get an instance of the express Router
-
-// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-router.get('/', function(req, res) {
-  res.json({ message: 'hooray! welcome to Time Traveler Seerver API!' });
-});
 
 var routeFlightInfoBookinCode = function(data, callback){
   var bookingCode = data.booking_code;
@@ -33,13 +27,6 @@ var routeFlightInfoBookinCode = function(data, callback){
   });
 };
 
-router.route('/flightInfo/:booking_code')
-.get(function(req, res){
-  routeFlightInfoBookinCode({booking_code: req.params.booking_code}, function(err, response) {
-    res.json(response);
-  })
-});
-
 var routeCustomer = function(data, callback){
   var lastName = data.ln;
   var firstName = data.fn;
@@ -48,26 +35,12 @@ var routeCustomer = function(data, callback){
   });
 };
 
-router.route('/customer')
-.get(function(req, res) {
-  routeCustomer({ln: req.query.ln, fn: req.query.fn}, function(err, response) {
-    res.json(response);
-  })
-});
-
 var routeCustomerIdAdress = function(data, callback) {
   var customerId = data.customer_id;
   apicalls.performLufthansaRequest('mockup/profiles/customers/'+customerId, { callerid: 'team1' }, function(response) {
     callback(null, response.CustomersResponse.Customers.Customer.Contacts.Contact.AddressContact);
   });
 };
-
-router.route('/customer/:customer_id/address')
-.get(function(req, res) {
-  routeCustomerIdAdress({customer_id: req.params.customer_id}, function(err, response) {
-    res.json(response);
-  })
-});
 
 var routeAirportInfoWithCode = function(data, callback) {
   var airportCode = data.airport_code;
@@ -76,12 +49,6 @@ var routeAirportInfoWithCode = function(data, callback) {
   });
 };
 
-router.route('/airportInfo/:airport_code')
-.get(function(req, res) {
-  routeAirportInfoWithCode({airport_code: req.params.airport_code}, function(err, response) {
-    res.json(response);
-  })
-});
 
 var routeLocations = function(data, callback) {
   var location = data.location;
@@ -90,13 +57,6 @@ var routeLocations = function(data, callback) {
   });
 };
 
-router.route('/locations')
-.get(function(req, res) {
-  routeLocations({location: req.query.location}, function(err, response) {
-    res.json(response);
-  });
-});
-
 var routeNearbyStops  = function(data, response) {
   var originLat = data.originCoordLat;
   var originLong = data.originCoordLong;
@@ -104,13 +64,6 @@ var routeNearbyStops  = function(data, response) {
     callback(null, response);
   });
 };
-
-router.route('/nearbystops')
-.get(function(req, res) {
-  routeNearbyStops({originCoordLat: req.query.originCoordLat, originCoordLong:req.query.originCoordLong}, function(err, response) {
-    res.json(response);
-  });
-});
 
 var routeTripToAirport  = function(data, callback) {
   var airportCode = data.airportCode;
@@ -129,26 +82,12 @@ var routeTripToAirport  = function(data, callback) {
   });
 };
 
-router.route('/tripToAirport')
-.get(function(req, res) {
-  routeTripToAirport({airportCode: req.query.airportCode,originCoordLat: req.query.originCoordLat, originCoordLong:req.query.originCoordLong}, function(err, response) {
-    res.json(response);
-  });
-});
-
 var routeTrainStation = function(data, callback){
   var station = data.station;
   apicalls.performDbRequest('/location.name', {input: station}, function(response) {
     callback(null, response);
   });
 };
-
-router.route('/trainStation')
-.get(function(req, res) {
-  routeTrainStation({station: req.query.station}, function(err, response){
-    res.json(response);
-  });
-});
 
 var routeDepartureSchedule = function(data, callback){
   var stationId = data.station_id;
@@ -158,13 +97,6 @@ var routeDepartureSchedule = function(data, callback){
     callback(null, response);
   });
 };
-
-router.route('/departureSchedule')
-.get(function(req, res) {
-  routeDepartureSchedule({station_id: req.query.station_id,data:req.query.date ,time: req.query.time}, function(err, response){
-    res.json(response);
-  });
-});
 
 var routeWaitingPeriodSecurity = function(data, callback){
   //TODO: Reduce Api-Querys
@@ -192,13 +124,6 @@ var routeWaitingPeriodPlace = function(data, callback){
   });
 };
 
-router.route('/waitingperiod/security')
-.get(function(req, res) {
-  routeWaitingPeriodSecurity({airline:req.query.airline,flightnumber:req.query.flightnumber,date:req.query.date }, function(err, response){
-    res.json(response);
-  });
-});
-
 var routeWaitingPeriodCheckin = function(data, callback){
   //var airline = 'LH';
   //var flightnumber = '400';
@@ -213,13 +138,6 @@ var routeWaitingPeriodCheckin = function(data, callback){
   });
 };
 
-router.route('/waitingperiod/checkin')
-.get(function(req, res) {
-  routeWaitingPeriodCheckin({airline:req.query.airline,flightnumber:req.query.flightnumber}, function(err, response){
-    res.json(response);
-  });
-});
-
 var routeDistance = function(data, callback){
   var start = data.start;
   var end = data.end;
@@ -230,12 +148,104 @@ var routeDistance = function(data, callback){
   });
 };
 
+// ROUTES FOR OUR API
+// =============================================================================
+
+var router = express.Router();              // get an instance of the express Router
+
+// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
+router.get('/', function(req, res) {
+  res.json({ message: 'hooray! welcome to Time Traveler Seerver API!' });
+});
+
+router.route('/flightInfo/:booking_code')
+.get(function(req, res){
+  routeFlightInfoBookinCode({booking_code: req.params.booking_code}, function(err, response) {
+    res.json(response);
+  })
+});
+
+router.route('/customer')
+.get(function(req, res) {
+  routeCustomer({ln: req.query.ln, fn: req.query.fn}, function(err, response) {
+    res.json(response);
+  })
+});
+
+router.route('/customer/:customer_id/address')
+.get(function(req, res) {
+  routeCustomerIdAdress({customer_id: req.params.customer_id}, function(err, response) {
+    res.json(response);
+  })
+});
+
+router.route('/airportInfo/:airport_code')
+.get(function(req, res) {
+  routeAirportInfoWithCode({airport_code: req.params.airport_code}, function(err, response) {
+    res.json(response);
+  })
+});
+
+router.route('/locations')
+.get(function(req, res) {
+  routeLocations({location: req.query.location}, function(err, response) {
+    res.json(response);
+  });
+});
+
+router.route('/nearbystops')
+.get(function(req, res) {
+  routeNearbyStops({originCoordLat: req.query.originCoordLat, originCoordLong:req.query.originCoordLong}, function(err, response) {
+    res.json(response);
+  });
+});
+
+router.route('/tripToAirport')
+.get(function(req, res) {
+  routeTripToAirport({airportCode: req.query.airportCode,originCoordLat: req.query.originCoordLat, originCoordLong:req.query.originCoordLong}, function(err, response) {
+    res.json(response);
+  });
+});
+
+router.route('/trainStation')
+.get(function(req, res) {
+  routeTrainStation({station: req.query.station}, function(err, response){
+    res.json(response);
+  });
+});
+
+router.route('/departureSchedule')
+.get(function(req, res) {
+  routeDepartureSchedule({station_id: req.query.station_id,data:req.query.date ,time: req.query.time}, function(err, response){
+    res.json(response);
+  });
+});
+
+router.route('/waitingperiod/security')
+.get(function(req, res) {
+  routeWaitingPeriodSecurity({airline:req.query.airline,flightnumber:req.query.flightnumber,date:req.query.date }, function(err, response){
+    res.json(response);
+  });
+});
+
+router.route('/waitingperiod/checkin')
+.get(function(req, res) {
+  routeWaitingPeriodCheckin({airline:req.query.airline,flightnumber:req.query.flightnumber}, function(err, response){
+    res.json(response);
+  });
+});
+
 router.route('/distance')
 .get(function(req, res) {
   routeDistance({start:req.query.start,end:req.query.end }, function(err, response){
     res.json(response);
   })
 });
+
+router.route('/getJourney')
+.get(function(req, res){
+  // TODO:
+})
 
 // more routes for our API will happen here
 
