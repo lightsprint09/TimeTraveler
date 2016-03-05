@@ -21,6 +21,7 @@ class StandardTimeLineCell: UITableViewCell, DurationPointDisplayable {
     func dispayDurationPoint(durationPoint: DurationPoint) {
         titleLabel.text = durationPoint.name
         timeLabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(durationPoint.duration)
+        infoImageView.image = durationPoint.image
     }
 }
 
@@ -32,6 +33,7 @@ class RouteCell: UITableViewCell, DurationPointDisplayable {
     
     func dispayDurationPoint(durationPoint: DurationPoint) {
         titleLabel.text = durationPoint.name
+        infoImageView.image = durationPoint.image
         timeLabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(durationPoint.duration)
         guard let carPoint = durationPoint as? CarDriveDurationPoint else { return }
         

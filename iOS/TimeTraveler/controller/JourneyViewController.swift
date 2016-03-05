@@ -21,10 +21,12 @@ extension JourneyViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let dataPoint = durationPointAtIndex(indexPath)
         let cell = tableView.dequeueReusableCellWithIdentifier(dataPoint.tabelCellID, forIndexPath: indexPath)
+        
         if let typecell = cell as? DurationPointDisplayable {
             typecell.dispayDurationPoint(dataPoint)
             return typecell as! UITableViewCell
         }
+        
         return cell
     }
     
@@ -48,7 +50,7 @@ extension JourneyViewController: UITableViewDataSource, UITableViewDelegate {
             case "routeCell":
             return 160
         default:
-            return 60
+            return 70
         }
     }
 }
@@ -59,6 +61,9 @@ class JourneyViewController: UIViewController {
     
     var timeLinecontainer: TimelineContainer {
         return travelerInformation.timeLineContainer
+    }
+    @IBAction func onBoardingCard(sender: AnyObject) {
+        
     }
  
     var parentVC: SignUpPageViewController?
@@ -71,6 +76,7 @@ class JourneyViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         timeLinecontainer.asynResolve({res in
             self.tableView.reloadData()
@@ -78,11 +84,44 @@ class JourneyViewController: UIViewController {
         setupNavbar()
         
         
+//        for cell in tableView.visibleCells {
+//            
+//        }
+        for (var row = 0; row < tableView.numberOfRowsInSection(0); row++)
+        {
+            
+            let indexPath = NSIndexPath(forRow: row, inSection: 0)
+            
+            let cell :UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+            
+          //  let delayTime: Float = row * 0.1
+           //cell.contentView.alpha = 0
+            
+            let view = cell.contentView
+            view.alpha = 0.1
+            
+            UIView.animateWithDuration(2.5, delay: 5, options: [], animations: { () -> Void in
+                view.alpha = 1
+                }, completion: nil)
+            
+        }
+
+        
+        
         ticketView.layer.shadowColor = UIColor.blackColor().CGColor
         ticketView.layer.shadowOpacity = 0.5
         ticketView.layer.shadowOffset = CGSizeZero
         ticketView.layer.shadowRadius = 2
         ticketView.layer.shadowPath = UIBezierPath(rect: ticketView.bounds).CGPath
+        
+        self.ticketView.frame = CGRectMake(0, 451, self.ticketView.frame.size.width, self.ticketView.frame.size.height)
+        UIView.animateWithDuration(0.3, delay: 1.0, options: UIViewAnimationOptions.TransitionNone
+            , animations: {
+            self.ticketView.frame = CGRectMake(0, 550, self.ticketView.frame.size.width, self.ticketView.frame.size.height)
+
+            
+            }, completion: nil)
+      
     }
     
     @IBAction func onPanTicket(sender: UIPanGestureRecognizer) {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class FakeDurationPoint: DurationPoint {
     var duration: NSTimeInterval
@@ -14,6 +15,8 @@ class FakeDurationPoint: DurationPoint {
     var subtitle: String?
     
     let tabelCellID = "standardtcell"
+    
+    var image = UIImage(named: "Bullet Point")!
     
     init(name: String, duration: NSTimeInterval) {
         self.name = name

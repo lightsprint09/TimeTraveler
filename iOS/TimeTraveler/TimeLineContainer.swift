@@ -20,6 +20,7 @@ protocol DurationPoint: class, Displayable {
     func asyncResolve(onSucess: (NSTimeInterval)->(), onError:(JSONFetcherErrorType)->())
     
     var tabelCellID: String { get }
+    var image: UIImage { get }
 }
 
 

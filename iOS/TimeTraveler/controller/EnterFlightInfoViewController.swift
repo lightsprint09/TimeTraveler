@@ -9,6 +9,7 @@
 import UIKit
 
 class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate {
+    @IBOutlet var logoImage: UIImageView!
     @IBOutlet weak var boockingReferenceIDInput: UITextField!
     @IBOutlet weak var flightIDInput: UITextField!
     @IBOutlet var backgroundView: UIView!
@@ -41,6 +42,9 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
         nextButton.layer.cornerRadius = 5
         boockingReferenceIDInput.delegate = self
         nextButton.backgroundColor = .grayColor()
+        logoImage.image = logoImage.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+
+        logoImage.tintColor = UIColor.whiteColor()
     }
     
     func isInvalidFlightID(error: JSONFetcherErrorType) {

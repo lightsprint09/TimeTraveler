@@ -8,12 +8,16 @@
 
 import Foundation
 import MapKit
+import UIKit
+
 class CarDriveDurationPoint: DurationPoint {
     var duration: NSTimeInterval = 0
     let name = "Autofahrt zum Flughafen"
     var subtitle: String?
     
     let tabelCellID = "routeCell"
+    
+    var image = UIImage(named: "Bullet Point")!
     
     private let from: Location
     private let to: Location
