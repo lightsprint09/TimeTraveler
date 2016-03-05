@@ -17,6 +17,8 @@ struct FlightStatus {
     var to: TimePoint? {
         return segments.last?.arrival
     }
+    
+    
 }
 
 struct TimePoint {

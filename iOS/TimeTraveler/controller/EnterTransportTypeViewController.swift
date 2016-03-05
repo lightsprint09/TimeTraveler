@@ -146,5 +146,13 @@ class EnterTransportTypeViewController: EnteringViewController {
         displayButtonState()  
     }
     
+    @IBAction func onJourney(sender: AnyObject) {
+        
+        let parentController = self.parentViewController as? SignUpPageViewController
+        parentController?.nextProgress()
+        
+               
+
+    }
     
 }

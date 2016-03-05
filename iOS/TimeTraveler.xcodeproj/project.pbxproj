@@ -10,7 +10,6 @@
 		36054A961C8ADDFB00877412 /* JourneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36054A951C8ADDFB00877412 /* JourneyViewController.swift */; };
 		36054A981C8AFA4D00877412 /* Progress.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36054A971C8AFA4D00877412 /* Progress.xib */; };
 		36054A9A1C8AFB5100877412 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36054A991C8AFB5100877412 /* ProgressView.swift */; };
-		368819781C8A3E5B00665DA3 /* Journey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 368819771C8A3E5B00665DA3 /* Journey.storyboard */; };
 		3688197D1C8A3F3400665DA3 /* opening_compressed.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3688197C1C8A3F3400665DA3 /* opening_compressed.mp4 */; };
 		368819861C8A3FC200665DA3 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 368819801C8A3FC200665DA3 /* Montserrat-Bold.otf */; };
 		368819871C8A3FC200665DA3 /* Montserrat-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 368819811C8A3FC200665DA3 /* Montserrat-Hairline.otf */; };
@@ -117,7 +116,6 @@
 		36054A951C8ADDFB00877412 /* JourneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyViewController.swift; sourceTree = "<group>"; };
 		36054A971C8AFA4D00877412 /* Progress.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Progress.xib; sourceTree = "<group>"; };
 		36054A991C8AFB5100877412 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		368819771C8A3E5B00665DA3 /* Journey.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Journey.storyboard; sourceTree = "<group>"; };
 		3688197C1C8A3F3400665DA3 /* opening_compressed.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = opening_compressed.mp4; sourceTree = "<group>"; };
 		368819801C8A3FC200665DA3 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		368819811C8A3FC200665DA3 /* Montserrat-Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Hairline.otf"; sourceTree = "<group>"; };
@@ -378,7 +376,6 @@
 				94B939FF1C7F294200F36C2D /* Assets.xcassets */,
 				94B93A011C7F294200F36C2D /* LaunchScreen.storyboard */,
 				94B93A041C7F294200F36C2D /* Info.plist */,
-				368819771C8A3E5B00665DA3 /* Journey.storyboard */,
 			);
 			path = TimeTraveler;
 			sourceTree = "<group>";
@@ -554,7 +551,6 @@
 			files = (
 				94B93A031C7F294200F36C2D /* LaunchScreen.storyboard in Resources */,
 				3688198B1C8A3FC200665DA3 /* Montserrat-UltraLight.otf in Resources */,
-				368819781C8A3E5B00665DA3 /* Journey.storyboard in Resources */,
 				368819871C8A3FC200665DA3 /* Montserrat-Hairline.otf in Resources */,
 				3688197D1C8A3F3400665DA3 /* opening_compressed.mp4 in Resources */,
 				94B93A001C7F294200F36C2D /* Assets.xcassets in Resources */,
