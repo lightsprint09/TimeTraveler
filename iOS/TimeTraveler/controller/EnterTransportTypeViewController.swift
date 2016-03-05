@@ -14,6 +14,8 @@ class EnterTransportTypeViewController: EnteringViewController {
     var autoOn: Bool = true
     var busBahnOn: Bool = false
     
+    @IBOutlet var buttonBus: UIButton!
+    @IBOutlet var buttonAuto: UIButton!
     let rmvService = RMVService()
     @IBOutlet weak var carETALabel: UILabel!
     @IBOutlet weak var TrainETALabel: UILabel!
@@ -45,21 +47,21 @@ class EnterTransportTypeViewController: EnteringViewController {
     {
         autoOn = !autoOn
         busBahnOn = !busBahnOn
+        buttonAuto.setImage(UIImage(named: "Auto" + (autoOn ? " selected" : "")), forState: .Normal)
+        buttonBus.setImage(UIImage(named: "Bus and bahn" + (busBahnOn ? " selected" : "")), forState: .Normal)
+
     }
     
     @IBAction func onAuto(sender: AnyObject) {
         
         toggleType()
-        let buttonImage = UIImage(named: "Auto" + (autoOn ? " selected" : ""));
-        sender.setImage(buttonImage, forState: .Normal)
+        
         
         
     }
     @IBAction func onBusBahn(sender: AnyObject) {
         
         toggleType()
-        let buttonImage = UIImage(named: "Bus and bahn" + (busBahnOn ? " selected" : ""));
-        sender.setImage(buttonImage, forState: .Normal)
         
     }
     

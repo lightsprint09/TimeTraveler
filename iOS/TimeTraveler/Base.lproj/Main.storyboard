@@ -635,6 +635,8 @@ Flughafen:</string>
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="e6i-Jx-uyv" id="0de-8U-jpe"/>
+                        <outlet property="buttonAuto" destination="fOK-3L-22m" id="yfn-YQ-w8C"/>
+                        <outlet property="buttonBus" destination="NvC-OO-vR2" id="leZ-K2-wQU"/>
                         <outlet property="nextButton" destination="zSh-Wq-0jr" id="CSj-0z-m8S"/>
                     </connections>
                 </viewController>
