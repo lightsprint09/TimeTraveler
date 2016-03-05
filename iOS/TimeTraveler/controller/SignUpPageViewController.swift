@@ -44,7 +44,7 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         let backgroundView = UIImageView(frame: view.frame)
         //backgroundView.backgroundColor = .blackColor()
         backgroundView.image = UIImage(named: "Mask")
-        backgroundView.alpha = 0.8
+        backgroundView.alpha = 0.9
         view.insertSubview(backgroundView, atIndex: 0)
         
         let videoFile = NSBundle.mainBundle().pathForResource("opening_compressed", ofType: "mp4")
@@ -59,6 +59,7 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "playerItemDidReachEnd", name: AVPlayerItemDidPlayToEndTimeNotification, object: player!.currentItem)
         
         
+        //some parallax
         let verticalMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.y", type: .TiltAlongVerticalAxis)
         verticalMotionEffect.minimumRelativeValue = -10
         verticalMotionEffect.maximumRelativeValue = 10
