@@ -2,3 +2,5 @@
 backend/node_modules/*
 
 iOS/Carthage/*
+
+iOS/TimeTraveler.xcodeproj/project.xcworkspace/xcuserdata/lukasschmidt.xcuserdatad/UserInterfaceState.xcuserstate
