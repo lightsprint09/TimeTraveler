@@ -48,6 +48,7 @@
 		944A31FC1C8B21A800D2AA9F /* FakeDurationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31FB1C8B21A800D2AA9F /* FakeDurationPoint.swift */; };
 		944A31FE1C8B322200D2AA9F /* PackingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31FD1C8B322200D2AA9F /* PackingTableViewCell.swift */; };
 		944A32001C8B352500D2AA9F /* LocationConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31FF1C8B352500D2AA9F /* LocationConstant.swift */; };
+		944A32021C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A32011C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift */; };
 		94B939F91C7F294200F36C2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B939F81C7F294200F36C2D /* AppDelegate.swift */; };
 		94B939FE1C7F294200F36C2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B939FC1C7F294200F36C2D /* Main.storyboard */; };
 		94B93A001C7F294200F36C2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B939FF1C7F294200F36C2D /* Assets.xcassets */; };
@@ -157,6 +158,7 @@
 		944A31FB1C8B21A800D2AA9F /* FakeDurationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeDurationPoint.swift; sourceTree = "<group>"; };
 		944A31FD1C8B322200D2AA9F /* PackingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackingTableViewCell.swift; sourceTree = "<group>"; };
 		944A31FF1C8B352500D2AA9F /* LocationConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationConstant.swift; sourceTree = "<group>"; };
+		944A32011C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingDistanceDurationPoint.swift; sourceTree = "<group>"; };
 		94B939F51C7F294200F36C2D /* TimeTraveler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTraveler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B939F81C7F294200F36C2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94B939FD1C7F294200F36C2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			children = (
 				944A31F91C8B17D600D2AA9F /* CarDriveDurationPoint.swift */,
 				944A31FB1C8B21A800D2AA9F /* FakeDurationPoint.swift */,
+				944A32011C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift */,
 			);
 			name = DurationPoint;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				94B939F91C7F294200F36C2D /* AppDelegate.swift in Sources */,
 				94F196D21C8ACDE500ED526E /* RMVService.swift in Sources */,
 				94F196DA1C8B07C800ED526E /* FraportAPI.swift in Sources */,
+				944A32021C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift in Sources */,
 				94F196D41C8ACDF200ED526E /* RMVTrip.swift in Sources */,
 				36054A961C8ADDFB00877412 /* JourneyViewController.swift in Sources */,
 				941DE72C1C8A35D700F4A4A4 /* EnterKindOfFligherViewVontroller.swift in Sources */,
