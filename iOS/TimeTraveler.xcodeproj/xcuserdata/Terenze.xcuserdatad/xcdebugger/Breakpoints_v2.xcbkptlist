@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimeTraveler/controller/ProgressView.swift"
-            timestampString = "478881772.42129"
+            timestampString = "478882633.612199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "setProgress(_:completed:sender:)"
             landmarkType = "5">
          </BreakpointContent>

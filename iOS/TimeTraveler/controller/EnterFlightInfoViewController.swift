@@ -22,6 +22,8 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
     @IBOutlet weak var arrivaleTimeLabel: UILabel!
     @IBOutlet weak var passegngerNameLabel: UILabel!
     @IBOutlet weak var countOfTravelersLabel: UILabel!
+    @IBOutlet var flightCode: UILabel!
+    @IBOutlet var flightStatus: UILabel!
     
     var flightReference: FlightReference?
     let flightStatusService = FlightStatusService()
@@ -70,6 +72,7 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
         
         arrivalAirportLabel.text = flightStatus.to?.airportCode
         arrivaleTimeLabel.text = flightStatus.to?.timeString
+       // flightCode.text = flightStatus.
     }
     
     @IBAction func finishEnertingData(sender: AnyObject) {

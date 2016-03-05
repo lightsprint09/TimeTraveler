@@ -74,10 +74,14 @@ class ProgressView: UIView {
                 if(page == 2 && completed)
                 {
                     
+                    
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    
                     let vc = storyboard.instantiateViewControllerWithIdentifier("JourneyStoryboard") as! JourneyViewController
+                    let navController = UINavigationController(rootViewController: vc) // Creating a navigation controller with VC1 at the root of the navigation stack.
+                    
                     vc.parentVC = sender as? SignUpPageViewController
-                    sender.presentViewController(vc, animated: true, completion: nil)
+                    sender.presentViewController(navController, animated: true, completion: nil)
 
                 }
 
