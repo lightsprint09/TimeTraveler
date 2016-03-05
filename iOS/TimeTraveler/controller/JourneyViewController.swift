@@ -13,6 +13,8 @@ class JourneyViewController: UIViewController {
     @IBOutlet var ticketView: UIView!
  
     var parentVC: SignUpPageViewController?
+    let maxY:CGFloat = 591
+    let minY:CGFloat = 691
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,17 @@ class JourneyViewController: UIViewController {
         
     }
     
+    override func viewDidLayoutSubviews() {
+//        UIView.animateWithDuration(0.3, delay: 1.0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+//            
+//            
+//            self.ticketView.frame = CGRectOffset(self.ticketView.frame, 0, 200)
+//            
+//            
+//            }, completion: nil)
+
+    }
+    
     @IBAction func onPanTicket(sender: UIPanGestureRecognizer) {
         
         let translation = sender.translationInView(self.view)
@@ -36,8 +49,7 @@ class JourneyViewController: UIViewController {
         let tmp1=sender.view?.center.y //y translation
         
         let newY = tmp1!+translation.y
-        let maxY:CGFloat = 591
-        let minY:CGFloat = 691
+        
         print("The y:\(newY)")
 
         if(newY < minY && newY > maxY){
@@ -50,7 +62,7 @@ class JourneyViewController: UIViewController {
             //reposition to nearest
             UIView.animateWithDuration(0.3, animations: {
                 
-                sender.view?.center=CGPointMake(self.view.frame.size.width / 2, (newY > 620 ? minY : maxY))
+                sender.view?.center=CGPointMake(self.view.frame.size.width / 2, (newY > 620 ? self.minY : self.maxY))
                 sender.setTranslation(CGPointZero, inView: self.view)
                 
                 }, completion: nil)
