@@ -51,7 +51,9 @@ class EnterFlightInfoViewController: EnteringViewController {
     func didChangeFlightStatus(flightStatus: FlightStatus) {
         travelerInformation.flightStatus = flightStatus
         displayFlightStatus(flightStatus)
-        nextButton.enabled = true
+        nextButton.enabled = true 
+        boockingReferenceIDInput.resignFirstResponder()
+
         //Activate Next button
     }
     
