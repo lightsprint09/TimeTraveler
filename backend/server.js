@@ -16,6 +16,21 @@ app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080;        // set our port
 
+// Class for each little part of our Journey
+function JourneyPart (options)  {
+  this.start = options.start || null;
+  this.end = options.end || null;
+  this.location = new Position(options.location);
+  this.name = options.name || null;
+  this.distance = options.distance || null;
+}
+
+function Position (options) {
+  this.lat = options.lat|| null;
+  this.long = options.long|| null;
+  this.name = options.name|| null;
+}
+
 // Functions for our Routes
 // =============================================================================
 
@@ -244,8 +259,38 @@ router.route('/distance')
 
 router.route('/getJourney')
 .get(function(req, res){
-  // TODO:
-})
+  routeGetJourney({booking_code: req.params.booking_code}, function(err, response) {
+      res.json(response);
+  });
+});
+
+var routeGetJourney = function(data, callback){
+    // TODO:
+  var journey = [];
+  // Flight
+  var now = new Date();
+  var loc = new Position({lat:'1', long:'2', name: 'A2'});
+  journey.unshift(
+    new JourneyPart({
+      start: now,
+      end: now,
+      name: 'Abflug',
+      location: loc,
+      distance: '20'
+    })
+  );
+  journey.unshift(
+    new JourneyPart({
+      start: now,
+      end: now,
+      name: 'Weg zum Gate',
+      location: loc,
+      distance: '20'
+    })
+  );
+  //routeFlightInfoBookinCode
+  callback(null, journey);
+};
 
 // more routes for our API will happen here
 
@@ -259,5 +304,8 @@ apicalls.initApis(function () {
   app.listen(port);
   console.log('Magic happens on port ' + port);
 
+  routeGetJourney({booking_code: '267MDE'}, function(err, response) {
+      console.log(response);
+  });
 
 });
