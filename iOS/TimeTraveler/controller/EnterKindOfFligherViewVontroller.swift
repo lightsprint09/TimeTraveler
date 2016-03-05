@@ -9,8 +9,16 @@
 import UIKit
 
 class EnterKindOfFligherViewVontroller: EnteringViewController {
-    var laguageType: LaguageType?
-    var travelSpeed: TravelSpeed?
+    var laguageType: LaguageType? {
+        didSet {
+            nextButton.enabled = isValidInput()
+        }
+    }
+    var travelSpeed: TravelSpeed?{
+        didSet {
+            nextButton.enabled = isValidInput()
+        }
+    }
     
     var handLuggageOn: Bool = false
     var checkinLuggageOn: Bool = false
@@ -28,21 +36,28 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
     @IBAction func sliderMoved(sender: AnyObject) {
         
         //snap to nearest
+        let int = Int(speedSlider.value)
+        travelSpeed = TravelSpeed(rawValue: int)!
         sender.setValue(Float(lroundf(speedSlider.value)), animated: true)
     }
     
     
     
     @IBAction func onCheckinLuggage(sender: AnyObject) {
+        laguageType = .BigBag(nil)
         checkinLuggageOn = !checkinLuggageOn
-        
+        if checkinLuggageOn && handLuggageOn {
+            laguageType = .Both
+        }
         let buttonImage = UIImage(named: "Check in luggage" + (checkinLuggageOn ? " selected" : ""));
         sender.setImage(buttonImage, forState: .Normal)
-        
-        
     }
     @IBAction func onHandLuggage(sender: AnyObject) {
+        laguageType = .Handbag
         handLuggageOn = !handLuggageOn
+        if checkinLuggageOn && handLuggageOn {
+            laguageType = .Both
+        }
         
         let buttonImage = UIImage(named: "Hand Luggage" + (handLuggageOn ? " Selected" : ""));
         sender.setImage(buttonImage, forState: .Normal)
@@ -51,10 +66,15 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backgroundView.backgroundColor = UIColor.clearColor()
+        backgroundView.backgroundColor = .clearColor()
         nextButton.layer.cornerRadius = 5
         slideView.layer.cornerRadius = 5
         
     }
 
+    @IBAction func finishEnteringData(sender: AnyObject) {
+        travelerInformation.laguageType = laguageType
+        travelerInformation.travelSpeed = travelSpeed
+        passToNextViewController()
+    }
 }

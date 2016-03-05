@@ -10,11 +10,14 @@ import Foundation
 
 enum LaguageType {
     case Handbag
-    case BigBag(Int)
+    case BigBag(Int?)
+    case Both
 }
 
-enum TravelSpeed {
-    case Slow, Medium, Fast
+enum TravelSpeed: Int {
+    case Slow = 0
+    case Medium = 1
+    case Fast = 2
 }
 
 enum TransportType {
@@ -32,6 +35,7 @@ class TravelerInformation {
     var flightReference: FlightReference?
     var laguageType: LaguageType?
     var transportType: TransportType?
+    var travelSpeed: TravelSpeed?
     
     
     //fetched Data
