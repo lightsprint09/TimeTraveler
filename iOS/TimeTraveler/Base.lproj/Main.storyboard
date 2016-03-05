@@ -319,6 +319,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="C3d-QF-lZW" secondAttribute="trailing" constant="-20" id="o84-Z5-EYN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="qY2-QY-UE9" id="9kZ-oW-mN8"/>
+                        <outlet property="nextButton" destination="SdM-Jj-nhO" id="hUB-Xl-io3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="naT-U6-QBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
