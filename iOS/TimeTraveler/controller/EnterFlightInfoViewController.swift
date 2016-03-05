@@ -41,7 +41,7 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
         backgroundView.backgroundColor = UIColor.clearColor()
         nextButton.layer.cornerRadius = 5
         boockingReferenceIDInput.delegate = self
-        
+        nextButton.backgroundColor = .grayColor()
     }
     
     func isInvalidFlightID(error: JSONFetcherErrorType) {
@@ -58,7 +58,8 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
         
         })
         displayFlightStatus(flightStatus)
-        nextButton.enabled = true 
+        nextButton.enabled = true
+        nextButton.backgroundColor = .orangeUIColor()
         boockingReferenceIDInput.resignFirstResponder()
 
     }

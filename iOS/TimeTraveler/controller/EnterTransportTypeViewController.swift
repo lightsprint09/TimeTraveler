@@ -32,10 +32,30 @@ extension EnterTransportTypeViewController: UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         if let cell = tableView.cellForRowAtIndexPath(indexPath) as? ParkingTableViewCell where transportType == .Car {
+            cell.holderImage.image = UIImage(named: "Selected Layer")
+            cell.dottedLine.image = UIImage(named: "Selection Way")
             didSelectNewTimePoint(cell.carTimePoint)
+            nextButton.backgroundColor = .orangeUIColor()
+            nextButton.enabled = true
+
+          
         }
     }
+    
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? ParkingTableViewCell where transportType == .Car {
+            cell.holderImage.image = UIImage(named: "Unselected Layer")
+            cell.dottedLine.image = UIImage(named: "Unselected Way")
+            didSelectNewTimePoint(cell.carTimePoint)
+        }
+        
+    }
+
+
 }
 
 class EnterTransportTypeViewController: EnteringViewController {
@@ -53,6 +73,8 @@ class EnterTransportTypeViewController: EnteringViewController {
     let rmvService = RMVService()
     let parkingService = FraportService()
     
+    @IBOutlet var endView: UIView!
+    @IBOutlet var startView: UIView!
     @IBOutlet weak var transportImage: UIImageView!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var ETALabel: UILabel!
@@ -80,10 +102,14 @@ class EnterTransportTypeViewController: EnteringViewController {
         super.viewDidLoad()
         backgroundView.backgroundColor = UIColor.clearColor()
         nextButton.layer.cornerRadius = 5
+        nextButton.backgroundColor = .grayColor()
+        
+        nextButton.enabled = false
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        
+        startView.hidden = true
+        endView.hidden = true
         basicCarDuration = CarDriveDurationPoint(name: "Autofahrt", from: LocationConstants.currentLocation, to: LocationConstants.airportLocation)
         basicCarDuration.asyncResolve({time in
             dispatch_async(dispatch_get_main_queue(),{
@@ -127,6 +153,9 @@ class EnterTransportTypeViewController: EnteringViewController {
         ETALabel.text = FlightStatusService.timeFormatter.stringFromDate(travelerInformation.timeLineContainer.currentResultTime.date) + " Abfahrt vom Aufenthaltsort"
         let duration = travelerInformation.timeLineContainer.durationPoints.last!.duration
         durationLabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(duration)! + " bei vorraussichtlichem Verkehr"
+        
+        
+        
     }
     
     
@@ -141,6 +170,8 @@ class EnterTransportTypeViewController: EnteringViewController {
     func displayButtonState() {
         let busButtonImage = UIImage(named: "Bus and bahn" + (transportType == .PlublicTransport ? " selected" : ""));
         let carButtonImage = UIImage(named: "Auto" + (transportType == .Car ? " selected" : ""));
+        startView.hidden = false
+        endView.hidden = false
         carButton.setImage(carButtonImage, forState: .Normal)
         busButton.setImage(busButtonImage, forState: .Normal)
 

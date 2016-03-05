@@ -592,7 +592,7 @@ Flughafen:</string>
                                             <constraint firstAttribute="width" constant="403" id="n2u-80-jA7"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="parking_cell" rowHeight="60" id="BfJ-D3-hy8" customClass="ParkingTableViewCell" customModule="TimeTraveler" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="parking_cell" rowHeight="60" id="BfJ-D3-hy8" customClass="ParkingTableViewCell" customModule="TimeTraveler" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="403" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BfJ-D3-hy8" id="qIy-CD-lJy">
@@ -600,12 +600,12 @@ Flughafen:</string>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Unselected Way" translatesAutoresizingMaskIntoConstraints="NO" id="oP2-I0-A8k">
-                                                            <rect key="frame" x="53" y="29" width="23" height="3"/>
+                                                            <rect key="frame" x="56" y="27" width="23" height="5"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Unselected Layer" translatesAutoresizingMaskIntoConstraints="NO" id="aRJ-2N-C0e">
                                                             <rect key="frame" x="70" y="7" width="277" height="51"/>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gray vertical line" translatesAutoresizingMaskIntoConstraints="NO" id="f8h-31-jBj">
+                                                        <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gray vertical line" translatesAutoresizingMaskIntoConstraints="NO" id="f8h-31-jBj">
                                                             <rect key="frame" x="58" y="0.0" width="2" height="59"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="2" id="JIf-MC-dzt"/>
@@ -614,12 +614,12 @@ Flughafen:</string>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Zuhause" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uO-2l-Qto">
                                                             <rect key="frame" x="119" y="15" width="201" height="20.5"/>
-                                                            <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="16"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbV-Rd-qUe">
-                                                            <rect key="frame" x="119" y="33" width="201" height="20.5"/>
+                                                            <rect key="frame" x="119" y="35" width="201" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="13"/>
                                                             <color key="textColor" red="0.99215686270000003" green="0.64705882349999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -633,7 +633,7 @@ Flughafen:</string>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="hbV-Rd-qUe" firstAttribute="top" secondItem="1uO-2l-Qto" secondAttribute="bottom" constant="-2.5" id="2R0-iU-bsF"/>
+                                                        <constraint firstItem="hbV-Rd-qUe" firstAttribute="top" secondItem="1uO-2l-Qto" secondAttribute="bottom" constant="-0.5" id="2R0-iU-bsF"/>
                                                         <constraint firstItem="hbV-Rd-qUe" firstAttribute="leading" secondItem="f8h-31-jBj" secondAttribute="trailing" constant="59" id="OY2-LQ-CiG"/>
                                                         <constraint firstItem="1uO-2l-Qto" firstAttribute="leading" secondItem="f8h-31-jBj" secondAttribute="trailing" constant="59" id="mqA-Ob-QS4"/>
                                                         <constraint firstItem="f8h-31-jBj" firstAttribute="centerY" secondItem="qIy-CD-lJy" secondAttribute="centerY" id="okg-qd-I3y"/>
@@ -642,7 +642,10 @@ Flughafen:</string>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <connections>
+                                                    <outlet property="dottedLine" destination="oP2-I0-A8k" id="jXr-ZP-e4Q"/>
+                                                    <outlet property="holderImage" destination="aRJ-2N-C0e" id="aKM-tG-5FY"/>
                                                     <outlet property="parkingNameLabel" destination="1uO-2l-Qto" id="oyK-M1-RPZ"/>
                                                     <outlet property="parkingSubtitleLable" destination="hbV-Rd-qUe" id="FMg-Bf-ZB1"/>
                                                 </connections>
@@ -822,7 +825,9 @@ Flughafen:</string>
                         <outlet property="carButton" destination="fOK-3L-22m" id="TWh-TP-quL"/>
                         <outlet property="carETALabel" destination="exp-do-i0Y" id="KHe-d8-Ojz"/>
                         <outlet property="durationLabel" destination="Mb5-VQ-ZOJ" id="qUJ-VH-LR7"/>
+                        <outlet property="endView" destination="sbh-7m-Trp" id="T3A-oW-PcC"/>
                         <outlet property="nextButton" destination="zSh-Wq-0jr" id="CSj-0z-m8S"/>
+                        <outlet property="startView" destination="sXP-Op-YSM" id="emo-jq-mHa"/>
                         <outlet property="tableView" destination="fTN-pq-IqR" id="eNU-RG-9ip"/>
                         <outlet property="trainETALabel" destination="qkG-xE-FEt" id="z63-sD-WK0"/>
                         <outlet property="transportImage" destination="h9H-A5-1tg" id="RxH-kh-PvK"/>
