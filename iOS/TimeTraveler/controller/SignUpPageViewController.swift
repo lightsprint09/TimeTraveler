@@ -29,7 +29,7 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         controllers = [keptVc, mainVc, tidiedOutVc]
 //        let view: UIView = UIView.viewFromNibNamed("BackgroundBlurView", owner: self)
 //        self.view.insertSubview(view, atIndex: 0)
-        dataSource = self
+        
         self.setViewControllers([controllers[0]], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         
         
@@ -38,7 +38,6 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         
         // load video
         playBackgroundvideo()
-        
         
         
     }

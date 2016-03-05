@@ -36,7 +36,7 @@
 		941DE7291C8A346100F4A4A4 /* UIColor+StandardColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7281C8A346100F4A4A4 /* UIColor+StandardColors.swift */; };
 		941DE72C1C8A35D700F4A4A4 /* EnterKindOfFligherViewVontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE72B1C8A35D700F4A4A4 /* EnterKindOfFligherViewVontroller.swift */; };
 		941DE72E1C8A361900F4A4A4 /* EnterTransportTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE72D1C8A361900F4A4A4 /* EnterTransportTypeViewController.swift */; };
-		941DE7311C8A3D6D00F4A4A4 /* FlightInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7301C8A3D6D00F4A4A4 /* FlightInformation.swift */; };
+		941DE7311C8A3D6D00F4A4A4 /* TravelerInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7301C8A3D6D00F4A4A4 /* TravelerInformation.swift */; };
 		941DE7331C8A424C00F4A4A4 /* EnteringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7321C8A424C00F4A4A4 /* EnteringViewController.swift */; };
 		941DE7361C8A43A000F4A4A4 /* FlightStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7351C8A43A000F4A4A4 /* FlightStatusService.swift */; };
 		941DE7381C8A43E800F4A4A4 /* FlightStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7371C8A43E800F4A4A4 /* FlightStatus.swift */; };
@@ -135,7 +135,7 @@
 		941DE7281C8A346100F4A4A4 /* UIColor+StandardColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+StandardColors.swift"; sourceTree = "<group>"; };
 		941DE72B1C8A35D700F4A4A4 /* EnterKindOfFligherViewVontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterKindOfFligherViewVontroller.swift; sourceTree = "<group>"; };
 		941DE72D1C8A361900F4A4A4 /* EnterTransportTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterTransportTypeViewController.swift; sourceTree = "<group>"; };
-		941DE7301C8A3D6D00F4A4A4 /* FlightInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightInformation.swift; sourceTree = "<group>"; };
+		941DE7301C8A3D6D00F4A4A4 /* TravelerInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelerInformation.swift; sourceTree = "<group>"; };
 		941DE7321C8A424C00F4A4A4 /* EnteringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnteringViewController.swift; sourceTree = "<group>"; };
 		941DE7351C8A43A000F4A4A4 /* FlightStatusService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightStatusService.swift; sourceTree = "<group>"; };
 		941DE7371C8A43E800F4A4A4 /* FlightStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightStatus.swift; sourceTree = "<group>"; };
@@ -283,7 +283,7 @@
 			children = (
 				94F196D71C8AE36A00ED526E /* Location+CLLocation.swift */,
 				94F196D51C8ACF2400ED526E /* Location.swift */,
-				941DE7301C8A3D6D00F4A4A4 /* FlightInformation.swift */,
+				941DE7301C8A3D6D00F4A4A4 /* TravelerInformation.swift */,
 				941DE7371C8A43E800F4A4A4 /* FlightStatus.swift */,
 				94F196D31C8ACDF200ED526E /* RMVTrip.swift */,
 			);
@@ -588,7 +588,7 @@
 				36054A961C8ADDFB00877412 /* JourneyViewController.swift in Sources */,
 				941DE72C1C8A35D700F4A4A4 /* EnterKindOfFligherViewVontroller.swift in Sources */,
 				94F196D61C8ACF2400ED526E /* Location.swift in Sources */,
-				941DE7311C8A3D6D00F4A4A4 /* FlightInformation.swift in Sources */,
+				941DE7311C8A3D6D00F4A4A4 /* TravelerInformation.swift in Sources */,
 				941DE7381C8A43E800F4A4A4 /* FlightStatus.swift in Sources */,
 				94F8C3FC1C8ABBFF00A6A911 /* FlightInfoView.swift in Sources */,
 				94F196D81C8AE36A00ED526E /* Location+CLLocation.swift in Sources */,
