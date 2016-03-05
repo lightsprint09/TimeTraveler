@@ -47,9 +47,7 @@ class EnterTransportTypeViewController: EnteringViewController {
         
     }
     
-    @IBAction func onNext(sender: AnyObject) {
-        print("here");
-    }
+    
     func calculateETACar() {
         let request = MKDirectionsRequest()
         request.source = MKMapItem.mapItemForCurrentLocation()

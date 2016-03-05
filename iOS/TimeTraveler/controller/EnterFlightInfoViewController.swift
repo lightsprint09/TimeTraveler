@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EnterFlightInfoViewController: EnteringViewController {
+class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate {
     @IBOutlet weak var boockingReferenceIDInput: UITextField!
     @IBOutlet weak var flightIDInput: UITextField!
     @IBOutlet var backgroundView: UIView!
@@ -39,6 +39,7 @@ class EnterFlightInfoViewController: EnteringViewController {
         travelerInformation = TravelerInformation()
         backgroundView.backgroundColor = UIColor.clearColor()
         nextButton.layer.cornerRadius = 5
+        boockingReferenceIDInput.delegate = self
         
     }
     
@@ -47,13 +48,21 @@ class EnterFlightInfoViewController: EnteringViewController {
         
     }
     
+    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        return true;
+    }
+
+    
     func didChangeFlightStatus(flightStatus: FlightStatus) {
+        
+        
         travelerInformation.flightStatus = flightStatus
         displayFlightStatus(flightStatus)
         nextButton.enabled = true 
         boockingReferenceIDInput.resignFirstResponder()
 
-        //Activate Next button
     }
     
     func displayFlightStatus(flightStatus: FlightStatus) {
