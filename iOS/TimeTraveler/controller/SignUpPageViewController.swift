@@ -81,9 +81,10 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
         
+        
         pageControl.currentPageIndicatorTintColor = .orangeUIColor()
         pageControl.backgroundColor = UIColor.clearColor()
-        
+     
         self.view.layer.backgroundColor = UIColor.clearColor().CGColor
     }
     
