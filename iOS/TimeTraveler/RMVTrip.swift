@@ -12,7 +12,6 @@ struct RMVTrip {
     let legs: Array<Leg>
     
     var duration: NSTimeInterval? {
-        print(legs.last?.destination?.name, legs.first?.origin?.name)
         guard let destinationDate = legs.last?.destination?.date, let originDate = legs.first?.origin?.date else { return nil }
         return destinationDate.timeIntervalSinceDate(originDate)
     }

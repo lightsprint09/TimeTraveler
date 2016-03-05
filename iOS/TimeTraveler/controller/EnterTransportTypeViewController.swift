@@ -9,41 +9,99 @@
 import UIKit
 import MapKit
 
+extension EnterTransportTypeViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return parkingFacilitys.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cellID = transportType == .Car ? "parking_cell" : "train_cell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath)
+        if let parkCell = cell as? ParkingTableViewCell {
+            parkCell.configureWithParkingFacility(parkingFacilitys[indexPath.row])
+            return parkCell
+        }
+        if let trainCell = cell as? TrainTripTableViewCell {
+            //
+        }
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? ParkingTableViewCell where transportType == .Car {
+            didSelectNewTimePoint(cell.carTimePoint)
+        }
+    }
+}
+
 class EnterTransportTypeViewController: EnteringViewController {
-    var transportType: TransportType?
+    var transportType: TransportType? {
+        didSet {
+            tableView.reloadData()
+            let image = UIImage(named: (transportType == .Car ?"Auto selected" : "Bus and bahn selected"));
+            transportImage.image = image
+        }
+    }
     var autoOn: Bool = true
     var busBahnOn: Bool = false
-    
-    @IBOutlet var buttonBus: UIButton!
-    @IBOutlet var buttonAuto: UIButton!
+    var parkingFacilitys = Array<ParkingFacility>()
+
     let rmvService = RMVService()
-    var timeLineContainer: TimelineContainer!
+    let parkingService = FraportService()
     
-    let airportLocation = Location(latitude: 50.031936, longitude: 8.577776)
+    @IBOutlet weak var transportImage: UIImageView!
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var ETALabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
     @IBOutlet weak var carETALabel: UILabel!
-    @IBOutlet weak var TrainETALabel: UILabel!
+    @IBOutlet weak var trainETALabel: UILabel!
     
     @IBOutlet weak var busButton: UIButton!
     @IBOutlet weak var carButton: UIButton!
     @IBOutlet var backgroundView: UIView!
     
     @IBOutlet var nextButton: UIButton!
+    
+    var basicCarDuration: DurationPoint!
+    static var hoursFormatter: NSDateComponentsFormatter = {
+        let formatter = NSDateComponentsFormatter()
+        formatter.allowedUnits = NSCalendarUnit.Hour.union(.Minute)
+        formatter.unitsStyle = .Short
+        return formatter
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        timeLineContainer = TimelineContainer(targetTime: travelerInformation.targetTime)
-        let location = Location(latitude: 50.111806, longitude: 8.681087)
-        let carTimePoint = CarDriveDurationPoint(name: "Autofahrt", from: location, to: airportLocation)
-        timeLineContainer.addDurationPoint(carTimePoint)
-        print(timeLineContainer.currentResultTime)
-        timeLineContainer.asynResolve({result in
+        backgroundView.backgroundColor = UIColor.clearColor()
+        nextButton.layer.cornerRadius = 5
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        basicCarDuration = CarDriveDurationPoint(name: "Autofahrt", from: LocationConstants.currentLocation, to: LocationConstants.airportLocation)
+        basicCarDuration.asyncResolve({time in
+            dispatch_async(dispatch_get_main_queue(),{
+               self.carETALabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(time)
+            })
+            }, onError: {err in
+        })
+        travelerInformation.timeLineContainer.durationPoints.append(FakeDurationPoint(name: "", duration: 0))
+        travelerInformation.timeLineContainer.asynResolve({result in
             print(result)
             }, onError: { err in
         })
-        backgroundView.backgroundColor = UIColor.clearColor()
-        nextButton.layer.cornerRadius = 5
         
         
-        rmvService.fetchRMVTrip(location, onSucces: didFetchRMVTrip, onErrror: onErrorFetchingRMVTrip)
+        parkingService.fetchParkingForecast(travelerInformation.flightReference!, onSucces: {list in
+            self.parkingFacilitys = list
+            }, onErrror: { err in
+                print(err)
+        })
+        rmvService.fetchRMVTrip(LocationConstants.currentLocation, onSucces: didFetchRMVTrip, onErrror: onErrorFetchingRMVTrip)
         
     }
         func didFetchRMVTrip(rmvTrip: RMVRoute) {
@@ -56,11 +114,20 @@ class EnterTransportTypeViewController: EnteringViewController {
             print(error)
             
         }
-    
+    func didSelectNewTimePoint(duration: DurationPoint) {
+        travelerInformation.timeLineContainer.durationPoints.popLast()
+        travelerInformation.timeLineContainer.durationPoints.append(duration)
+        ETALabel.text = FlightStatusService.timeFormatter.stringFromDate(travelerInformation.timeLineContainer.currentResultTime.date) + " Abfahrt vom Aufenthaltsort"
+        let duration = travelerInformation.timeLineContainer.durationPoints.last!.duration
+        durationLabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(duration)! + " bei vorraussichtlichem Verkehr"
+    }
 
+    
     @IBAction func onAuto(sender: AnyObject) {
+        didSelectNewTimePoint(basicCarDuration)
         transportType = .Car
-        displayButtonState()    }
+        displayButtonState()
+    }
     
     func displayButtonState() {
         let busButtonImage = UIImage(named: "Bus and bahn" + (transportType == .PlublicTransport ? " selected" : ""));
@@ -71,6 +138,7 @@ class EnterTransportTypeViewController: EnteringViewController {
     }
     
     @IBAction func onBusBahn(sender: AnyObject) {
+        guard transportType != .PlublicTransport else { return }
         transportType = .PlublicTransport
         displayButtonState()  
     }

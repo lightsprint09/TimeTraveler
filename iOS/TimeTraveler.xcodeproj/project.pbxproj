@@ -45,6 +45,9 @@
 		944A31F51C8B117800D2AA9F /* TimeLineContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31F41C8B117800D2AA9F /* TimeLineContainer.swift */; };
 		944A31F71C8B13A100D2AA9F /* AsyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31F61C8B13A100D2AA9F /* AsyncManager.swift */; };
 		944A31FA1C8B17D600D2AA9F /* CarDriveDurationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31F91C8B17D600D2AA9F /* CarDriveDurationPoint.swift */; };
+		944A31FC1C8B21A800D2AA9F /* FakeDurationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31FB1C8B21A800D2AA9F /* FakeDurationPoint.swift */; };
+		944A31FE1C8B322200D2AA9F /* PackingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31FD1C8B322200D2AA9F /* PackingTableViewCell.swift */; };
+		944A32001C8B352500D2AA9F /* LocationConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31FF1C8B352500D2AA9F /* LocationConstant.swift */; };
 		94B939F91C7F294200F36C2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B939F81C7F294200F36C2D /* AppDelegate.swift */; };
 		94B939FE1C7F294200F36C2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B939FC1C7F294200F36C2D /* Main.storyboard */; };
 		94B93A001C7F294200F36C2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B939FF1C7F294200F36C2D /* Assets.xcassets */; };
@@ -151,6 +154,9 @@
 		944A31F41C8B117800D2AA9F /* TimeLineContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineContainer.swift; sourceTree = "<group>"; };
 		944A31F61C8B13A100D2AA9F /* AsyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncManager.swift; sourceTree = "<group>"; };
 		944A31F91C8B17D600D2AA9F /* CarDriveDurationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarDriveDurationPoint.swift; sourceTree = "<group>"; };
+		944A31FB1C8B21A800D2AA9F /* FakeDurationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeDurationPoint.swift; sourceTree = "<group>"; };
+		944A31FD1C8B322200D2AA9F /* PackingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackingTableViewCell.swift; sourceTree = "<group>"; };
+		944A31FF1C8B352500D2AA9F /* LocationConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationConstant.swift; sourceTree = "<group>"; };
 		94B939F51C7F294200F36C2D /* TimeTraveler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTraveler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B939F81C7F294200F36C2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94B939FD1C7F294200F36C2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -280,6 +286,7 @@
 			children = (
 				941DE7281C8A346100F4A4A4 /* UIColor+StandardColors.swift */,
 				3688198C1C8A47F200665DA3 /* UIFont+CustomFonts.swift */,
+				944A31FF1C8B352500D2AA9F /* LocationConstant.swift */,
 			);
 			path = constant;
 			sourceTree = "<group>";
@@ -323,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				944A31F91C8B17D600D2AA9F /* CarDriveDurationPoint.swift */,
+				944A31FB1C8B21A800D2AA9F /* FakeDurationPoint.swift */,
 			);
 			name = DurationPoint;
 			sourceTree = "<group>";
@@ -385,6 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				94F8C3FB1C8ABBFF00A6A911 /* FlightInfoView.swift */,
+				944A31FD1C8B322200D2AA9F /* PackingTableViewCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -633,10 +642,13 @@
 				3688198D1C8A47F200665DA3 /* UIFont+CustomFonts.swift in Sources */,
 				941DE7331C8A424C00F4A4A4 /* EnteringViewController.swift in Sources */,
 				941DE7261C8A335300F4A4A4 /* SignUpPageViewController.swift in Sources */,
+				944A31FE1C8B322200D2AA9F /* PackingTableViewCell.swift in Sources */,
 				94F8C3FA1C8AA96E00A6A911 /* JSONFetcher.swift in Sources */,
+				944A31FC1C8B21A800D2AA9F /* FakeDurationPoint.swift in Sources */,
 				94F196DC1C8B086A00ED526E /* ParkingFacility.swift in Sources */,
 				944A31F71C8B13A100D2AA9F /* AsyncManager.swift in Sources */,
 				944A31FA1C8B17D600D2AA9F /* CarDriveDurationPoint.swift in Sources */,
+				944A32001C8B352500D2AA9F /* LocationConstant.swift in Sources */,
 				944A31F51C8B117800D2AA9F /* TimeLineContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

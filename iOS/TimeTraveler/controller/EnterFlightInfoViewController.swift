@@ -23,14 +23,13 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
     @IBOutlet weak var passegngerNameLabel: UILabel!
     @IBOutlet weak var countOfTravelersLabel: UILabel!
     
-    var flightReference: FlightReference?
     let flightStatusService = FlightStatusService()
     
 
     @IBAction func didChangeBoockingRederence(sender: UITextField) {
         guard let boockingReferenceID = sender.text where boockingReferenceID.characters.count > 4 else { return }
-        flightReference = FlightReference(boockingReferenceID: boockingReferenceID, isValid: false)
-        flightStatusService.fetchFlightStatus(flightReference!, onSucces: didChangeFlightStatus, onErrror: isInvalidFlightID)
+        travelerInformation.flightReference = FlightReference(boockingReferenceID: boockingReferenceID, isValid: false)
+        flightStatusService.fetchFlightStatus(travelerInformation.flightReference!, onSucces: didChangeFlightStatus, onErrror: isInvalidFlightID)
         
     }
     
@@ -47,13 +46,6 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
         print(error)
         
     }
-    
-//    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
-//    {
-//        textField.resignFirstResponder()
-//        return true;
-//    }
-
     
     func didChangeFlightStatus(flightStatus: FlightStatus) {
         travelerInformation.flightStatus = flightStatus

@@ -38,7 +38,7 @@ struct ResultTime: ResultTimeType {
 
 class TimelineContainer {
     let targetTime: TargetTime
-    private var durationPoints = Array<DurationPoint>()
+    var durationPoints = Array<DurationPoint>()
     
     init(targetTime: TargetTime) {
         self.targetTime = targetTime
@@ -62,9 +62,4 @@ class TimelineContainer {
             durationPoint.asyncResolve(async.addResult, onError: async.addError)
         }
     }
-    
-    func addDurationPoint(point: DurationPoint) {
-        self.durationPoints.append(point)
-    }
-    
 }

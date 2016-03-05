@@ -14,11 +14,7 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
             nextButton.enabled = isValidInput()
         }
     }
-    var travelSpeed: TravelSpeed?{
-        didSet {
-            nextButton.enabled = isValidInput()
-        }
-    }
+    var travelSpeed: TravelSpeed = .Medium
     
     var handLuggageOn: Bool = false
     var checkinLuggageOn: Bool = false
@@ -30,7 +26,7 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
     
     
     func isValidInput() -> Bool {
-        guard let _ = laguageType, let _ = travelSpeed else { return false }
+        guard let _ = laguageType else { return false }
         return true
     }
     @IBAction func sliderMoved(sender: AnyObject) {

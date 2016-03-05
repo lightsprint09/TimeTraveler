@@ -25,7 +25,6 @@ struct FraportService {
             dispatch_async(dispatch_get_main_queue(),{
                 onSucces(result)
             })
-            
         }
         
         jsonFetcher.loadArray(url!, onSucess: sucess, onError: onErrror)
@@ -38,19 +37,22 @@ extension ParkingFacility: JSONParsable {
         self.name = data["name"] as! String
         let longitude = data["longitude"] as! Double
         let latitude = data["latitude"] as! Double
+        self.pricePerDay = (data["fee_per_day"] as? Double) ?? 23.5
         self.location = Location(latitude: latitude, longitude: longitude)
-        self.forecastData = (data["latitude"] as! Array<Dictionary<String, AnyObject>>).map { forecast in
-            return Forecast(JSON: forecast)
-        }
+//        self.forecastData = (data["forecasts"] as! Array<Dictionary<String, AnyObject>>).map { forecast in
+//            return Forecast(JSON: forecast)
+//        }
+        self.forecastData = []
         
     }
 }
 
 extension Forecast: JSONParsable {
     init(JSON: Dictionary<String, AnyObject>) {
-        let dateTimeString = JSON["time"] as! String
+        let data = JSON["forecasts"] as! Dictionary<String, AnyObject>
+        let dateTimeString = data["time"] as! String
         self.time = FraportService.datetimeFormatter.dateFromString(dateTimeString)!
-        self.trend = JSON["trend"] as! String
-        self.status = JSON["status"] as! String
+        self.trend = data["trend"] as! String
+        self.status = data["status"] as! String
     }
 }

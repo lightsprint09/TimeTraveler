@@ -16,7 +16,7 @@ struct FlightStatusService {
         return dateParser
     }()
     
-    private static var timeFormatter: NSDateFormatter = {
+    static var timeFormatter: NSDateFormatter = {
         let dateParser = NSDateFormatter()
         dateParser.dateFormat = "HH:mm"
         

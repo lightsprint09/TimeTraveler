@@ -12,6 +12,7 @@ struct ParkingFacility {
     let name: String
     let location: Location
     let forecastData: Array<Forecast>
+    let pricePerDay: Double
 }
 
 struct Forecast {
