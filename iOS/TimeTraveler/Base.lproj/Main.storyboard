@@ -601,9 +601,6 @@ Flughafen:</string>
                                         <state key="normal" title="Reiseplan erstellen!">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="0rP-xi-UZd" kind="presentation" id="tQD-Fn-e1h"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
