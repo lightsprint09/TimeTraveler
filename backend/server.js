@@ -53,7 +53,7 @@ function Position (options) {
 
 function Distance (options) {
   this.minutes = options.minutes || null;
-  this.kilometers = options.kilometers || null;
+  this.meters = options.meters || null;
 }
 
 // Functions for our Routes
@@ -135,6 +135,12 @@ var routeDepartureSchedule = function(data, callback){
   });
 };
 
+var routeGateInfo = function(data, callback){
+    apicalls.performFraportRequest('gates','/gates/'+data.gate, null, function(response) {
+        callback(null, response);
+    });
+};
+
 var routeWaitingPeriodSecurity = function(data, callback){
   //TODO: Reduce Api-Querys
   var airline = data.airline;
@@ -145,11 +151,11 @@ var routeWaitingPeriodSecurity = function(data, callback){
   // var departuredate = '2016-03-05';
   apicalls.performLufthansaRequest('operations/flightstatus/'+airline+flightnumber+'/'+departuredate, null, function(response) {
     var gate = response.FlightStatusResource.Flights.Flight.Departure.Terminal.Gate;
-    apicalls.performFraportRequest('gates','/gates/'+gate, null, function(response2) {
+    routeGateInfo({gate: gate}, function(err, response2) {
       var securityCheckName = response2[0].gate.departure_securitycheck;
       routeWaitingPeriodPlace({name:securityCheckName}, function(err, response3){
         callback(null, response3)
-      })
+      });
     });
   });
 };
@@ -320,13 +326,12 @@ var routeGetJourney = function(data, callback){
   // Flight
   var now = new Date();
   var loc = new Position({lat:'1', long:'2', name: 'A2'});
-  var dist = new Distance({minutes: '11', kilometers: '1'});
+  var dist = new Distance({minutes: '11', meters: '1'});
 
   async.waterfall([
     function flightPart(next) {
       routeFlightInfoBookinCode({booking_code: data.booking_code}, function(err, response) {
         console.log(response);
-
         // TODO: get Location of Gate, get Distance, Customize name
         var date = new Date(response.Departure.Date + ' ' + response.Departure.Time);
         journey.unshift(
@@ -338,23 +343,53 @@ var routeGetJourney = function(data, callback){
             distance: dist
           })
         );
-        next(null, date, 'two');
+        next(null, date, loc);
       })
+    }, 
+    function idControll(endTime, gate, next) {
+        // 1. Query Id-Kontrolle for flight gate
+        routeGateInfo({gate: gate.name}, function(err, response){
+         // 2. Query Distance between gate and controll
+         gate.name = 'A-Gates'; // FIXME: Weggucken, hier gibt es nichts zu sehen
+            routeDistance({start: response[0].gate.departure_bordercheck, end: gate.name}, function(err, response2){      
+            // 3. TODO: Calculate Time for start
+            var startTime = now; //FIXME
+            var pos = new Distance({meters: response2.distance, minutes: response2.transitTime}); 
+                journey.unshift(
+                    new JourneyPart({
+                    start: now,
+                    end: endTime,
+                    name: 'Border Check',
+                    location: loc,
+                    distance: pos
+                    })
+                );
+                next(null, startTime, gate);
+            });
+        });
     },
-    function idControll(startTime, arg2, next) {
-      // TODO:
-      journey.unshift(
-        new JourneyPart({
-          start: now,
-          end: now,
-          name: 'ID Check',
-          location: loc,
-          distance: dist
-        })
-      );
-      next(null, 'one', 'three');
-    },
-    function securityControll(startTime, arg2, next) {
+    function securityControll(endTime, gate, next) {
+         // 1. Query Id-Kontrolle for flight gate
+        routeGateInfo({gate: gate.name}, function(err, response){
+         // 2. Query Distance between gate and controll 
+         gate.name = 'A-Gates'; // FIXME: Weggucken, hier gibt es nichts zu sehen
+            routeDistance({start: response[0].gate.departure_securitycheck, end: gate.name}, function(err, response2){      
+            // 3. TODO: Calculate Time for start
+            var startTime = now; //FIXME
+            var pos = new Distance({meters: response2.distance, minutes: response2.transitTime});
+           // var loc = new Position() //FIXME
+                journey.unshift(
+                    new JourneyPart({
+                    start: now,
+                    end: endTime,
+                    name: 'Security Check',
+                    location: loc,
+                    distance: pos
+                    })
+                );
+                next(null, startTime, gate);
+            });
+        });
       // TODO:
       journey.unshift(
         new JourneyPart({
