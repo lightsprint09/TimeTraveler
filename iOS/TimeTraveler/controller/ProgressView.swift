@@ -46,7 +46,7 @@ class ProgressView: UIView {
         
         UIView.animateWithDuration(1.0, delay: 0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
             
-            imageItem!.frame = CGRectMake(imageItem!.frame.origin.x - 5, imageItem!.frame.origin.y - 5, 35, 35)
+            imageItem!.frame = CGRectMake(imageItem!.frame.origin.x - 3.5, imageItem!.frame.origin.y - 5, 35, 35)
             
             }, completion: { (finished: Bool) -> Void in
                 

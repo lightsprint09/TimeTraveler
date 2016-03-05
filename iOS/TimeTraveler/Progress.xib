@@ -14,6 +14,12 @@
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aah-lm-bxC">
                     <rect key="frame" x="30" y="0.0" width="240" height="40"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="Dko-uG-Mvr">
+                            <rect key="frame" x="58" y="19" width="45" height="2"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="2Qh-b2-Ctk">
+                            <rect key="frame" x="138" y="19" width="45" height="2"/>
+                        </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Location" translatesAutoresizingMaskIntoConstraints="NO" id="FCa-lj-MbF">
                             <rect key="frame" x="187" y="7" width="25" height="25"/>
                         </imageView>
@@ -21,13 +27,7 @@
                             <rect key="frame" x="109" y="7" width="25" height="25"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Flight" translatesAutoresizingMaskIntoConstraints="NO" id="A21-oJ-u5X">
-                            <rect key="frame" x="31" y="7" width="25" height="25"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="Dko-uG-Mvr">
-                            <rect key="frame" x="60" y="19" width="45" height="2"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="2Qh-b2-Ctk">
-                            <rect key="frame" x="138" y="19" width="45" height="2"/>
+                            <rect key="frame" x="29" y="7" width="25" height="25"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
