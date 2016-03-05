@@ -10,6 +10,14 @@
 import UIKit
 
 class JourneyViewController: UIViewController {
-   
+ 
+    var parentVC: SignUpPageViewController?
     
+    @IBAction func onClose(sender: AnyObject) {
+        
+        parentVC!.resetProgress()
+
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

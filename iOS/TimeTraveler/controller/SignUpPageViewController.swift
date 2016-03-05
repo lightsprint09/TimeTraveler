@@ -24,6 +24,8 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         let keptVc: EnteringViewController = instantiateViewControllerWithIdentifier("enter_flight_controller")
         let mainVc: EnteringViewController = instantiateViewControllerWithIdentifier("enter_traveler_kind_controller")
         let tidiedOutVc: EnteringViewController = instantiateViewControllerWithIdentifier("enter_transport_controller")
+        
+        
 
                 
         
@@ -96,7 +98,6 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         group.motionEffects = [horizontalMotionEffect, verticalMotionEffect]
         self.view.addMotionEffect(group)
         
-        //set up tasks
     }
     
     func playerItemDidReachEnd() {
@@ -104,13 +105,29 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         player!.play()
     }
     
+    func nextProgress(){
+        
+        progressIndicatorView.setProgress(currentControllerIndex, completed: true, sender: self)
+        currentControllerIndex += 1
+        
+    }
+    
+    func resetProgress()
+    {
+        currentControllerIndex = 0
+        let destnationViewController = controllers[currentControllerIndex] as! EnteringViewController
+        
+        progressIndicatorView.resetProgress()
+        
+        self.setViewControllers([destnationViewController], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil)
+    }
   
     func passToNextInputViewController(travelerInformation: TravelerInformation) {
+        nextProgress()
         
-        progressIndicatorView.setProgress(currentControllerIndex, completed: true)
-        currentControllerIndex += 1
         let destnationViewController = controllers[currentControllerIndex] as! EnteringViewController
         destnationViewController.travelerInformation = travelerInformation
+        
         self.setViewControllers([destnationViewController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
     }
 }

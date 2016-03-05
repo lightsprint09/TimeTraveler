@@ -65,6 +65,14 @@ class EnterTransportTypeViewController: EnteringViewController {
         
     }
     
+    @IBAction func onJourney(sender: AnyObject) {
+        
+        let parentController = self.parentViewController as? SignUpPageViewController
+        parentController?.nextProgress()
+        
+               
+
+    }
     
 func calculateETACar(from: Location, to: Location) {
         let request = MKDirectionsRequest()
