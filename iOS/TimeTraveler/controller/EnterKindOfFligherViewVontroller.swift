@@ -27,6 +27,7 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
     
     func isValidInput() -> Bool {
         guard let _ = laguageType else { return false }
+        nextButton.backgroundColor = .orangeUIColor()
         return true
     }
     @IBAction func sliderMoved(sender: AnyObject) {
@@ -65,6 +66,7 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
         backgroundView.backgroundColor = .clearColor()
         nextButton.layer.cornerRadius = 5
         slideView.layer.cornerRadius = 5
+        nextButton.backgroundColor = .grayColor()
         
     }
 
