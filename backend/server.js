@@ -25,22 +25,34 @@ router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to Time Traveler Seerver API!' });
 });
 
+var routeFlightInfoBookinCode = function(data, callback){
+    var bookingCode = data.booking_code;
+    apicalls.performLufthansaRequest('mockup/profiles/ordersandcustomers/pnrid/'+bookingCode, { callerid: 'team1' }, function(response) {
+        var flights = response.CustomersAndOrdersResponse.Orders.Order.OrderItems.OrderItem.FlightItem.OriginDestination.Flight;
+        callback(null, flights);
+    });
+};
+
 router.route('/flightInfo/:booking_code')
     .get(function(req, res){
-        var bookingCode = req.params.booking_code;
-        apicalls.performLufthansaRequest('mockup/profiles/ordersandcustomers/pnrid/'+bookingCode, { callerid: 'team1' }, function(response) {
-            var flights = response.CustomersAndOrdersResponse.Orders.Order.OrderItems.OrderItem.FlightItem.OriginDestination.Flight;
-            res.json(flights);
-        });
+      routeFlightInfoBookinCode({booking_code: req.params.booking_code}, function(err, response) {
+        res.json(response);
+      })
     });
+
+var routeCustomer = function(data, callback){
+  var lastName = data.ln;
+  var firstName = data.fn;
+  apicalls.performLufthansaRequest('mockup/profiles/customers/'+lastName+'/'+firstName, { filter: 'id', callerid: 'team1' }, function(response) {
+    callback(null, response.CustomersResponse.Customers.Customer);
+  });
+}
 
 router.route('/customer')
     .get(function(req, res) {
-        var lastName = req.query.ln;
-        var firstName = req.query.fn;
-        apicalls.performLufthansaRequest('mockup/profiles/customers/'+lastName+'/'+firstName, { filter: 'id', callerid: 'team1' }, function(response) {
-          res.json(response.CustomersResponse.Customers.Customer);
-        });
+        routeCustomer({ln: req.query.ln, fn: req.query.fn}, function(err, response) {
+          res.json(response);
+        })
     });
 
 router.route('/customer/:customer_id/address')
@@ -170,6 +182,8 @@ apicalls.initApis(function () {
   console.log('Magic happens on port ' + port);
 
 
-
+routeFlightInfoBookinCode({booking_code: '267MRS'}, function(err, response){
+  console.log(response);
+})
 
 });
