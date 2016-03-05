@@ -1,5 +1,25 @@
 // server.js
 
+var fraport = {
+    airportCode: "FRA",
+	position: {
+		coordinate: {
+			latitude: 50.03194444,
+			longitude: 8.577777778
+		}
+	},
+	cityCode: "FRA",
+	countryCode: "DE",
+	locationType: "Airport",
+	name: "Frankfurt/Main International",
+    trainStation: {
+        name: "Frankfurt(M) Flughafen Regionalbf",
+        longitude: 8.571250,
+        latitude: 50.051218,
+        id: "008070004"
+    }
+};
+
 // BASE SETUP
 // =============================================================================
 
@@ -57,28 +77,25 @@ var routeLocations = function(data, callback) {
   });
 };
 
-var routeNearbyStops  = function(data, response) {
+var routeNearbyStops  = function(data, callback) {
   var originLat = data.originCoordLat;
   var originLong = data.originCoordLong;
-  apicalls.performRmvRequest('/location.nearbystops', {originCoordLong: originLong, originCoordLat: originLat}, function(response) {
+  apicalls.performRmvRequest('/location.nearbystops',{originCoordLong: originLong, originCoordLat: originLat}, function(response) {
     callback(null, response);
   });
 };
 
 var routeTripToAirport  = function(data, callback) {
-  var airportCode = data.airportCode;
   var originLat = data.originCoordLat;
   var originLong = data.originCoordLong;
-  routeAirportInfoWithCode({airport_code: airportCode}, function (err, response) {
-    var coord = response.Position.Coordinate;
-    apicalls.performRmvRequest('/trip', {
-      originCoordLat: originLat,
-      originCoordLong: originLong,
-      destCoordLat: coord.Latitude,
-      destCoordLong: coord.Longitude
-    }, function(response2) {
-      callback(null, response2);
-    });
+  apicalls.performRmvRequest('/trip', {
+    originCoordLat: originLat,
+    originCoordLong: originLong,
+    destCoordLat: fraport.trainStation.latitude,
+    destCoordLong: fraport.trainStation.longitude,
+    originBike: 0
+  }, function(response) {
+    callback(null, response);
   });
 };
 
@@ -202,7 +219,7 @@ router.route('/nearbystops')
 
 router.route('/tripToAirport')
 .get(function(req, res) {
-  routeTripToAirport({airportCode: req.query.airportCode,originCoordLat: req.query.originCoordLat, originCoordLong:req.query.originCoordLong}, function(err, response) {
+  routeTripToAirport({originCoordLat: req.query.originCoordLat, originCoordLong:req.query.originCoordLong}, function(err, response) {
     res.json(response);
   });
 });
