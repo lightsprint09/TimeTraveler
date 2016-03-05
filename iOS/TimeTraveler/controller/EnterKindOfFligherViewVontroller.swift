@@ -15,6 +15,7 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
     var handLuggageOn: Bool = false
     var checkinLuggageOn: Bool = false
     
+    @IBOutlet var slideView: UIView!
     @IBOutlet var speedSlider: UISlider!
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var backgroundView: UIView!
@@ -53,6 +54,7 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
         backgroundView.backgroundColor = UIColor.clearColor()
         nextButton.layer.cornerRadius = 5
         nextButton.enabled = false
+        slideView.layer.cornerRadius = 5
         
     }
 

@@ -14,6 +14,17 @@ class EnterTransportTypeViewController: EnteringViewController {
     @IBOutlet weak var carETALabel: UILabel!
     @IBOutlet weak var TrainETALabel: UILabel!
     
+    @IBOutlet var backgroundView: UIView!
+    
+    @IBOutlet var nextButton: UIButton!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        backgroundView.backgroundColor = UIColor.clearColor()
+        nextButton.layer.cornerRadius = 5
+        nextButton.enabled = false
+        
+    }
+    
     func calculateETACar() {
         let request = MKDirectionsRequest()
         request.source = MKMapItem.mapItemForCurrentLocation()
