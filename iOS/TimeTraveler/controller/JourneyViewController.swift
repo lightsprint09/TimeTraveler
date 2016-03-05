@@ -10,6 +10,7 @@
 import UIKit
 
 class JourneyViewController: UIViewController {
+    @IBOutlet var ticketView: UIView!
  
     var parentVC: SignUpPageViewController?
     
@@ -17,10 +18,46 @@ class JourneyViewController: UIViewController {
         super.viewDidLoad()
         
         setupNavbar()
-
         
+        
+        ticketView.layer.shadowColor = UIColor.blackColor().CGColor
+        ticketView.layer.shadowOpacity = 0.5
+        ticketView.layer.shadowOffset = CGSizeZero
+        ticketView.layer.shadowRadius = 2
+        ticketView.layer.shadowPath = UIBezierPath(rect: ticketView.bounds).CGPath
         
     }
+    
+    @IBAction func onPanTicket(sender: UIPanGestureRecognizer) {
+        
+        let translation = sender.translationInView(self.view)
+        
+        
+        let tmp1=sender.view?.center.y //y translation
+        
+        let newY = tmp1!+translation.y
+        let maxY:CGFloat = 591
+        let minY:CGFloat = 691
+        print("The y:\(newY)")
+
+        if(newY < minY && newY > maxY){
+            sender.view?.center=CGPointMake(self.view.frame.size.width / 2, newY)
+            sender.setTranslation(CGPointZero, inView: self.view)
+
+        }
+        
+        if(sender.state ==  UIGestureRecognizerState.Ended){
+            //reposition to nearest
+            UIView.animateWithDuration(0.3, animations: {
+                
+                sender.view?.center=CGPointMake(self.view.frame.size.width / 2, (newY > 620 ? minY : maxY))
+                sender.setTranslation(CGPointZero, inView: self.view)
+                
+                }, completion: nil)
+        }
+        
+    }
+    
     
     func setupNavbar() {
         
