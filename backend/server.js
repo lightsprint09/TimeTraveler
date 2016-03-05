@@ -28,11 +28,9 @@ router.get('/', function(req, res) {
 router.route('/flightInfo/:booking_code')
     .get(function(req, res){
         var bookingCode = req.params.booking_code;
-        apicalls.initApis(function () {
-          apicalls.performLufthansaRequest('mockup/profiles/ordersandcustomers/pnrid/'+bookingCode, { callerid: 'team1' }, function(response) {
-              var flights = response.CustomersAndOrdersResponse.Orders.Order.OrderItems.OrderItem.FlightItem.OriginDestination.Flight;
-              res.json(flights);
-          });
+        apicalls.performLufthansaRequest('mockup/profiles/ordersandcustomers/pnrid/'+bookingCode, { callerid: 'team1' }, function(response) {
+            var flights = response.CustomersAndOrdersResponse.Orders.Order.OrderItems.OrderItem.FlightItem.OriginDestination.Flight;
+            res.json(flights);
         });
     });
 
@@ -40,40 +38,32 @@ router.route('/customer')
     .get(function(req, res) {
         var lastName = req.query.ln;
         var firstName = req.query.fn;
-        apicalls.initApis(function () {
-            apicalls.performLufthansaRequest('mockup/profiles/customers/'+lastName+'/'+firstName, { filter: 'id', callerid: 'team1' }, function(response) {
-              res.json(response.CustomersResponse.Customers.Customer);
-            });
+        apicalls.performLufthansaRequest('mockup/profiles/customers/'+lastName+'/'+firstName, { filter: 'id', callerid: 'team1' }, function(response) {
+          res.json(response.CustomersResponse.Customers.Customer);
         });
     });
 
 router.route('/customer/:customer_id/address')
     .get(function(req, res) {
         var customerId = req.params.customer_id;
-        apicalls.initApis(function () {
-            apicalls.performLufthansaRequest('mockup/profiles/customers/'+customerId, { callerid: 'team1' }, function(response) {
-              res.json(response.CustomersResponse.Customers.Customer.Contacts.Contact.AddressContact);
-            });
+        apicalls.performLufthansaRequest('mockup/profiles/customers/'+customerId, { callerid: 'team1' }, function(response) {
+          res.json(response.CustomersResponse.Customers.Customer.Contacts.Contact.AddressContact);
         });
     });
 
 router.route('/airportInfo/:airport_code')
     .get(function(req, res) {
         var airportCode = req.params.airport_code;
-        apicalls.initApis(function () {
-            apicalls.performLufthansaRequest('references/airports/'+airportCode, { filter: 'id', callerid: 'team1' }, function(response) {
-              res.json(response.AirportResource.Airports.Airport);
-            });
+        apicalls.performLufthansaRequest('references/airports/'+airportCode, { filter: 'id', callerid: 'team1' }, function(response) {
+          res.json(response.AirportResource.Airports.Airport);
         });
     });
 
 router.route('/locations')
     .get(function(req, res) {
         var location = req.query.location;
-        apicalls.initApis(function () {
-            apicalls.performRmvRequest('/location.name', {input: location}, function(response) {
-              res.json(response);
-            });
+        apicalls.performRmvRequest('/location.name', {input: location}, function(response) {
+          res.json(response);
         });
     });
 
@@ -81,10 +71,8 @@ router.route('/nearbystops')
     .get(function(req, res) {
         var originLat = req.query.originCoordLat;
         var originLong = req.query.originCoordLong;
-        apicalls.initApis(function () {
-            apicalls.performRmvRequest('/location.nearbystops', {originCoordLong: originLong, originCoordLat: originLat}, function(response) {
-              res.json(response);
-            });
+        apicalls.performRmvRequest('/location.nearbystops', {originCoordLong: originLong, originCoordLat: originLat}, function(response) {
+          res.json(response);
         });
     });
 
@@ -93,15 +81,13 @@ router.route('/tripToAirport')
         var airportCode = req.query.airportCode;
         var originLat = req.query.originCoordLat;
         var originLong = req.query.originCoordLong;
-        apicalls.initApis(function () {
-            apicalls.performLufthansaRequest('references/airports/'+airportCode, { filter: 'id', callerid: 'team1' }, function(response) {
-              var coord = response.AirportResource.Airports.Airport.Position.Coordinate;
-              var airportLat = coord.Latitude;
-              var airportLong = coord.Longitude;
-              apicalls.performRmvRequest('/trip', {originCoordLong: originLong, originCoordLat: originLat, destCoordLat: airportLat, destCoordLong: airportLong}, function(response) {
-                res.json(response);
-              });
-            });
+        apicalls.performLufthansaRequest('references/airports/'+airportCode, { filter: 'id', callerid: 'team1' }, function(response) {
+          var coord = response.AirportResource.Airports.Airport.Position.Coordinate;
+          var airportLat = coord.Latitude;
+          var airportLong = coord.Longitude;
+          apicalls.performRmvRequest('/trip', {originCoordLong: originLong, originCoordLat: originLat, destCoordLat: airportLat, destCoordLong: airportLong}, function(response) {
+            res.json(response);
+          });
         });
     });
 
@@ -133,7 +119,9 @@ router.route('/departureSchedule')
 // all of our routes will be prefixed with /api
 app.use('/', router);
 
-// START THE SERVER
+// START THE SERVER (after initalising the APIs)
 // =============================================================================
-app.listen(port);
-console.log('Magic happens on port ' + port);
+apicalls.initApis(function () {
+  app.listen(port);
+  console.log('Magic happens on port ' + port);
+});

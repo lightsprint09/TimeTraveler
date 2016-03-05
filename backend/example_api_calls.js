@@ -20,7 +20,15 @@ apicalls.initApis(function () {
   apicalls.performRmvRequest('/trip', {originExtId: 3006907, destExtId: 3004199}, function(response) {
     log(response, false);
   });
-  apicalls.performDbRequest('/location.name', {input: 'Frankfurt'}, function(response) {
-    log(response, false);
+  apicalls.performDbRequest('/location.name', {input: 'München Passing'}, function(response) {
+    log(response.LocationList.StopLocation[0], true);
+  });
+
+  // Comparing DB and RMV Api with the same request for a location
+  apicalls.performDbRequest('/location.name', {input: 'Darmstadt'}, function(response) {
+    log(response.LocationList.StopLocation, true);
+  });
+  apicalls.performRmvRequest('/location.name', {input: 'Darmstadt'}, function(response) {
+    log(response, true);
   });
 });
