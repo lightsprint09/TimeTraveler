@@ -594,10 +594,10 @@ Flughafen:</string>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fTN-pq-IqR">
-                                        <rect key="frame" x="99" y="305" width="403" height="183"/>
+                                        <rect key="frame" x="99" y="320" width="403" height="176"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="183" id="RkB-G0-Dh7"/>
+                                            <constraint firstAttribute="height" constant="176" id="RkB-G0-Dh7"/>
                                             <constraint firstAttribute="width" constant="403" id="n2u-80-jA7"/>
                                         </constraints>
                                         <prototypes>
@@ -781,7 +781,7 @@ Flughafen:</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbh-7m-Trp">
-                                        <rect key="frame" x="143" y="486" width="309" height="33"/>
+                                        <rect key="frame" x="143" y="510" width="309" height="33"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15:30 Abfahrt vom Aufenthaltsort" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkh-Xo-xFU">
                                                 <rect key="frame" x="45" y="5" width="267" height="21"/>
@@ -807,11 +807,11 @@ Flughafen:</string>
                                     <constraint firstItem="sXP-Op-YSM" firstAttribute="top" secondItem="0Hq-qU-Kg7" secondAttribute="bottom" constant="-1" id="92T-eu-XWN"/>
                                     <constraint firstItem="sbh-7m-Trp" firstAttribute="centerX" secondItem="YLh-Zh-FbQ" secondAttribute="centerX" constant="-2.5" id="HOq-vg-RIC"/>
                                     <constraint firstItem="zSh-Wq-0jr" firstAttribute="centerX" secondItem="YLh-Zh-FbQ" secondAttribute="centerX" constant="-3" id="Oza-Pd-1w5"/>
-                                    <constraint firstItem="sbh-7m-Trp" firstAttribute="top" secondItem="fTN-pq-IqR" secondAttribute="bottom" constant="-2" id="Rzs-Fk-T5s"/>
+                                    <constraint firstItem="sbh-7m-Trp" firstAttribute="top" secondItem="fTN-pq-IqR" secondAttribute="bottom" constant="14" id="Rzs-Fk-T5s"/>
                                     <constraint firstItem="u5U-Yc-ehs" firstAttribute="centerX" secondItem="YLh-Zh-FbQ" secondAttribute="centerX" id="Xz6-ex-4Zx"/>
                                     <constraint firstItem="cmM-zp-xiM" firstAttribute="leading" secondItem="fjY-zI-zrn" secondAttribute="leading" id="bxw-Hi-VBF"/>
                                     <constraint firstItem="u5U-Yc-ehs" firstAttribute="top" secondItem="YLh-Zh-FbQ" secondAttribute="top" constant="31" id="frR-1F-XN1"/>
-                                    <constraint firstItem="fTN-pq-IqR" firstAttribute="top" secondItem="0Hq-qU-Kg7" secondAttribute="bottom" constant="42" id="goY-PG-KnG"/>
+                                    <constraint firstItem="fTN-pq-IqR" firstAttribute="top" secondItem="0Hq-qU-Kg7" secondAttribute="bottom" constant="57" id="goY-PG-KnG"/>
                                     <constraint firstItem="u5U-Yc-ehs" firstAttribute="centerX" secondItem="0Hq-qU-Kg7" secondAttribute="centerX" id="hJC-dP-bss"/>
                                     <constraint firstItem="0Hq-qU-Kg7" firstAttribute="top" secondItem="u5U-Yc-ehs" secondAttribute="bottom" constant="20" id="oKi-t8-hwZ"/>
                                     <constraint firstItem="zSh-Wq-0jr" firstAttribute="top" secondItem="fTN-pq-IqR" secondAttribute="bottom" constant="44" id="rjE-eQ-hGc"/>
@@ -880,7 +880,7 @@ Flughafen:</string>
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="486"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="routeCell" rowHeight="160" id="EbM-oT-VqV" customClass="RouteCell" customModule="TimeTraveler" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="routeCell" rowHeight="160" id="EbM-oT-VqV" customClass="RouteCell" customModule="TimeTraveler" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="92" width="600" height="160"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EbM-oT-VqV" id="gGu-wJ-R1m">
@@ -960,11 +960,11 @@ Flughafen:</string>
                                                     <outlet property="titleLabel" destination="uMl-Jk-vHA" id="aQe-7o-Ht3"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="standardtcell" rowHeight="82" id="CnH-q2-LUY" userLabel="standardcell" customClass="StandardTimeLineCell" customModule="TimeTraveler" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="standardtcell" rowHeight="82" id="CnH-q2-LUY" userLabel="standardcell" customClass="StandardTimeLineCell" customModule="TimeTraveler" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="252" width="600" height="82"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CnH-q2-LUY" id="XNA-4r-KpM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="82"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="81.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ppR-u5-vqA">
