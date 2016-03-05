@@ -33,15 +33,27 @@ extension EnterTransportTypeViewController: UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        
         if let cell = tableView.cellForRowAtIndexPath(indexPath) as? ParkingTableViewCell where transportType == .Car {
+            didSelectNewTimePoint(cell.carTimePoint)
             cell.holderImage.image = UIImage(named: "Selected Layer")
             cell.dottedLine.image = UIImage(named: "Selection Way")
-            didSelectNewTimePoint(cell.carTimePoint)
-            nextButton.backgroundColor = .orangeUIColor()
-            nextButton.enabled = true
-
+            
+            
           
         }
+        
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? TrainTripTableViewCell where transportType == .PlublicTransport {
+            
+            cell.holderImage.image = UIImage(named: "Selected Layer")
+            cell.dottedLine.image = UIImage(named: "Selection Way")
+            
+            
+            
+        }
+        nextButton.backgroundColor = .orangeUIColor()
+        nextButton.enabled = true
+
     }
     
     
@@ -52,6 +64,13 @@ extension EnterTransportTypeViewController: UITableViewDataSource, UITableViewDe
             cell.dottedLine.image = UIImage(named: "Unselected Way")
             didSelectNewTimePoint(cell.carTimePoint)
         }
+        
+        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? TrainTripTableViewCell where transportType == .PlublicTransport {
+            cell.holderImage.image = UIImage(named: "Unselected Layer")
+            cell.dottedLine.image = UIImage(named: "Unselected Way")
+            //didSelectNewTimePoint(cell.carTimePoint)
+        }
+
         
     }
 

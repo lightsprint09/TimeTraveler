@@ -29,6 +29,13 @@ class ParkingTableViewCell: UITableViewCell {
 }
 
 class TrainTripTableViewCell: UITableViewCell {
+    
+    @IBOutlet var holderImage: UIImageView!
+    
+    @IBOutlet var dottedLine: UIImageView!
+    @IBOutlet weak var parkingNameLabel: UILabel!
+    @IBOutlet weak var parkingSubtitleLable: UILabel!
+    
     func configureWithTrip(facility: RMVTrip) {
         
     }
