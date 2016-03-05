@@ -187,7 +187,9 @@ var routeDistance = function(data, callback){
   // var start = 'Check-In A';
   // var end = 'Central Security-Check A';
   apicalls.performFraportRequest('transittimes','/transittime/'+start+'/'+end, null, function(response) {
-    callback(null, response[0].path);
+      console.log("---->"+start);
+      console.log("---->"+end);
+      callback(null, response[0].path);
   });
 };
 
@@ -200,6 +202,15 @@ var routeParkingAvailability = function(data, callback){
 var routeParkingAvailabilityForecast = function(data, callback){
   apicalls.performFraportRequest('parking','/parking/forecast/', null, function(response) {
     callback(null, response);
+  });
+};
+
+var routeFlightStatus = function(data, callback){
+  var airline = data.airline;
+  var flightnumber = data.flightnumber;
+  var departuredate = data.date;
+  apicalls.performLufthansaRequest('operations/flightstatus/'+airline+flightnumber+'/'+departuredate, null, function(response) {
+    callback(null, response.FlightStatusResource.Flights.Flight);
   });
 };
 
@@ -318,6 +329,16 @@ router.route('/parkingAvailabilityForecast')
   });
 });
 
+router.route('/flightStatus')
+.get(function(req, res){
+  var airlineCode = req.query.airline_code;
+  var flightNumber = req.query.flight_number;
+  var departureDate = req.query.departure_date;
+  routeFlightStatus({airline: airlineCode, flightnumber: flightNumber, date: departureDate}, function(err, response) {
+    res.json(response);
+  });
+});
+
 var async = require('async');
 
 var routeGetJourney = function(data, callback){
@@ -345,25 +366,28 @@ var routeGetJourney = function(data, callback){
         );
         next(null, date, loc);
       })
-    }, 
+    },
     function idControll(endTime, gate, next) {
         // 1. Query Id-Kontrolle for flight gate
         routeGateInfo({gate: gate.name}, function(err, response){
-         // 2. Query Distance between gate and controll
-         gate.name = 'A-Gates'; // FIXME: Weggucken, hier gibt es nichts zu sehen
-            routeDistance({start: response[0].gate.departure_bordercheck, end: gate.name}, function(err, response2){      
-            // 3. TODO: Calculate Time for start
-            var startTime = now; //FIXME
-            var pos = new Distance({meters: response2.distance, minutes: response2.transitTime}); 
-                journey.unshift(
-                    new JourneyPart({
-                    start: now,
-                    end: endTime,
-                    name: 'Border Check',
-                    location: loc,
-                    distance: pos
-                    })
-                );
+             // 2. Query Distance between gate and controll
+            //gate.name = 'A-Gates'; // FIXME: Weggucken, hier gibt es nichts zu sehen
+            console.log(response.length);
+            var gateSectionName = (gate.name).charAt(0)+"-Gates";
+            console.log(response.length);
+            routeDistance({start: response[0].gate.departure_bordercheck, end: gateSectionName}, function(err, response2){
+                // 3. TODO: Calculate Time for start
+                var startTime = now; //FIXME
+                var pos = new Distance({meters: response2.distance, minutes: response2.transitTime});
+                    journey.unshift(
+                        new JourneyPart({
+                        start: now,
+                        end: endTime,
+                        name: 'Border Check',
+                        location: loc,
+                        distance: pos
+                        })
+                    );
                 next(null, startTime, gate);
             });
         });
@@ -371,9 +395,9 @@ var routeGetJourney = function(data, callback){
     function securityControll(endTime, gate, next) {
          // 1. Query Id-Kontrolle for flight gate
         routeGateInfo({gate: gate.name}, function(err, response){
-         // 2. Query Distance between gate and controll 
+         // 2. Query Distance between gate and controll
          gate.name = 'A-Gates'; // FIXME: Weggucken, hier gibt es nichts zu sehen
-            routeDistance({start: response[0].gate.departure_securitycheck, end: gate.name}, function(err, response2){      
+            routeDistance({start: response[0].gate.departure_securitycheck, end: gate.name}, function(err, response2){
             // 3. TODO: Calculate Time for start
             var startTime = now; //FIXME
             var pos = new Distance({meters: response2.distance, minutes: response2.transitTime});
@@ -390,16 +414,6 @@ var routeGetJourney = function(data, callback){
                 next(null, startTime, gate);
             });
         });
-      // TODO:
-      journey.unshift(
-        new JourneyPart({
-          start: now,
-          end: now,
-          name: 'Security Check',
-          location: loc,
-          distance: dist
-        })
-      );
       next(null, 'one', 'three');
     },
     function checking(startTime, arg2, next) {
