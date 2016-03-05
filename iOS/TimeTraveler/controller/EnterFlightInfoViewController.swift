@@ -31,7 +31,7 @@ class EnterFlightInfoViewController: EnteringViewController {
         super.viewDidLoad()
         backgroundView.backgroundColor = UIColor.clearColor()
         nextButton.layer.cornerRadius = 5
-
+        nextButton.enabled = false
         
     }
     
@@ -45,7 +45,7 @@ class EnterFlightInfoViewController: EnteringViewController {
     }
 
     @IBAction func didChangeFlightID(sender: UITextField) {
-        
+        // lookup
     }
     
     @IBAction func finishEnertingData(sender: AnyObject) {
