@@ -11,7 +11,7 @@ import MapKit
 
 class EnterTransportTypeViewController: EnteringViewController {
     var transportType: TransportType?
-    var autoOn: Bool = false
+    var autoOn: Bool = true
     var busBahnOn: Bool = false
     
     let rmvService = RMVService()
@@ -41,17 +41,23 @@ class EnterTransportTypeViewController: EnteringViewController {
             
         }
     
-    @IBAction func onAuto(sender: AnyObject) {
+    func toggleType()
+    {
         autoOn = !autoOn
+        busBahnOn = !busBahnOn
+    }
+    
+    @IBAction func onAuto(sender: AnyObject) {
         
+        toggleType()
         let buttonImage = UIImage(named: "Auto" + (autoOn ? " selected" : ""));
         sender.setImage(buttonImage, forState: .Normal)
         
         
     }
     @IBAction func onBusBahn(sender: AnyObject) {
-        busBahnOn = !busBahnOn
         
+        toggleType()
         let buttonImage = UIImage(named: "Bus and bahn" + (busBahnOn ? " selected" : ""));
         sender.setImage(buttonImage, forState: .Normal)
         

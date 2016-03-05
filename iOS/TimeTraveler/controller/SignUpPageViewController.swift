@@ -29,18 +29,23 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         controllers = [keptVc, mainVc, tidiedOutVc]
 //        let view: UIView = UIView.viewFromNibNamed("BackgroundBlurView", owner: self)
 //        self.view.insertSubview(view, atIndex: 0)
-        dataSource = self
+        //dataSource = self
         self.setViewControllers([controllers[0]], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         
         
+        
         navigationController?.interactivePopGestureRecognizer?.delegate = self
-        stylePageControl()
+        
         
         // load video
         playBackgroundvideo()
         
         
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        stylePageControl()
     }
     
     
@@ -91,8 +96,10 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         pageControl.currentPageIndicatorTintColor = .orangeUIColor()
         pageControl.backgroundColor = UIColor.clearColor()
         
-     
+        
         self.view.layer.backgroundColor = UIColor.clearColor().CGColor
+        
+        
     }
     
     func passToNextInputViewController(travelerInformation: TravelerInformation) {
