@@ -1,0 +1,18 @@
+{
+  "startingPoint": {
+    "name": "Check-In A",
+    "longitude": 8.569989,
+    "latitude": 50.050208,
+    "terminal": 1,
+    "area": "A"
+  },
+  "destination": {
+    "name": "Central Security-Check A",
+    "longitude": 8.568234,
+    "latitude": 50.049065,
+    "terminal": 1,
+    "area": "A"
+  },
+  "distance": 354,
+  "transitTime": 4
+}

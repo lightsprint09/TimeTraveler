@@ -146,6 +146,17 @@ router.route('/waitingperiod/checkin')
     });
   });
 
+router.route('/distance')
+  .get(function(req, res) {
+    var start = req.query.start;
+    var end = req.query.end;
+    // var start = 'Check-In A';
+    // var end = 'Central Security-Check A';
+    apicalls.performFraportRequest('transittimes','/transittime/'+start+'/'+end, null, function(response) {
+        res.json(response[0].path);
+      });
+    });
+
 // more routes for our API will happen here
 
 // REGISTER OUR ROUTES -------------------------------
