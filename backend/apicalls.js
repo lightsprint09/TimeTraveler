@@ -197,7 +197,7 @@ var performDbRequest = function(endpoint, data, callback) {
   }
   // console.log(url);
   request.get({
-    url:  url 
+    url:  url
   }, function(err, httpResponse, body){
     if(httpResponse.statusCode !== 200){
       return console.log('6: Invalid Status Code Returned:', httpResponse.statusCode);

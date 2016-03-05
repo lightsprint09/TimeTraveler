@@ -185,6 +185,12 @@ var routeDistance = function(data, callback){
   });
 };
 
+var routeParkingAvailability = function(data, callback){
+  apicalls.performFraportRequest('parking','/parking/current', null, function(response) {
+    callback(null, response);
+  });
+};
+
 // ROUTES FOR OUR API
 // =============================================================================
 
@@ -282,6 +288,13 @@ router.route('/distance')
 router.route('/getJourney')
 .get(function(req, res){
   routeGetJourney({booking_code: req.params.booking_code}, function(err, response) {
+    res.json(response);
+  });
+});
+
+router.route('/parkingAvailability')
+.get(function(req, res){
+  routeParkingAvailability({}, function(err, response) {
     res.json(response);
   });
 });
