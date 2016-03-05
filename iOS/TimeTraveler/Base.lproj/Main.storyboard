@@ -662,8 +662,11 @@ Flughafen:</string>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Unselected Way" translatesAutoresizingMaskIntoConstraints="NO" id="K0i-5a-vsR">
                                                             <rect key="frame" x="56" y="27" width="23" height="5"/>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Unselected Layer" translatesAutoresizingMaskIntoConstraints="NO" id="XGJ-g6-cFS">
-                                                            <rect key="frame" x="70" y="7" width="277" height="51"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unselected Layer" translatesAutoresizingMaskIntoConstraints="NO" id="XGJ-g6-cFS">
+                                                            <rect key="frame" x="70" y="6" width="277" height="47"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="277" id="nis-tF-rkA"/>
+                                                            </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gray vertical line" translatesAutoresizingMaskIntoConstraints="NO" id="91K-TP-ZWN">
                                                             <rect key="frame" x="58" y="0.0" width="2" height="59"/>
@@ -672,8 +675,8 @@ Flughafen:</string>
                                                                 <constraint firstAttribute="width" constant="2" id="PCU-G4-SXe"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Zuhause" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERm-ya-CVW">
-                                                            <rect key="frame" x="119" y="15" width="201" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zuhause" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ERm-ya-CVW">
+                                                            <rect key="frame" x="119" y="15" width="204" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="17"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -696,6 +699,9 @@ Flughafen:</string>
                                                         <constraint firstItem="0MA-Yx-F9n" firstAttribute="top" secondItem="ERm-ya-CVW" secondAttribute="bottom" constant="-0.5" id="QEU-iB-On4"/>
                                                         <constraint firstItem="0MA-Yx-F9n" firstAttribute="leading" secondItem="91K-TP-ZWN" secondAttribute="trailing" constant="59" id="R6Y-DY-jbJ"/>
                                                         <constraint firstItem="ERm-ya-CVW" firstAttribute="top" secondItem="kAE-Gr-4Y8" secondAttribute="topMargin" constant="7" id="Rct-Av-dOe"/>
+                                                        <constraint firstItem="XGJ-g6-cFS" firstAttribute="centerY" secondItem="kAE-Gr-4Y8" secondAttribute="centerY" id="T2A-jp-yRA"/>
+                                                        <constraint firstItem="XGJ-g6-cFS" firstAttribute="leading" secondItem="kAE-Gr-4Y8" secondAttribute="leadingMargin" constant="62" id="XkO-aJ-aR2"/>
+                                                        <constraint firstItem="ERm-ya-CVW" firstAttribute="trailing" secondItem="XGJ-g6-cFS" secondAttribute="trailing" constant="-24" id="ckw-bw-AZH"/>
                                                         <constraint firstItem="ERm-ya-CVW" firstAttribute="leading" secondItem="91K-TP-ZWN" secondAttribute="trailing" constant="59" id="dWV-fM-31c"/>
                                                         <constraint firstAttribute="leadingMargin" secondItem="91K-TP-ZWN" secondAttribute="leading" constant="-50" id="nDx-Pz-bJS"/>
                                                         <constraint firstItem="91K-TP-ZWN" firstAttribute="centerY" secondItem="kAE-Gr-4Y8" secondAttribute="centerY" constant="-0.25" id="pKp-si-hxz"/>

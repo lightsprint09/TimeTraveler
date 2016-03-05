@@ -15,7 +15,7 @@ extension EnterTransportTypeViewController: UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return parkingFacilitys.count
+        return transportType == .Car ? parkingFacilitys.count : localTransportTrips.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -26,30 +26,22 @@ extension EnterTransportTypeViewController: UITableViewDataSource, UITableViewDe
             return parkCell
         }
         if let trainCell = cell as? TrainTripTableViewCell {
-            //
+            trainCell.configureWithTrip(localTransportTrips[indexPath.row])
         }
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        
         if let cell = tableView.cellForRowAtIndexPath(indexPath) as? ParkingTableViewCell where transportType == .Car {
             didSelectNewTimePoint(cell.carTimePoint)
             cell.holderImage.image = UIImage(named: "Selected Layer")
             cell.dottedLine.image = UIImage(named: "Selection Way")
-            
-            
-          
         }
         
         if let cell = tableView.cellForRowAtIndexPath(indexPath) as? TrainTripTableViewCell where transportType == .PlublicTransport {
-            
+            didSelectNewTimePoint(cell.trainTripDuration)
             cell.holderImage.image = UIImage(named: "Selected Layer")
             cell.dottedLine.image = UIImage(named: "Selection Way")
-            
-            
-            
         }
         nextButton.backgroundColor = .orangeUIColor()
         nextButton.enabled = true
@@ -58,17 +50,14 @@ extension EnterTransportTypeViewController: UITableViewDataSource, UITableViewDe
     
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        
         if let cell = tableView.cellForRowAtIndexPath(indexPath) as? ParkingTableViewCell where transportType == .Car {
             cell.holderImage.image = UIImage(named: "Unselected Layer")
             cell.dottedLine.image = UIImage(named: "Unselected Way")
-            didSelectNewTimePoint(cell.carTimePoint)
         }
         
         if let cell = tableView.cellForRowAtIndexPath(indexPath) as? TrainTripTableViewCell where transportType == .PlublicTransport {
             cell.holderImage.image = UIImage(named: "Unselected Layer")
             cell.dottedLine.image = UIImage(named: "Unselected Way")
-            //didSelectNewTimePoint(cell.carTimePoint)
         }
 
         
@@ -91,6 +80,7 @@ class EnterTransportTypeViewController: EnteringViewController {
 
     let rmvService = RMVService()
     let parkingService = FraportService()
+    var localTransportTrips = Array<RMVTrip>()
     
     @IBOutlet var endView: UIView!
     @IBOutlet var startView: UIView!
@@ -110,6 +100,7 @@ class EnterTransportTypeViewController: EnteringViewController {
     @IBOutlet var nextButton: UIButton!
     
     var basicCarDuration: DurationPoint!
+    var basicTrainDuration: LocalTrainDurationPoint!
     static var hoursFormatter: NSDateComponentsFormatter = {
         let formatter = NSDateComponentsFormatter()
         formatter.allowedUnits = NSCalendarUnit.Hour.union(.Minute)
@@ -122,7 +113,6 @@ class EnterTransportTypeViewController: EnteringViewController {
         backgroundView.backgroundColor = UIColor.clearColor()
         nextButton.layer.cornerRadius = 5
         nextButton.backgroundColor = .grayColor()
-        
         nextButton.enabled = false
         tableView.dataSource = self
         tableView.delegate = self
@@ -149,16 +139,15 @@ class EnterTransportTypeViewController: EnteringViewController {
                 print(err)
         })
         rmvService.fetchRMVTrip(LocationConstants.currentLocation, onSucces: didFetchRMVTrip, onErrror: onErrorFetchingRMVTrip)
-        
-        
-       
     }
         func didFetchRMVTrip(rmvTrip: RMVRoute) {
             let sortedTrips = rmvTrip.trips.sort { trip1, trip2 in
                 return trip1.duration < trip2.duration
             }
-            guard let trainDuration = sortedTrips.first?.duration else { return }
-            trainETALabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(trainDuration)
+            guard let fastestTrip = sortedTrips.first, let duration = fastestTrip.duration else { return }
+            basicTrainDuration = LocalTrainDurationPoint(rmvTrip: fastestTrip)
+            localTransportTrips = sortedTrips
+            trainETALabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(duration)
             
         }
         
@@ -172,9 +161,6 @@ class EnterTransportTypeViewController: EnteringViewController {
         ETALabel.text = FlightStatusService.timeFormatter.stringFromDate(travelerInformation.timeLineContainer.currentResultTime.date) + " Abfahrt vom Aufenthaltsort"
         let duration = travelerInformation.timeLineContainer.durationPoints.last!.duration
         durationLabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(duration)! + " bei vorraussichtlichem Verkehr"
-        
-        
-        
     }
     
     
@@ -197,7 +183,7 @@ class EnterTransportTypeViewController: EnteringViewController {
     }
     
     @IBAction func onBusBahn(sender: AnyObject) {
-        guard transportType != .PlublicTransport else { return }
+        didSelectNewTimePoint(basicTrainDuration)
         transportType = .PlublicTransport
         displayButtonState()  
     }
