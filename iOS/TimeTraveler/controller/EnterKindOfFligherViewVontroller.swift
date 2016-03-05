@@ -12,6 +12,7 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
     var laguageType: LaguageType?
     var travelSpeed: TravelSpeed?
     
+    @IBOutlet var speedSlider: UISlider!
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var backgroundView: UIView!
     
@@ -19,6 +20,11 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
     func isValidInput() -> Bool {
         guard let _ = laguageType, let _ = travelSpeed else { return false }
         return true
+    }
+    @IBAction func sliderMoved(sender: AnyObject) {
+        
+        //snap to nearest
+        sender.setValue(Float(lroundf(speedSlider.value)), animated: true)
     }
     
     override func viewDidLoad() {
