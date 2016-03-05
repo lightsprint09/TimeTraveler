@@ -599,7 +599,13 @@ Flughafen:</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="403" height="59.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gray vertical line" translatesAutoresizingMaskIntoConstraints="NO" id="f8h-31-jBj">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Unselected Way" translatesAutoresizingMaskIntoConstraints="NO" id="oP2-I0-A8k">
+                                                            <rect key="frame" x="53" y="29" width="23" height="3"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Unselected Layer" translatesAutoresizingMaskIntoConstraints="NO" id="aRJ-2N-C0e">
+                                                            <rect key="frame" x="70" y="7" width="277" height="51"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gray vertical line" translatesAutoresizingMaskIntoConstraints="NO" id="f8h-31-jBj">
                                                             <rect key="frame" x="58" y="0.0" width="2" height="59"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="2" id="JIf-MC-dzt"/>
@@ -607,25 +613,31 @@ Flughafen:</string>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Zuhause" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uO-2l-Qto">
-                                                            <rect key="frame" x="96" y="12" width="287" height="20.5"/>
+                                                            <rect key="frame" x="119" y="15" width="201" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="17"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbV-Rd-qUe">
-                                                            <rect key="frame" x="81" y="33" width="287" height="20.5"/>
+                                                            <rect key="frame" x="119" y="33" width="201" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="13"/>
                                                             <color key="textColor" red="0.99215686270000003" green="0.64705882349999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Parking" translatesAutoresizingMaskIntoConstraints="NO" id="sDp-bd-fUV">
+                                                            <rect key="frame" x="83" y="18" width="15" height="30"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Arrow Top" translatesAutoresizingMaskIntoConstraints="NO" id="Lih-1E-D0I">
+                                                            <rect key="frame" x="83" y="12" width="15" height="15"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="hbV-Rd-qUe" firstAttribute="top" secondItem="1uO-2l-Qto" secondAttribute="bottom" constant="1" id="2R0-iU-bsF"/>
-                                                        <constraint firstItem="hbV-Rd-qUe" firstAttribute="leading" secondItem="f8h-31-jBj" secondAttribute="trailing" constant="21" id="OY2-LQ-CiG"/>
-                                                        <constraint firstItem="1uO-2l-Qto" firstAttribute="leading" secondItem="f8h-31-jBj" secondAttribute="trailing" constant="36" id="mqA-Ob-QS4"/>
+                                                        <constraint firstItem="hbV-Rd-qUe" firstAttribute="top" secondItem="1uO-2l-Qto" secondAttribute="bottom" constant="-2.5" id="2R0-iU-bsF"/>
+                                                        <constraint firstItem="hbV-Rd-qUe" firstAttribute="leading" secondItem="f8h-31-jBj" secondAttribute="trailing" constant="59" id="OY2-LQ-CiG"/>
+                                                        <constraint firstItem="1uO-2l-Qto" firstAttribute="leading" secondItem="f8h-31-jBj" secondAttribute="trailing" constant="59" id="mqA-Ob-QS4"/>
                                                         <constraint firstItem="f8h-31-jBj" firstAttribute="centerY" secondItem="qIy-CD-lJy" secondAttribute="centerY" id="okg-qd-I3y"/>
-                                                        <constraint firstItem="1uO-2l-Qto" firstAttribute="top" secondItem="qIy-CD-lJy" secondAttribute="topMargin" constant="4" id="r6O-X0-LOm"/>
+                                                        <constraint firstItem="1uO-2l-Qto" firstAttribute="top" secondItem="qIy-CD-lJy" secondAttribute="topMargin" constant="7" id="r6O-X0-LOm"/>
                                                         <constraint firstAttribute="leadingMargin" secondItem="f8h-31-jBj" secondAttribute="leading" constant="-50" id="y8C-Yg-3di"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
@@ -998,6 +1010,7 @@ Flughafen:</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Arrow Top" width="12" height="7"/>
         <image name="Auto" width="102" height="102"/>
         <image name="Bus and bahn" width="102" height="102"/>
         <image name="Check in luggage" width="102" height="102"/>
@@ -1009,7 +1022,10 @@ Flughafen:</string>
         <image name="Hand Luggage" width="102" height="102"/>
         <image name="Icon Auto" width="12" height="11"/>
         <image name="Location" width="25" height="25"/>
+        <image name="Parking" width="12" height="14"/>
         <image name="Seat icon" width="35" height="44"/>
         <image name="Ticket Pattern" width="960" height="1260"/>
+        <image name="Unselected Layer" width="281" height="47"/>
+        <image name="Unselected Way" width="16" height="4"/>
     </resources>
 </document>
