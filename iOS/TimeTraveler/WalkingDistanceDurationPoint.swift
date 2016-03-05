@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class WalkingDistanceDurationPoint: DurationPoint {
     var duration: NSTimeInterval = 0
@@ -14,6 +15,8 @@ class WalkingDistanceDurationPoint: DurationPoint {
     var subtitle: String?
     
     let tabelCellID = "standardtcell"
+    
+    var image = UIImage(named: "Bullet Point")!
     
     func asyncResolve(onSucess: (NSTimeInterval) -> (), onError: (JSONFetcherErrorType) -> ()) {
         let urlString = "https://timetraveler-server.herokuapp.com/distance?start=\(origin) A&end=\(destination)".stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)

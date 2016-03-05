@@ -119,6 +119,7 @@ class EnterTransportTypeViewController: EnteringViewController {
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         startView.hidden = true
         endView.hidden = true
+        tableView.hidden = true
         basicCarDuration = CarDriveDurationPoint(name: "Autofahrt", from: LocationConstants.currentLocation, to: LocationConstants.airportLocation)
         basicCarDuration.asyncResolve({time in
             dispatch_async(dispatch_get_main_queue(),{
@@ -177,6 +178,7 @@ class EnterTransportTypeViewController: EnteringViewController {
         let carButtonImage = UIImage(named: "Auto" + (transportType == .Car ? " selected" : ""));
         startView.hidden = false
         endView.hidden = false
+        tableView.hidden = false
         carButton.setImage(carButtonImage, forState: .Normal)
         busButton.setImage(busButtonImage, forState: .Normal)
 
