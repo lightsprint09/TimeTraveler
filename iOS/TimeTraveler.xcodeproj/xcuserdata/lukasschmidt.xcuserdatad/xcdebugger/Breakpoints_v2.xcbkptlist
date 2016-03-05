@@ -2,4 +2,54 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TimeTraveler/controller/EnterFlightInfoViewController.swift"
+            timestampString = "478853896.65736"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "EnterFlightInfoViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimeTraveler.EnterFlightInfoViewController.init (TimeTraveler.EnterFlightInfoViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; TimeTraveler.EnterFlightInfoViewController"
+                  moduleName = "TimeTraveler"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasschmidt/Developer/Git/TimeTraveler/iOS/TimeTraveler/controller/EnterFlightInfoViewController.swift"
+                  timestampString = "478853897.669221"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "315">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TimeTraveler.EnterFlightInfoViewController.init (TimeTraveler.EnterFlightInfoViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;TimeTraveler.EnterFlightInfoViewController&gt;"
+                  moduleName = "TimeTraveler"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasschmidt/Developer/Git/TimeTraveler/iOS/TimeTraveler/controller/EnterFlightInfoViewController.swift"
+                  timestampString = "478853897.66941"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "217">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

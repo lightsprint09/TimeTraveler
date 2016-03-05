@@ -15,15 +15,25 @@ class EnterFlightInfoViewController: EnteringViewController {
     var flightReference: FlightReference?
     
     let flightStatusService = FlightStatusService()
+
+    @IBOutlet var backgroundView: UIView!
     
-    override func viewDidLoad() {
-        travelerInformation = TravelerInformation()
-    }
+    @IBOutlet var nextButton: UIButton!
+    
 
     @IBAction func didChangeBoockingRederence(sender: UITextField) {
         guard let boockingReferenceID = sender.text else { return }
         flightReference = FlightReference(boockingReferenceID: boockingReferenceID, isValid: false)
         flightStatusService.fetchFlightStatus(flightReference!, onSucces: didChangeFlightStatus, onErrror: isInvalidFlightID)
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        travelerInformation = TravelerInformation()
+        backgroundView.backgroundColor = UIColor.clearColor()
+        nextButton.layer.cornerRadius = 5
+        nextButton.enabled = false
         
     }
     
@@ -38,7 +48,7 @@ class EnterFlightInfoViewController: EnteringViewController {
     }
 
     @IBAction func didChangeFlightID(sender: UITextField) {
-        
+        // lookup
     }
     
     @IBAction func finishEnertingData(sender: AnyObject) {

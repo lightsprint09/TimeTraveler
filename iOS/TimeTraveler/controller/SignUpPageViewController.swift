@@ -41,12 +41,11 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
     
     func playBackgroundvideo() {
         
-        let backgroundView = UIView(frame: view.frame)
-        backgroundView.backgroundColor = .blackColor()
+        let backgroundView = UIImageView(frame: view.frame)
+        //backgroundView.backgroundColor = .blackColor()
+        backgroundView.image = UIImage(named: "Mask")
         backgroundView.alpha = 0.8
         view.insertSubview(backgroundView, atIndex: 0)
-
-        
         
         let videoFile = NSBundle.mainBundle().pathForResource("opening_compressed", ofType: "mp4")
         player = AVPlayer(URL: NSURL(fileURLWithPath: videoFile!))
@@ -81,9 +80,11 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
     func stylePageControl() {
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
+        
+        
         pageControl.currentPageIndicatorTintColor = .orangeUIColor()
         pageControl.backgroundColor = UIColor.clearColor()
-        
+     
         self.view.layer.backgroundColor = UIColor.clearColor().CGColor
     }
     
