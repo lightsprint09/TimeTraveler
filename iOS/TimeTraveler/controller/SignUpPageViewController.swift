@@ -31,6 +31,8 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
 //        self.view.insertSubview(view, atIndex: 0)
         dataSource = self
         self.setViewControllers([controllers[0]], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+        
+        
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         stylePageControl()
         
@@ -85,6 +87,8 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         
         pageControl.currentPageIndicatorTintColor = .orangeUIColor()
         pageControl.backgroundColor = UIColor.clearColor()
+        
+        
      
         self.view.layer.backgroundColor = UIColor.clearColor().CGColor
     }

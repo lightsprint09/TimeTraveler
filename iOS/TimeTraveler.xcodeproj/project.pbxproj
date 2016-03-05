@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36054A961C8ADDFB00877412 /* JourneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36054A951C8ADDFB00877412 /* JourneyViewController.swift */; };
 		368819781C8A3E5B00665DA3 /* Journey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 368819771C8A3E5B00665DA3 /* Journey.storyboard */; };
 		3688197D1C8A3F3400665DA3 /* opening_compressed.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3688197C1C8A3F3400665DA3 /* opening_compressed.mp4 */; };
 		368819861C8A3FC200665DA3 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 368819801C8A3FC200665DA3 /* Montserrat-Bold.otf */; };
@@ -102,6 +103,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		36054A951C8ADDFB00877412 /* JourneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyViewController.swift; sourceTree = "<group>"; };
 		368819771C8A3E5B00665DA3 /* Journey.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Journey.storyboard; sourceTree = "<group>"; };
 		3688197C1C8A3F3400665DA3 /* opening_compressed.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = opening_compressed.mp4; sourceTree = "<group>"; };
 		368819801C8A3FC200665DA3 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			children = (
 				941DE72A1C8A356500F4A4A4 /* helpers */,
 				941DE71F1C8A32F000F4A4A4 /* EnterFlightInfoViewController.swift */,
+				36054A951C8ADDFB00877412 /* JourneyViewController.swift */,
 				941DE7251C8A335300F4A4A4 /* SignUpPageViewController.swift */,
 				941DE72B1C8A35D700F4A4A4 /* EnterKindOfFligherViewVontroller.swift */,
 				941DE72D1C8A361900F4A4A4 /* EnterTransportTypeViewController.swift */,
@@ -582,6 +585,7 @@
 				94B939F91C7F294200F36C2D /* AppDelegate.swift in Sources */,
 				94F196D21C8ACDE500ED526E /* RMVService.swift in Sources */,
 				94F196D41C8ACDF200ED526E /* RMVTrip.swift in Sources */,
+				36054A961C8ADDFB00877412 /* JourneyViewController.swift in Sources */,
 				941DE72C1C8A35D700F4A4A4 /* EnterKindOfFligherViewVontroller.swift in Sources */,
 				94F196D61C8ACF2400ED526E /* Location.swift in Sources */,
 				941DE7311C8A3D6D00F4A4A4 /* FlightInformation.swift in Sources */,
