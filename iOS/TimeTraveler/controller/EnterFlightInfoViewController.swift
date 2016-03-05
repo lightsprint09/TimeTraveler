@@ -48,16 +48,14 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
         
     }
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
-    {
-        textField.resignFirstResponder()
-        return true;
-    }
+//    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
+//    {
+//        textField.resignFirstResponder()
+//        return true;
+//    }
 
     
     func didChangeFlightStatus(flightStatus: FlightStatus) {
-        
-        
         travelerInformation.flightStatus = flightStatus
         displayFlightStatus(flightStatus)
         nextButton.enabled = true 

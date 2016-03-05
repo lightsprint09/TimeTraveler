@@ -45,4 +45,7 @@ class TravelerInformation {
         }
     }
     
+    var targetTime: TargetTime {
+        return TargetTime(date: (flightStatus?.from?.date)!, name: "Abflugzeit")
+    }
 }
