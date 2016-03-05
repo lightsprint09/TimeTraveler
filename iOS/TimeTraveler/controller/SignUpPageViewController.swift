@@ -112,6 +112,11 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         
     }
     
+    func reselectRoute(){
+        currentControllerIndex = 2
+        progressIndicatorView.reselectRoute()
+    }
+    
     func resetProgress()
     {
         currentControllerIndex = 0

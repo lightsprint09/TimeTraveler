@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimeTraveler/controller/ProgressView.swift"
-            timestampString = "478881408.263402"
+            timestampString = "478886258.474177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "setProgress(_:completed:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -41,28 +41,28 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TimeTraveler/controller/JourneyViewController.swift"
-            timestampString = "478880156.599309"
+            filePath = "TimeTraveler/controller/ProgressView.swift"
+            timestampString = "478886258.474177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "onClose(_:)"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "setProgress(_:completed:sender:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimeTraveler/controller/ProgressView.swift"
-            timestampString = "478882633.612199"
+            timestampString = "478886349.480894"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "setProgress(_:completed:sender:)"
             landmarkType = "5">
          </BreakpointContent>

@@ -34,6 +34,12 @@ class ProgressView: UIView {
         
     }
     
+    func reselectRoute()
+    {
+        setProgress(2, completed: false, sender:self)
+        
+    }
+    
    
      func setProgress(page: Int, completed: Bool, sender: AnyObject)
     {
