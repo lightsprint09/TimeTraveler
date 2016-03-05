@@ -48,6 +48,7 @@
 		944A31FE1C8B322200D2AA9F /* PackingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31FD1C8B322200D2AA9F /* PackingTableViewCell.swift */; };
 		944A32001C8B352500D2AA9F /* LocationConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31FF1C8B352500D2AA9F /* LocationConstant.swift */; };
 		944A32021C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A32011C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift */; };
+		944A32041C8B71AE00D2AA9F /* StandardTimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A32031C8B71AE00D2AA9F /* StandardTimeLineCell.swift */; };
 		94B939F91C7F294200F36C2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B939F81C7F294200F36C2D /* AppDelegate.swift */; };
 		94B939FE1C7F294200F36C2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B939FC1C7F294200F36C2D /* Main.storyboard */; };
 		94B93A001C7F294200F36C2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B939FF1C7F294200F36C2D /* Assets.xcassets */; };
@@ -157,6 +158,7 @@
 		944A31FD1C8B322200D2AA9F /* PackingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackingTableViewCell.swift; sourceTree = "<group>"; };
 		944A31FF1C8B352500D2AA9F /* LocationConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationConstant.swift; sourceTree = "<group>"; };
 		944A32011C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingDistanceDurationPoint.swift; sourceTree = "<group>"; };
+		944A32031C8B71AE00D2AA9F /* StandardTimeLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardTimeLineCell.swift; sourceTree = "<group>"; };
 		94B939F51C7F294200F36C2D /* TimeTraveler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTraveler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B939F81C7F294200F36C2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94B939FD1C7F294200F36C2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 			children = (
 				94F8C3FB1C8ABBFF00A6A911 /* FlightInfoView.swift */,
 				944A31FD1C8B322200D2AA9F /* PackingTableViewCell.swift */,
+				944A32031C8B71AE00D2AA9F /* StandardTimeLineCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				941DE7361C8A43A000F4A4A4 /* FlightStatusService.swift in Sources */,
 				36054A9A1C8AFB5100877412 /* ProgressView.swift in Sources */,
 				941DE7231C8A330500F4A4A4 /* StandardPageViewController.swift in Sources */,
+				944A32041C8B71AE00D2AA9F /* StandardTimeLineCell.swift in Sources */,
 				941DE7291C8A346100F4A4A4 /* UIColor+StandardColors.swift in Sources */,
 				941DE7201C8A32F000F4A4A4 /* EnterFlightInfoViewController.swift in Sources */,
 				941DE72E1C8A361900F4A4A4 /* EnterTransportTypeViewController.swift in Sources */,

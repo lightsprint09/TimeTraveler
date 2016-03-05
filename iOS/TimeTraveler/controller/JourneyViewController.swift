@@ -9,16 +9,72 @@
 
 import UIKit
 
+extension JourneyViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return timeLinecontainer.durationPoints.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let dataPoint = durationPointAtIndex(indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(dataPoint.tabelCellID, forIndexPath: indexPath)
+        if let typecell = cell as? DurationPointDisplayable {
+            typecell.dispayDurationPoint(dataPoint)
+            return typecell as! UITableViewCell
+        }
+        return cell
+    }
+    
+    func durationPointAtIndex(indexPath: NSIndexPath) -> DurationPoint {
+        return timeLinecontainer.durationPoints.reverse()[indexPath.row]
+    }
+    
+//    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        let dataPoint = durationPointAtIndex(indexPath)
+//        print(heightForCellID(dataPoint.tabelCellID))
+//        return heightForCellID(dataPoint.tabelCellID)
+//    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let dataPoint = durationPointAtIndex(indexPath)
+        return heightForCellID(dataPoint.tabelCellID)
+    }
+    
+    func heightForCellID(cellID: String) -> CGFloat {
+        switch cellID {
+            case "routeCell":
+            return 160
+        default:
+            return 60
+        }
+    }
+}
+
 class JourneyViewController: UIViewController {
     @IBOutlet var ticketView: UIView!
+    var travelerInformation: TravelerInformation!
+    
+    var timeLinecontainer: TimelineContainer {
+        return travelerInformation.timeLineContainer
+    }
  
     var parentVC: SignUpPageViewController?
     let maxY:CGFloat = 591
     let minY:CGFloat = 691
     
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.dataSource = self
+        tableView.delegate = self
         
+        timeLinecontainer.asynResolve({res in
+            self.tableView.reloadData()
+            }, onError: { err in })
         setupNavbar()
         
         
@@ -27,31 +83,15 @@ class JourneyViewController: UIViewController {
         ticketView.layer.shadowOffset = CGSizeZero
         ticketView.layer.shadowRadius = 2
         ticketView.layer.shadowPath = UIBezierPath(rect: ticketView.bounds).CGPath
-        
-    }
-    
-    override func viewDidLayoutSubviews() {
-//        UIView.animateWithDuration(0.3, delay: 1.0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
-//            
-//            
-//            self.ticketView.frame = CGRectOffset(self.ticketView.frame, 0, 200)
-//            
-//            
-//            }, completion: nil)
-
     }
     
     @IBAction func onPanTicket(sender: UIPanGestureRecognizer) {
-        
         let translation = sender.translationInView(self.view)
         
         
-        let tmp1=sender.view?.center.y //y translation
+        let tmp1 = sender.view?.center.y //y translation
         
         let newY = tmp1!+translation.y
-        
-        print("The y:\(newY)")
-
         if(newY < minY && newY > maxY){
             sender.view?.center=CGPointMake(self.view.frame.size.width / 2, newY)
             sender.setTranslation(CGPointZero, inView: self.view)

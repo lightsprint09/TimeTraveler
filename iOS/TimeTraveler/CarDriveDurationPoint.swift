@@ -13,9 +13,12 @@ class CarDriveDurationPoint: DurationPoint {
     let name = "Autofahrt zum Flughafen"
     var subtitle: String?
     
+    let tabelCellID = "routeCell"
+    
     private let from: Location
     private let to: Location
     private let arrivalTime: NSDate?
+    var direction: MKDirections!
     
     init(name: String, from: Location, to: Location, arrivalTime: NSDate? = nil) {
         self.from = from
@@ -35,7 +38,7 @@ class CarDriveDurationPoint: DurationPoint {
         request.transportType = .Automobile
         request.requestsAlternateRoutes = false
         
-        let direction = MKDirections(request: request)
+        direction = MKDirections(request: request)
         direction.calculateETAWithCompletionHandler { response, error in
             guard let response = response else {
                 onError(.Network("Network map", error))

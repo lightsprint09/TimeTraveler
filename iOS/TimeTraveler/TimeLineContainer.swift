@@ -7,16 +7,22 @@
 //
 
 import Foundation
+import UIKit
 
 protocol Displayable {
     var name: String { get }
 }
 
+
 protocol DurationPoint: class, Displayable {
     var duration: NSTimeInterval { get }
     var subtitle: String? { get }
     func asyncResolve(onSucess: (NSTimeInterval)->(), onError:(JSONFetcherErrorType)->())
+    
+    var tabelCellID: String { get }
 }
+
+
 
 protocol TargetTimeType: Displayable {
     var date: NSDate { get }

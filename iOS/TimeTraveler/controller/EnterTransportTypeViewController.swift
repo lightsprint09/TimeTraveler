@@ -147,11 +147,17 @@ class EnterTransportTypeViewController: EnteringViewController {
     }
     
     @IBAction func onJourney(sender: AnyObject) {
-        
         let parentController = self.parentViewController as? SignUpPageViewController
         parentController?.nextProgress()
         
-               
+        let vc: JourneyViewController = instantiateViewControllerWithIdentifier("JourneyStoryboard")
+        vc.travelerInformation = travelerInformation
+        let navController = UINavigationController(rootViewController: vc) // Creating a navigation controller with VC1 at the root of the navigation stack.
+        
+        vc.parentVC = parentController
+        self.presentViewController(navController, animated: true, completion: nil)
+        
+        
 
     }
     

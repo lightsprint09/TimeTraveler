@@ -18,7 +18,7 @@ class ParkingTableViewCell: UITableViewCell {
         carTimePoint = CarDriveDurationPoint(name: "Fahrt zum Parkplatz", from: LocationConstants.currentLocation, to: facility.location)
         carTimePoint.asyncResolve({time in
             dispatch_async(dispatch_get_main_queue(),{
-                self.parkingSubtitleLable.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(time)! + " - Preis pro Tag: \(facility.pricePerDay)"
+                self.parkingSubtitleLable.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(time)! + " - Preis pro Tag: \(facility.pricePerDay)€"
             })
             }, onError: { err in
         })

@@ -69,28 +69,12 @@ class ProgressView: UIView {
         let posX: CGFloat = imageItem!.frame.origin.x
         let posY: CGFloat = imageItem!.frame.origin.y
         
-        UIView.animateWithDuration(1.0, delay: 0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
-            
+        UIView.animateWithDuration(1.0, delay: 0, options: .TransitionNone, animations: {
             imageItem!.frame = CGRectMake( (completed ? posX - 3.5 :  posX + 3.5), (completed ? posY - 5 :  posY + 5), size, size)
             
             }, completion: { (finished: Bool) -> Void in
-                
                 imageItem!.image = image
                 
-                if(page == 2 && completed)
-                {
-                    
-                    
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    
-                    let vc = storyboard.instantiateViewControllerWithIdentifier("JourneyStoryboard") as! JourneyViewController
-                    let navController = UINavigationController(rootViewController: vc) // Creating a navigation controller with VC1 at the root of the navigation stack.
-                    
-                    vc.parentVC = sender as? SignUpPageViewController
-                    sender.presentViewController(navController, animated: true, completion: nil)
-
-                }
-
         })
 
         

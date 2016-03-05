@@ -13,8 +13,11 @@ class WalkingDistanceDurationPoint: DurationPoint {
     let name: String
     var subtitle: String?
     
+    let tabelCellID = "standardtcell"
+    
     func asyncResolve(onSucess: (NSTimeInterval) -> (), onError: (JSONFetcherErrorType) -> ()) {
-        let url = NSURL(string: "https://timetraveler-server.herokuapp.com/distance?start=\(origin) A&end=\(destination)")
+        let urlString = "https://timetraveler-server.herokuapp.com/distance?start=\(origin) A&end=\(destination)".stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)
+        let url = NSURL(string: urlString!)
         func sucess(result: Walking) {
             dispatch_async(dispatch_get_main_queue(), {
                 onSucess(result.time)
@@ -33,6 +36,10 @@ class WalkingDistanceDurationPoint: DurationPoint {
         self.origin = origin
         self.destination = destination
         self.name = "Fußweg von \(origin) nach \(destination)"
+    }
+    
+    static var transportToTerminal1: WalkingDistanceDurationPoint {
+        return WalkingDistanceDurationPoint(origin: "Regional Bahnhof", destination: "The Squaire")
     }
 }
 

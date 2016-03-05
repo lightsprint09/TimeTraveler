@@ -20,10 +20,9 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
     @IBOutlet weak var depatureTimeLabel: UILabel!
     @IBOutlet weak var arrivalAirportLabel: UILabel!
     @IBOutlet weak var arrivaleTimeLabel: UILabel!
-    @IBOutlet weak var passegngerNameLabel: UILabel!
-    @IBOutlet weak var countOfTravelersLabel: UILabel!
-    @IBOutlet var flightCode: UILabel!
-    @IBOutlet var flightStatus: UILabel!
+    @IBOutlet weak var terminalLabel: UILabel!
+    @IBOutlet var flightCodeLabel: UILabel!
+    @IBOutlet var flightStatusLabel: UILabel!
     
     let flightStatusService = FlightStatusService()
     
@@ -42,6 +41,13 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
         nextButton.layer.cornerRadius = 5
         boockingReferenceIDInput.delegate = self
         
+//        let walk = WalkingDistanceDurationPoint.transportToTerminal1
+//        walk.asyncResolve({duration in
+//          print(duration)
+//            }, onError: {err in
+//        print(err)
+//        })
+        
     }
     
     func isInvalidFlightID(error: JSONFetcherErrorType) {
@@ -53,7 +59,9 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
         travelerInformation.flightStatus = flightStatus
         flightStatusService.fetchFlightStatus(flightStatus, onSucces: {info in
             self.travelerInformation.flightStatusInfo = info
-            //fill in data
+            self.flightStatusLabel.text = info.status == "OT" ? "SCHEDULED" : "UNSCHEDULED"
+            self.flightCodeLabel.text = flightStatus.segments.first?.marketingCarrier.flight
+            self.terminalLabel.text = "Terminal \(info.terminal)"
             }, onErrror: { err in
         
         })

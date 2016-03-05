@@ -13,6 +13,8 @@ class FakeDurationPoint: DurationPoint {
     let name: String
     var subtitle: String?
     
+    let tabelCellID = "standardtcell"
+    
     init(name: String, duration: NSTimeInterval) {
         self.name = name
         self.duration = duration
