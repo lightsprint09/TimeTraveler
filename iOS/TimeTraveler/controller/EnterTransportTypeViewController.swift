@@ -21,10 +21,13 @@ class EnterTransportTypeViewController: EnteringViewController {
         super.viewDidLoad()
         backgroundView.backgroundColor = UIColor.clearColor()
         nextButton.layer.cornerRadius = 5
-        nextButton.enabled = false
+        
         
     }
     
+    @IBAction func onNext(sender: AnyObject) {
+        print("here");
+    }
     func calculateETACar() {
         let request = MKDirectionsRequest()
         request.source = MKMapItem.mapItemForCurrentLocation()

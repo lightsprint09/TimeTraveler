@@ -42,7 +42,7 @@
         <!--Sign Up Page View Controller-->
         <scene sceneID="aPZ-DE-P5C">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="100" navigationOrientation="horizontal" spineLocation="none" id="Flt-oO-C67" customClass="SignUpPageViewController" customModule="TimeTraveler" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="20" navigationOrientation="horizontal" spineLocation="none" id="Flt-oO-C67" customClass="SignUpPageViewController" customModule="TimeTraveler" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3r-8j-udn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1562" y="1306"/>
@@ -501,19 +501,6 @@
                                             <constraint firstAttribute="height" constant="143" id="xNQ-Ii-Wvt"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSh-Wq-0jr">
-                                        <rect key="frame" x="180" y="496" width="235" height="40"/>
-                                        <color key="backgroundColor" red="0.99215686270000003" green="0.64705882349999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="EeQ-Ic-a05"/>
-                                            <constraint firstAttribute="width" constant="235" id="hwr-Ch-TzR"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
-                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="Reiseplan erstellen!">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5U-Yc-ehs">
                                         <rect key="frame" x="174" y="31" width="253" height="69"/>
                                         <constraints>
@@ -560,6 +547,23 @@ Flughafen:</string>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSh-Wq-0jr">
+                                        <rect key="frame" x="180" y="496" width="235" height="40"/>
+                                        <color key="backgroundColor" red="0.99215686270000003" green="0.64705882349999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="EeQ-Ic-a05"/>
+                                            <constraint firstAttribute="width" constant="235" id="hwr-Ch-TzR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Reiseplan erstellen!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onNext:" destination="87F-QV-rt9" eventType="touchUpInside" id="CBh-J8-eYO"/>
+                                            <segue destination="0rP-xi-UZd" kind="presentation" id="tQD-Fn-e1h"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -599,6 +603,14 @@ Flughafen:</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xcb-wU-YpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-569" y="1975"/>
+        </scene>
+        <!--Journey-->
+        <scene sceneID="4b2-7j-V64">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Journey" id="0rP-xi-UZd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fgR-i5-ouj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-113.5" y="2088"/>
         </scene>
     </scenes>
     <resources>

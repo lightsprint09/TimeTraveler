@@ -39,7 +39,6 @@ class EnterFlightInfoViewController: EnteringViewController {
         travelerInformation = TravelerInformation()
         backgroundView.backgroundColor = UIColor.clearColor()
         nextButton.layer.cornerRadius = 5
-        nextButton.enabled = false
         
     }
     
