@@ -42,11 +42,11 @@ class EnterTransportTypeViewController: EnteringViewController {
     var transportType: TransportType? {
         didSet {
             tableView.reloadData()
-            let image = UIImage(named: (transportType == .Car ?"Auto selected" : "Bus and bahn selected"));
-            transportImage.image = image
+            let image = UIImage(named: (transportType == .Car ?"Icon Auto" : "Icon Train"));
+           transportImage.image = image
         }
     }
-    var autoOn: Bool = true
+    var autoOn: Bool = false
     var busBahnOn: Bool = false
     var parkingFacilitys = Array<ParkingFacility>()
 
@@ -58,6 +58,7 @@ class EnterTransportTypeViewController: EnteringViewController {
     @IBOutlet weak var ETALabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet var ETAFlightLabel: UILabel!
     @IBOutlet weak var carETALabel: UILabel!
     @IBOutlet weak var trainETALabel: UILabel!
     
@@ -81,6 +82,7 @@ class EnterTransportTypeViewController: EnteringViewController {
         nextButton.layer.cornerRadius = 5
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         basicCarDuration = CarDriveDurationPoint(name: "Autofahrt", from: LocationConstants.currentLocation, to: LocationConstants.airportLocation)
         basicCarDuration.asyncResolve({time in
@@ -103,6 +105,8 @@ class EnterTransportTypeViewController: EnteringViewController {
         })
         rmvService.fetchRMVTrip(LocationConstants.currentLocation, onSucces: didFetchRMVTrip, onErrror: onErrorFetchingRMVTrip)
         
+        
+       
     }
         func didFetchRMVTrip(rmvTrip: RMVRoute) {
             let sortedTrips = rmvTrip.trips.sort { trip1, trip2 in
@@ -124,6 +128,8 @@ class EnterTransportTypeViewController: EnteringViewController {
         let duration = travelerInformation.timeLineContainer.durationPoints.last!.duration
         durationLabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(duration)! + " bei vorraussichtlichem Verkehr"
     }
+    
+    
 
     
     @IBAction func onAuto(sender: AnyObject) {
