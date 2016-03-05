@@ -16,12 +16,22 @@ class EnterFlightInfoViewController: EnteringViewController {
     
     let flightStatusService = FlightStatusService()
     
+    @IBOutlet var backgroundView: UIView!
     
+    @IBOutlet var nextButton: UIButton!
 
     @IBAction func didChangeBoockingRederence(sender: UITextField) {
         guard let boockingReferenceID = sender.text else { return }
         flightReference = FlightReference(boockingReferenceID: boockingReferenceID, isValid: false)
         flightStatusService.fetchFlightStatus(flightReference!, onSucces: didChangeFlightStatus, onErrror: isInvalidFlightID)
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        backgroundView.backgroundColor = UIColor.clearColor()
+        nextButton.layer.cornerRadius = 5
+
         
     }
     
