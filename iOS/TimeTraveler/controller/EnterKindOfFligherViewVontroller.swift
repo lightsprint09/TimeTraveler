@@ -68,7 +68,6 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
         super.viewDidLoad()
         backgroundView.backgroundColor = .clearColor()
         nextButton.layer.cornerRadius = 5
-        nextButton.enabled = false
         slideView.layer.cornerRadius = 5
         
     }

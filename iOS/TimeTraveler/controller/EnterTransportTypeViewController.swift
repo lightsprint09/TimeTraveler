@@ -11,9 +11,11 @@ import MapKit
 
 class EnterTransportTypeViewController: EnteringViewController {
     var transportType: TransportType?
-    var autoOn: Bool = false
+    var autoOn: Bool = true
     var busBahnOn: Bool = false
     
+    @IBOutlet var buttonBus: UIButton!
+    @IBOutlet var buttonAuto: UIButton!
     let rmvService = RMVService()
     var timeLineContainer: TimelineContainer!
     
@@ -55,9 +57,9 @@ class EnterTransportTypeViewController: EnteringViewController {
             
         }
     
+
     @IBAction func onAuto(sender: AnyObject) {
         transportType = .Car
-        
         displayButtonState()    }
     
     func displayButtonState() {
@@ -70,8 +72,7 @@ class EnterTransportTypeViewController: EnteringViewController {
     
     @IBAction func onBusBahn(sender: AnyObject) {
         transportType = .PlublicTransport
-        displayButtonState()
-        
+        displayButtonState()  
     }
     
     

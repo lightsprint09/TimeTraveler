@@ -12,6 +12,7 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
     var controllers: Array<UIViewController> = []
     var currentControllerIndex = 0
     var player: AVPlayer?
+    var progressIndicatorView: ProgressView!
     
     var displayedController: UIViewController {
         return viewControllers![0]
@@ -29,19 +30,38 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         controllers = [keptVc, mainVc, tidiedOutVc]
 //        let view: UIView = UIView.viewFromNibNamed("BackgroundBlurView", owner: self)
 //        self.view.insertSubview(view, atIndex: 0)
-        
+
         self.setViewControllers([controllers[0]], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         
         
+        
         navigationController?.interactivePopGestureRecognizer?.delegate = self
-        stylePageControl()
+        
         
         // load video
         playBackgroundvideo()
         
+        // add bottoms status
+        initProgressIndicators()
+        
+        
         
     }
     
+    func initProgressIndicators()
+    {
+        
+        progressIndicatorView = ProgressView.instanceFromNib()
+        
+        progressIndicatorView.center = CGPointMake(CGRectGetMidX(self.view.bounds),
+        self.view.frame.size.height - 30.0)
+        self.view.insertSubview(progressIndicatorView, atIndex: 3)
+        
+        
+    }
+    
+    
+   
     
     func playBackgroundvideo() {
         
@@ -75,6 +95,8 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         let group = UIMotionEffectGroup()
         group.motionEffects = [horizontalMotionEffect, verticalMotionEffect]
         self.view.addMotionEffect(group)
+        
+        //set up tasks
     }
     
     func playerItemDidReachEnd() {
@@ -82,19 +104,10 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
         player!.play()
     }
     
-    func stylePageControl() {
-        let pageControl = UIPageControl.appearance()
-        pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
-        
-        
-        pageControl.currentPageIndicatorTintColor = .orangeUIColor()
-        pageControl.backgroundColor = UIColor.clearColor()
-        
-     
-        self.view.layer.backgroundColor = UIColor.clearColor().CGColor
-    }
-    
+  
     func passToNextInputViewController(travelerInformation: TravelerInformation) {
+        
+        progressIndicatorView.setProgress(currentControllerIndex, completed: true)
         currentControllerIndex += 1
         let destnationViewController = controllers[currentControllerIndex] as! EnteringViewController
         destnationViewController.travelerInformation = travelerInformation
