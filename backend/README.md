@@ -4,7 +4,9 @@
 Install node in your computer and the use the following fromt the `backend` folder.
 
 ```Bash
-node server.js
+$ npm install
+
+$ node server.js
 ```
 
 ## Flight Info Service
