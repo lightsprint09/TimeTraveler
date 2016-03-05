@@ -11,6 +11,11 @@ import MapKit
 
 class EnterTransportTypeViewController: EnteringViewController {
     var transportType: TransportType?
+    
+    var autoOn: Bool = false
+    var busBahnOn: Bool = false
+    
+    
     @IBOutlet weak var carETALabel: UILabel!
     @IBOutlet weak var TrainETALabel: UILabel!
     
@@ -22,6 +27,23 @@ class EnterTransportTypeViewController: EnteringViewController {
         backgroundView.backgroundColor = UIColor.clearColor()
         nextButton.layer.cornerRadius = 5
         
+        
+    }
+    
+    
+    @IBAction func onAuto(sender: AnyObject) {
+        autoOn = !autoOn
+        
+        let buttonImage = UIImage(named: "Auto" + (autoOn ? " selected" : ""));
+        sender.setImage(buttonImage, forState: .Normal)
+        
+        
+    }
+    @IBAction func onBusBahn(sender: AnyObject) {
+        busBahnOn = !busBahnOn
+        
+        let buttonImage = UIImage(named: "Bus and bahn" + (busBahnOn ? " selected" : ""));
+        sender.setImage(buttonImage, forState: .Normal)
         
     }
     

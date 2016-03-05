@@ -470,15 +470,17 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOK-3L-22m" userLabel="Hand Luggage">
                                                 <rect key="frame" x="36" y="0.0" width="102" height="102"/>
-                                                <state key="normal" image="Hand Luggage"/>
+                                                <state key="normal" image="Auto"/>
                                                 <connections>
+                                                    <action selector="onAuto:" destination="87F-QV-rt9" eventType="touchUpInside" id="EpA-ld-GgL"/>
                                                     <action selector="onHandLuggage:" destination="jzZ-Dh-A5a" eventType="touchUpInside" id="XYt-Aq-auO"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvC-OO-vR2" userLabel="Check in Luggage">
                                                 <rect key="frame" x="192" y="0.0" width="102" height="102"/>
-                                                <state key="normal" image="Check in luggage"/>
+                                                <state key="normal" image="Bus and bahn"/>
                                                 <connections>
+                                                    <action selector="onBusBahn:" destination="87F-QV-rt9" eventType="touchUpInside" id="BwT-Hq-Sb5"/>
                                                     <action selector="onCheckinLuggage:" destination="jzZ-Dh-A5a" eventType="touchUpInside" id="4Zb-gf-X52"/>
                                                 </connections>
                                             </button>
@@ -614,6 +616,8 @@ Flughafen:</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Auto" width="102" height="102"/>
+        <image name="Bus and bahn" width="102" height="102"/>
         <image name="Check in luggage" width="102" height="102"/>
         <image name="Clock" width="102" height="102"/>
         <image name="Flight Icon" width="100" height="30"/>

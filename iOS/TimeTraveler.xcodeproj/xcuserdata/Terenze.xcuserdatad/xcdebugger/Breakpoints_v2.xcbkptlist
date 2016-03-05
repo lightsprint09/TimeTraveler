@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimeTraveler/controller/EnterTransportTypeViewController.swift"
-            timestampString = "478862635.803476"
+            timestampString = "478864037.249446"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "onNext(_:)"
             landmarkType = "5">
          </BreakpointContent>
