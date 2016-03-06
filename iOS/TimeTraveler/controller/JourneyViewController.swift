@@ -57,6 +57,8 @@ extension JourneyViewController: UITableViewDataSource, UITableViewDelegate {
 
 class JourneyViewController: UIViewController {
     @IBOutlet var ticketView: UIView!
+    var ticketOpened: Bool = true
+    
     var travelerInformation: TravelerInformation!
     
     var timeLinecontainer: TimelineContainer {
@@ -115,6 +117,8 @@ class JourneyViewController: UIViewController {
         ticketView.layer.shadowPath = UIBezierPath(rect: ticketView.bounds).CGPath
         
         self.ticketView.frame = CGRectMake(0, 451, self.ticketView.frame.size.width, self.ticketView.frame.size.height)
+        
+        
         UIView.animateWithDuration(0.3, delay: 1.0, options: UIViewAnimationOptions.TransitionNone
             , animations: {
             self.ticketView.frame = CGRectMake(0, 550, self.ticketView.frame.size.width, self.ticketView.frame.size.height)
