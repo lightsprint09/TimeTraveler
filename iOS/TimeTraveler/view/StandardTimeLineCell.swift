@@ -42,17 +42,43 @@ class RouteCell: UITableViewCell, DurationPointDisplayable {
         infoImageView.image = durationPoint.image
         
         
-        
+    
         timeLabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(durationPoint.duration)
         dateTimeLabel.text = FlightStatusService.timeFormatter.stringFromDate(durationPoint.targetDate)
         guard let carPoint = durationPoint as? CarDriveDurationPoint else { return }
         
-        print(carPoint.direction)
         
+        
+        for route in carPoint.routes as [MKRoute] {
+            
+            mapView.addOverlay(route.polyline,
+                level: MKOverlayLevel.AboveRoads)
+            
+            
+        }
+        
+        if let first = mapView.overlays.first {
+            let rect = mapView.overlays.reduce(first.boundingMapRect, combine: {MKMapRectUnion($0, $1.boundingMapRect)})
+            mapView.setVisibleMapRect(rect, edgePadding: UIEdgeInsets(top: 10.0, left: 5.0, bottom: 10.0, right: 5.0), animated: true)
+        }
+
+
         self.contentView.alpha = durationPoint.passed ? 0.1 : 1
 
         
     }
+    
+    func mapView(mapView: MKMapView!, rendererForOverlay
+        overlay: MKOverlay!) -> MKOverlayRenderer! {
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            
+            renderer.strokeColor = UIColor.blueColor()
+            renderer.lineWidth = 5.0
+            return renderer
+    }
+
+    
+    
 }
 
 class HeaderFooterCell: UITableViewCell, DurationPointDisplayable {

@@ -25,6 +25,8 @@ class CarDriveDurationPoint: DurationPoint {
     private let to: Location
     private let arrivalTime: NSDate?
     var direction: MKDirections!
+    var directionRoutes: MKDirections!
+    var routes: [MKRoute]!
     
     init(name: String, from: Location, to: Location, arrivalTime: NSDate? = nil) {
         self.from = from
@@ -32,6 +34,7 @@ class CarDriveDurationPoint: DurationPoint {
         self.arrivalTime = arrivalTime
     }
     
+  
     
     func asyncResolve(onSucess: (NSTimeInterval) -> (), onError: (JSONFetcherErrorType) -> ()) {
         let request = MKDirectionsRequest()
@@ -44,16 +47,35 @@ class CarDriveDurationPoint: DurationPoint {
         request.transportType = .Automobile
         request.requestsAlternateRoutes = false
         
+        directionRoutes = MKDirections(request: request)
+        
+        directionRoutes.calculateDirectionsWithCompletionHandler { (response: MKDirectionsResponse?, error: NSError?) -> Void in
+            if(error == nil){
+                self.routes = response!.routes
+            }
+        }
+        
         direction = MKDirections(request: request)
+        
         direction.calculateETAWithCompletionHandler { response, error in
             guard let response = response else {
                 onError(.Network("Network map", error))
                 return }
             self.duration = response.expectedTravelTime
+            
             onSucess(response.expectedTravelTime)
+            
         }
+        
+        
+        
+        
+       
+        
+        
 
     }
+
     
     
 }
