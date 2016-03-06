@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Flt-oO-C67">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Flt-oO-C67">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -8,6 +8,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Montserrat-Bold.otf">
+            <string>Montserrat-Bold</string>
             <string>Montserrat-Bold</string>
             <string>Montserrat-Bold</string>
             <string>Montserrat-Bold</string>
@@ -894,7 +895,7 @@ Flughafen:</string>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="psA-yC-yGH">
-                                                            <rect key="frame" x="88" y="113" width="28" height="28"/>
+                                                            <rect key="frame" x="88" y="3" width="28" height="28"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="28" id="vTt-VN-W66"/>
                                                                 <constraint firstAttribute="height" constant="28" id="wir-JP-rWH"/>
@@ -902,12 +903,14 @@ Flughafen:</string>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ankunft Parkauf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uMl-Jk-vHA">
                                                             <rect key="frame" x="133" y="116" width="451" height="20.5"/>
+
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dxj-Me-18R">
                                                             <rect key="frame" x="132.5" y="8" width="230" height="98"/>
+
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="98" id="FtT-7X-7BA"/>
                                                                 <constraint firstAttribute="width" constant="230" id="Vw4-eW-Ko6"/>
@@ -917,36 +920,29 @@ Flughafen:</string>
                                                             <rect key="frame" x="100.5" y="0.0" width="2" height="108"/>
                                                             <color key="backgroundColor" red="0.52801277619999998" green="0.52801277619999998" blue="0.52801277619999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="2" id="Z6X-F6-wBy"/>
+                                                                <constraint firstAttribute="height" constant="123" id="5r6-VL-4P6"/>
+                                                                <constraint firstAttribute="width" constant="2" id="TKe-bX-CaL"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.52801277619999998" green="0.52801277619999998" blue="0.52801277619999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYo-DK-GiG">
-                                                            <rect key="frame" x="101" y="145" width="2" height="15"/>
-                                                            <color key="backgroundColor" red="0.52801277619999998" green="0.52801277619999998" blue="0.52801277619999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="2" id="1yh-Hz-Pa2"/>
-                                                                <constraint firstAttribute="height" constant="15" id="dP2-wT-mee"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.52801277619999998" green="0.52801277619999998" blue="0.52801277619999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="30min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OH-13-B0X">
+                                                            <rect key="frame" x="42" y="69" width="48.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="10"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="30min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OH-13-B0X">
-                                                            <rect key="frame" x="22" y="69" width="48.5" height="20.5"/>
-                                                            <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="15"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15:55" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZW-nF-Znh">
+                                                            <rect key="frame" x="24" y="8" width="49" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="1CA-Tm-t0p" firstAttribute="leading" secondItem="9OH-13-B0X" secondAttribute="trailing" constant="30.5" id="1Xc-cL-TWK"/>
-                                                        <constraint firstItem="uMl-Jk-vHA" firstAttribute="leading" secondItem="cYo-DK-GiG" secondAttribute="trailing" constant="30" id="4ht-e0-Obv"/>
-                                                        <constraint firstItem="cYo-DK-GiG" firstAttribute="top" secondItem="psA-yC-yGH" secondAttribute="bottom" constant="4" id="84N-6y-taa"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="cYo-DK-GiG" secondAttribute="bottom" constant="-8.5" id="FWY-c5-cD1"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="1CA-Tm-t0p" secondAttribute="bottom" constant="43.5" id="H2Q-Cf-Jag"/>
+                                                        <constraint firstItem="dxj-Me-18R" firstAttribute="leading" secondItem="1CA-Tm-t0p" secondAttribute="trailing" constant="30" id="GVw-gX-gzC"/>
+                                                        <constraint firstItem="1CA-Tm-t0p" firstAttribute="top" secondItem="psA-yC-yGH" secondAttribute="bottom" constant="8" id="Gtg-7W-hy4"/>
                                                         <constraint firstItem="uMl-Jk-vHA" firstAttribute="centerY" secondItem="psA-yC-yGH" secondAttribute="centerY" constant="-0.75" id="HDp-h0-zkS"/>
                                                         <constraint firstItem="psA-yC-yGH" firstAttribute="leading" secondItem="gGu-wJ-R1m" secondAttribute="leadingMargin" constant="80" id="IZz-68-K7t"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="psA-yC-yGH" secondAttribute="bottom" constant="10.5" id="Jvi-3o-4h9"/>
@@ -954,9 +950,10 @@ Flughafen:</string>
                                                         <constraint firstItem="dxj-Me-18R" firstAttribute="top" secondItem="uMl-Jk-vHA" secondAttribute="bottom" constant="-128.5" id="Mmf-FS-U4e"/>
                                                         <constraint firstItem="9OH-13-B0X" firstAttribute="leading" secondItem="gGu-wJ-R1m" secondAttribute="leadingMargin" constant="14" id="Xhq-6G-Dsr"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="uMl-Jk-vHA" secondAttribute="trailing" constant="8" id="hEy-vA-Ng2"/>
+
                                                         <constraint firstItem="uMl-Jk-vHA" firstAttribute="leading" secondItem="psA-yC-yGH" secondAttribute="trailing" constant="17" id="kgf-cM-R9e"/>
                                                         <constraint firstItem="9OH-13-B0X" firstAttribute="centerY" secondItem="gGu-wJ-R1m" secondAttribute="centerY" id="uFq-tO-q20"/>
-                                                        <constraint firstItem="1CA-Tm-t0p" firstAttribute="top" secondItem="psA-yC-yGH" secondAttribute="bottom" constant="-141" id="zhF-33-zZE"/>
+                                                        <constraint firstItem="1CA-Tm-t0p" firstAttribute="leading" secondItem="gGu-wJ-R1m" secondAttribute="leadingMargin" constant="93" id="y7E-Vi-577"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -492,17 +492,16 @@
 				TargetAttributes = {
 					941DE6EB1C8A292400F4A4A4 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 2UNP9S73JZ;
 					};
 					941DE6F71C8A292400F4A4A4 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
 					94B939F41C7F294200F36C2D = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 2UNP9S73JZ;
+						DevelopmentTeam = KELXXX3R7N;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
