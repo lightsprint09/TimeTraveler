@@ -182,7 +182,10 @@ class JourneyViewController: UIViewController {
     func setupNavbar() {
         
         let btnBack = UIButton()
-        btnBack.setImage(UIImage(named: "Settings Icon"), forState: .Normal)
+        let image = UIImage(named: "glyphicons-568-transport")
+        
+        btnBack.setImage(image, forState: .Normal)
+        btnBack.tintColor = .grayColor()
         btnBack.frame = CGRectMake(0, 0, 30, 30)
         btnBack.addTarget(self, action: Selector("reselectRoute"), forControlEvents: .TouchUpInside)
         let leftBarButton = UIBarButtonItem()
@@ -193,13 +196,6 @@ class JourneyViewController: UIViewController {
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
         
-//        let btnReset = UIButton()
-//        btnReset.setImage(UIImage(named: "Plus Icon"), forState: .Normal)
-//        btnReset.frame = CGRectMake(0, 0, 30, 30)
-//        btnReset.addTarget(self, action: Selector("resetJourney"), forControlEvents: .TouchUpInside)
-//        let rightBarButton = UIBarButtonItem()
-//        rightBarButton.customView = btnReset
-//        self.navigationItem.rightBarButtonItem = rightBarButton
         
         UIApplication.sharedApplication().statusBarStyle = .Default
     }

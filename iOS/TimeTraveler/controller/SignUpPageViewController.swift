@@ -113,6 +113,8 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
     
     func reselectRoute(){
         currentControllerIndex = 2
+        let destnationViewController = controllers[currentControllerIndex] as! EnteringViewController
+        destnationViewController.travelerInformation.timeLineContainer.durationPoints.popLast()
         progressIndicatorView.reselectRoute()
     }
     
