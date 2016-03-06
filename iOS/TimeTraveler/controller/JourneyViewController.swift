@@ -193,13 +193,13 @@ class JourneyViewController: UIViewController {
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
         
-        let btnReset = UIButton()
-        btnReset.setImage(UIImage(named: "Plus Icon"), forState: .Normal)
-        btnReset.frame = CGRectMake(0, 0, 30, 30)
-        btnReset.addTarget(self, action: Selector("resetJourney"), forControlEvents: .TouchUpInside)
-        let rightBarButton = UIBarButtonItem()
-        rightBarButton.customView = btnReset
-        self.navigationItem.rightBarButtonItem = rightBarButton
+//        let btnReset = UIButton()
+//        btnReset.setImage(UIImage(named: "Plus Icon"), forState: .Normal)
+//        btnReset.frame = CGRectMake(0, 0, 30, 30)
+//        btnReset.addTarget(self, action: Selector("resetJourney"), forControlEvents: .TouchUpInside)
+//        let rightBarButton = UIBarButtonItem()
+//        rightBarButton.customView = btnReset
+//        self.navigationItem.rightBarButtonItem = rightBarButton
         
         UIApplication.sharedApplication().statusBarStyle = .Default
     }
