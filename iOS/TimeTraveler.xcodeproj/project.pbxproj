@@ -492,14 +492,14 @@
 				TargetAttributes = {
 					941DE6EB1C8A292400F4A4A4 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 2UNP9S73JZ;
+						DevelopmentTeam = KELXXX3R7N;
 					};
 					941DE6F71C8A292400F4A4A4 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
 					94B939F41C7F294200F36C2D = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 2UNP9S73JZ;
+						DevelopmentTeam = KELXXX3R7N;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -723,11 +723,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = TimeTraveler_Watch_Extension;
 				INFOPLIST_FILE = "TimeTraveler Watch/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.timetraveler.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -741,11 +743,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = TimeTraveler_Watch_Extension;
 				INFOPLIST_FILE = "TimeTraveler Watch/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.timetraveler.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;

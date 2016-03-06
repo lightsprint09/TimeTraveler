@@ -22,7 +22,9 @@ class StandardTimeLineCell: UITableViewCell, DurationPointDisplayable {
     func dispayDurationPoint(durationPoint: DurationPoint) {
         titleLabel.text = durationPoint.name
         timeLabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(durationPoint.duration)
-        infoImageView.image = durationPoint.passed ? UIImage(named: "Parking")! : durationPoint.image
+        //infoImageView.image = durationPoint.passed ? UIImage(named: "Parking")! : durationPoint.image
+        infoImageView.image = durationPoint.image
+        self.contentView.alpha = durationPoint.passed ? 0.1 : 1
     }
 }
 
@@ -37,7 +39,8 @@ class RouteCell: UITableViewCell, DurationPointDisplayable {
         infoImageView.image = durationPoint.image
         timeLabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(durationPoint.duration)
         guard let carPoint = durationPoint as? CarDriveDurationPoint else { return }
-        
+        self.contentView.alpha = durationPoint.passed ? 0.1 : 1
+
         
     }
 }
