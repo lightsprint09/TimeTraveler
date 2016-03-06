@@ -12,6 +12,7 @@ struct FlightStatusService {
     private static var dateFormatter: NSDateFormatter = {
         let dateParser = NSDateFormatter()
         dateParser.dateFormat = "yyyy-MM-dd"
+        dateParser.timeZone = NSTimeZone.systemTimeZone()
         
         return dateParser
     }()
@@ -19,6 +20,7 @@ struct FlightStatusService {
     static var timeFormatter: NSDateFormatter = {
         let dateParser = NSDateFormatter()
         dateParser.dateFormat = "HH:mm"
+        dateParser.timeZone = NSTimeZone.systemTimeZone()
         
         return dateParser
     }()
@@ -26,6 +28,7 @@ struct FlightStatusService {
     static var datetimeFormatter: NSDateFormatter = {
         let dateParser = NSDateFormatter()
         dateParser.dateFormat = "yyyy-MM-ddHH:mm"
+        dateParser.timeZone = NSTimeZone.systemTimeZone()
         
         return dateParser
     }()

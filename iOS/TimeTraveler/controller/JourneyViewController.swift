@@ -15,7 +15,7 @@ extension JourneyViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timeLinecontainer.durationPoints.count
+        return timeLinecontainer.addedHeader.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -31,7 +31,7 @@ extension JourneyViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func durationPointAtIndex(indexPath: NSIndexPath) -> DurationPoint {
-        return timeLinecontainer.durationPoints.reverse()[indexPath.row]
+        return timeLinecontainer.addedHeader.reverse()[indexPath.row]
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -43,6 +43,8 @@ extension JourneyViewController: UITableViewDataSource, UITableViewDelegate {
         switch cellID {
             case "routeCell":
             return 160
+        case "headerFooter":
+            return 60
         default:
             return 70
         }
@@ -136,9 +138,6 @@ class JourneyViewController: UIViewController {
     }
     
     @IBAction func onBoardingCard(sender: AnyObject) {
-        
-        
-       
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.TransitionNone
             , animations: {
                 self.ticketView.frame = CGRectMake(0, 520, self.ticketView.frame.size.width, self.ticketView.frame.size.height)
@@ -226,6 +225,7 @@ class JourneyViewController: UIViewController {
     
     func resetJourney()
     {
+        travelerInformation = TravelerInformation()
         parentVC!.resetProgress()
         
         dismissView()

@@ -35,6 +35,7 @@ class RouteCell: UITableViewCell, DurationPointDisplayable {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoImageView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var dateTimeLabel: UILabel!
     
     func dispayDurationPoint(durationPoint: DurationPoint) {
         titleLabel.text = durationPoint.name
@@ -43,6 +44,7 @@ class RouteCell: UITableViewCell, DurationPointDisplayable {
         
     
         timeLabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(durationPoint.duration)
+        dateTimeLabel.text = FlightStatusService.timeFormatter.stringFromDate(durationPoint.targetDate)
         guard let carPoint = durationPoint as? CarDriveDurationPoint else { return }
         
         
@@ -78,3 +80,21 @@ class RouteCell: UITableViewCell, DurationPointDisplayable {
     
     
 }
+
+class HeaderFooterCell: UITableViewCell, DurationPointDisplayable {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var infoImageView: UIImageView!
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    func dispayDurationPoint(durationPoint: DurationPoint) {
+        titleLabel.text = durationPoint.name
+        infoImageView.image = durationPoint.image
+        timeLabel.text = FlightStatusService.timeFormatter.stringFromDate(durationPoint.targetDate)
+        
+        
+        
+        
+    }
+}
+
+

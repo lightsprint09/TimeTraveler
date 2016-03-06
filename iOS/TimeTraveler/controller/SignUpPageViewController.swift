@@ -118,6 +118,7 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
     
     func resetProgress()
     {
+        
         currentControllerIndex = 0
         let destnationViewController = controllers[currentControllerIndex] as! EnteringViewController
         

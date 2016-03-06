@@ -18,14 +18,14 @@ class WalkingDistanceDurationPoint: DurationPoint {
     let tabelCellID = "standardtcell"
     var targetDate: NSDate!
     
-    var image = UIImage(named: "Bullet Point")!
+    var image = UIImage(named: "Walking")!
     var walking: Walking?
     
     func asyncResolve(onSucess: (NSTimeInterval) -> (), onError: (JSONFetcherErrorType) -> ()) {
         let urlString = "https://time-traveler-api.herokuapp.com/distance?start=\(origin)&end=\(destination)".stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)
         let url = NSURL(string: urlString!)
         func sucess(result: Walking) {
-            duration = NSTimeInterval(60 * result.duration)
+            duration = NSTimeInterval(60 * result.duration) * TravelSpeed.multiplier 
             self.walking = result
             dispatch_async(dispatch_get_main_queue(), {
                 onSucess(result.time)
