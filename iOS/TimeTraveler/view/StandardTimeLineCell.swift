@@ -17,11 +17,12 @@ class StandardTimeLineCell: UITableViewCell, DurationPointDisplayable {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoImageView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var dateTimeLabel: UILabel!
     
     func dispayDurationPoint(durationPoint: DurationPoint) {
         titleLabel.text = durationPoint.name
         timeLabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(durationPoint.duration)
-        infoImageView.image = durationPoint.image
+        infoImageView.image = durationPoint.passed ? UIImage(named: "Parking")! : durationPoint.image
     }
 }
 

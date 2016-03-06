@@ -13,15 +13,20 @@ class WalkingDistanceDurationPoint: DurationPoint {
     var duration: NSTimeInterval = 0
     let name: String
     var subtitle: String?
+    var passed = false
     
     let tabelCellID = "standardtcell"
+    var targetDate: NSDate!
     
     var image = UIImage(named: "Bullet Point")!
+    var walking: Walking?
     
     func asyncResolve(onSucess: (NSTimeInterval) -> (), onError: (JSONFetcherErrorType) -> ()) {
-        let urlString = "https://timetraveler-server.herokuapp.com/distance?start=\(origin) A&end=\(destination)".stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)
+        let urlString = "https://timetraveler-server.herokuapp.com/distance?start=\(origin)&end=\(destination)".stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)
         let url = NSURL(string: urlString!)
         func sucess(result: Walking) {
+            duration = NSTimeInterval(60 * result.duration)
+            self.walking = result
             dispatch_async(dispatch_get_main_queue(), {
                 onSucess(result.time)
             })
@@ -38,18 +43,14 @@ class WalkingDistanceDurationPoint: DurationPoint {
     init(origin: String, destination: String) {
         self.origin = origin
         self.destination = destination
-        self.name = "Fußweg von \(origin) nach \(destination)"
-    }
-    
-    static var transportToTerminal1: WalkingDistanceDurationPoint {
-        return WalkingDistanceDurationPoint(origin: "Regional Bahnhof", destination: "The Squaire")
+        self.name = "Fußweg: \(origin) ➜ \(destination)"
     }
 }
 
 extension Walking: JSONParsable {
     init(JSON: Dictionary<String, AnyObject>) {
         self.distance = JSON["distance"] as! Int
-        self.duration = JSON["duration"] as! Int
+        self.duration = JSON["transitTime"] as! Int
     }
 }
 

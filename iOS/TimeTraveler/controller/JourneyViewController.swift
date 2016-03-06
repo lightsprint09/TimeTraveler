@@ -33,13 +33,7 @@ extension JourneyViewController: UITableViewDataSource, UITableViewDelegate {
     func durationPointAtIndex(indexPath: NSIndexPath) -> DurationPoint {
         return timeLinecontainer.durationPoints.reverse()[indexPath.row]
     }
-    
-//    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        let dataPoint = durationPointAtIndex(indexPath)
-//        print(heightForCellID(dataPoint.tabelCellID))
-//        return heightForCellID(dataPoint.tabelCellID)
-//    }
-    
+
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let dataPoint = durationPointAtIndex(indexPath)
         return heightForCellID(dataPoint.tabelCellID)
@@ -75,14 +69,22 @@ class JourneyViewController: UIViewController {
     var timeLinecontainer: TimelineContainer {
         return travelerInformation.timeLineContainer
     }
-    
+
+  
  
     var parentVC: SignUpPageViewController?
     let maxY:CGFloat = 591
     let minY:CGFloat = 691
+    let center = NSNotificationCenter.defaultCenter()
     
     @IBOutlet weak var tableView: UITableView!
+    
+    func update() {
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
+        center.addObserver(self, selector: "update", name: "update", object: nil)
         super.viewDidLoad()
         
         flightStatus.text = travelerInformation?.flightStatusInfo?.status == "OT" ? "SCHEDULED" : "UNSCHEDULED"
@@ -107,28 +109,7 @@ class JourneyViewController: UIViewController {
             }, onError: { err in })
         setupNavbar()
         
-        
-//        for cell in tableView.visibleCells {
-//            
-//        }
-        for (var row = 0; row < tableView.numberOfRowsInSection(0); row++)
-        {
-            
-            let indexPath = NSIndexPath(forRow: row, inSection: 0)
-            
-            let cell :UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-            
-          //  let delayTime: Float = row * 0.1
-           //cell.contentView.alpha = 0
-            
-            let view = cell.contentView
-            view.alpha = 0.1
-            
-            UIView.animateWithDuration(2.5, delay: 5, options: [], animations: { () -> Void in
-                view.alpha = 1
-                }, completion: nil)
-            
-        }
+
 
         
         
@@ -139,13 +120,14 @@ class JourneyViewController: UIViewController {
         ticketView.layer.shadowPath = UIBezierPath(rect: ticketView.bounds).CGPath
         
         self.ticketView.frame = CGRectMake(0, 451, self.ticketView.frame.size.width, self.ticketView.frame.size.height)
-        
+
         revealButton.hidden = true
+
         UIView.animateWithDuration(0.3, delay: 1.0, options: UIViewAnimationOptions.TransitionNone
             , animations: {
             self.ticketView.frame = CGRectMake(0, 550, self.ticketView.frame.size.width, self.ticketView.frame.size.height)
 
-            
+
             }, completion: {
                 (value: Bool) in
                 self.revealButton.hidden = false

@@ -21,6 +21,10 @@ protocol DurationPoint: class, Displayable {
     
     var tabelCellID: String { get }
     var image: UIImage { get }
+    
+    var targetDate: NSDate! { get set }
+    var passed: Bool { get set }
+
 }
 
 
@@ -46,9 +50,18 @@ struct ResultTime: ResultTimeType {
 class TimelineContainer {
     let targetTime: TargetTime
     var durationPoints = Array<DurationPoint>()
+    let center = NSNotificationCenter.defaultCenter()
     
     init(targetTime: TargetTime) {
         self.targetTime = targetTime
+        center.addObserver(self, selector: Selector("recieve"), name: "beacon", object: nil)
+    }
+    
+    dynamic func recieve() {
+        for (_, durationPoint) in durationPoints.enumerate() where durationPoint is LocalTrainDurationPoint {
+            durationPoint.passed = true
+        }
+        center.postNotificationName("update", object: nil)
     }
     
     private var timeDifference: NSTimeInterval {
@@ -62,11 +75,21 @@ class TimelineContainer {
     }
     
     func asynResolve(onSucess: (ResultTimeType)->(), onError:(JSONFetcherErrorType)->()) {
+        update()
         let async = AsyncManager<NSTimeInterval, JSONFetcherErrorType>(count: durationPoints.count, didFinishCallback: {_, _ in
+            self.update()
             onSucess(self.currentResultTime)
         })
         for (_, durationPoint) in durationPoints.enumerate() {
             durationPoint.asyncResolve(async.addResult, onError: async.addError)
+        }
+    }
+    
+    private func update() {
+        var targetDate = targetTime.date
+        for(_, duration) in durationPoints.enumerate() {
+            targetDate = targetDate.dateByAddingTimeInterval(duration.duration)
+            duration.targetDate = targetDate
         }
     }
 }
