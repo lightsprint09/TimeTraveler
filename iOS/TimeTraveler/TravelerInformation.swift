@@ -18,6 +18,8 @@ enum TravelSpeed: Int {
     case Slow = 0
     case Medium = 1
     case Fast = 2
+    
+    static var multiplier = 1.0
 }
 
 enum TransportType {

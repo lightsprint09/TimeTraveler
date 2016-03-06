@@ -136,9 +136,6 @@ class JourneyViewController: UIViewController {
     }
     
     @IBAction func onBoardingCard(sender: AnyObject) {
-        
-        
-       
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.TransitionNone
             , animations: {
                 self.ticketView.frame = CGRectMake(0, 520, self.ticketView.frame.size.width, self.ticketView.frame.size.height)
