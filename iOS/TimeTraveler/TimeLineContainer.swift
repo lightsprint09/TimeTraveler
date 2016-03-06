@@ -54,7 +54,7 @@ class TimelineContainer {
     
     var addedHeader:  Array<DurationPoint> {
         var durations = durationPoints
-        let origin = HeaderFooterDuration(name: "Abktueller Ort - Abfahrt", image: UIImage(named: "Location")!)
+        let origin = HeaderFooterDuration(name: "Aktueller Ort - Abfahrt", image: UIImage(named: "Location")!)
         origin.targetDate = currentResultTime.date
         durations.append(origin)
         let boarding = HeaderFooterDuration(name: "Take Off", image: UIImage(named: "Flight")!)

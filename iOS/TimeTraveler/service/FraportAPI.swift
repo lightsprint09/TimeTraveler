@@ -37,11 +37,9 @@ extension ParkingFacility: JSONParsable {
         self.name = data["name"] as! String
         let longitude = data["longitude"] as! Double
         let latitude = data["latitude"] as! Double
-        self.pricePerDay = (data["fee_per_day"] as? Double) ?? 23.5
+        let priceData = (data["parkingSpaceTypes"] as! Array<Dictionary<String, AnyObject>>).last
+        self.pricePerDay = (priceData!["fee_per_day"] as! Double)
         self.location = Location(latitude: latitude, longitude: longitude)
-//        self.forecastData = (data["forecasts"] as! Array<Dictionary<String, AnyObject>>).map { forecast in
-//            return Forecast(JSON: forecast)
-//        }
         self.forecastData = []
         
     }

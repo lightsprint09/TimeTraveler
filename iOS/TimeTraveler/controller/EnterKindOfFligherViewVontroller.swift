@@ -92,10 +92,10 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
         let security = FakeDurationPoint(name: "Security Check", duration: 60 * 28)
         var checkin: DurationPoint
         if laguageType == .Both || laguageType == .BigBag {
-            checkin = FakeDurationPoint(name: "Ceck-In & Gepäckabgabe", duration: 60 * 24)
+            checkin = FakeDurationPoint(name: "Check-In & Gepäckabgabe", duration: 60 * 24)
             
         }else {
-            checkin = FakeDurationPoint(name: "Ceck-In", duration: 60 * 18)
+            checkin = FakeDurationPoint(name: "Check-In", duration: 60 * 18)
         }
         travelerInformation.timeLineContainer.durationPoints.appendContentsOf([boaring, fromSecToGate, security, checkInToSec, checkin])
         
