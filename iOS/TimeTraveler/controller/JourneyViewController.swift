@@ -59,6 +59,16 @@ class JourneyViewController: UIViewController {
     @IBOutlet var ticketView: UIView!
     var ticketOpened: Bool = true
     
+    @IBOutlet var arrivalTerminal: UILabel!
+    @IBOutlet var arrivalTime: UILabel!
+    @IBOutlet var seatNumber: UILabel!
+    @IBOutlet var departureTerminal: UILabel!
+    @IBOutlet var flightTime: UILabel!
+    @IBOutlet var flightDate: UILabel!
+    @IBOutlet var flightArrivalDestination: UILabel!
+    @IBOutlet var flightDepartureDestination: UILabel!
+    @IBOutlet var flightStatus: UILabel!
+    @IBOutlet var flightNumber: UILabel!
     var travelerInformation: TravelerInformation!
     
     var timeLinecontainer: TimelineContainer {
@@ -75,6 +85,18 @@ class JourneyViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        flightStatus.text = travelerInformation?.flightStatusInfo?.status == "OT" ? "SCHEDULED" : "UNSCHEDULED"
+        
+        flightNumber.text = travelerInformation?.flightNumber
+        
+        departureTerminal.text = "Terminal " + (travelerInformation?.flightStatusInfo?.terminal)!
+        
+        flightDepartureDestination.text = travelerInformation?.departureAirport
+        flightArrivalDestination.text = travelerInformation?.arrivalAirport
+        flightTime.text = travelerInformation?.departureTime
+        arrivalTime.text = travelerInformation?.arrivalTime
+        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.dataSource = self
         tableView.delegate = self
