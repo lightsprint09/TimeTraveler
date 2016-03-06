@@ -19,7 +19,7 @@ class CarDriveDurationPoint: DurationPoint {
     
     let tabelCellID = "routeCell"
     
-    var image = UIImage(named: "Bullet Point")!
+    var image = UIImage(named: "Icon Auto")!
     
     private let from: Location
     private let to: Location
@@ -49,10 +49,9 @@ class CarDriveDurationPoint: DurationPoint {
         
         directionRoutes = MKDirections(request: request)
         
-        directionRoutes.calculateDirectionsWithCompletionHandler { (response: MKDirectionsResponse?, error: NSError?) -> Void in
-            if(error == nil){
-                self.routes = response!.routes
-            }
+        directionRoutes.calculateDirectionsWithCompletionHandler { response, error in
+            guard let response = response else { return }
+            self.routes = response.routes
         }
         
         direction = MKDirections(request: request)
@@ -61,9 +60,9 @@ class CarDriveDurationPoint: DurationPoint {
             guard let response = response else {
                 onError(.Network("Network map", error))
                 return }
-            self.duration = response.expectedTravelTime
+            self.duration = response.expectedTravelTime + 4 * 60
             
-            onSucess(response.expectedTravelTime)
+            onSucess(response.expectedTravelTime + 4 * 60)
             
         }
         
