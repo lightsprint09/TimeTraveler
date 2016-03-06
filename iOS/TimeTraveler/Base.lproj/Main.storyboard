@@ -913,6 +913,9 @@ Flughafen:</string>
                                                                 <constraint firstAttribute="height" constant="98" id="FtT-7X-7BA"/>
                                                                 <constraint firstAttribute="width" constant="230" id="Vw4-eW-Ko6"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="EbM-oT-VqV" id="Gn0-De-WIk"/>
+                                                            </connections>
                                                         </mapView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CA-Tm-t0p">
                                                             <rect key="frame" x="101" y="39" width="2" height="123"/>
