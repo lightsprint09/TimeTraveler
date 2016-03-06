@@ -40,8 +40,13 @@ class RouteCell: UITableViewCell, DurationPointDisplayable {
         titleLabel.text = durationPoint.name
         infoImageView.image = durationPoint.image
         
+        
+        
         timeLabel.text = EnterTransportTypeViewController.hoursFormatter.stringFromTimeInterval(durationPoint.duration)
         guard let carPoint = durationPoint as? CarDriveDurationPoint else { return }
+        
+        print(carPoint.direction)
+        
         self.contentView.alpha = durationPoint.passed ? 0.1 : 1
 
         
