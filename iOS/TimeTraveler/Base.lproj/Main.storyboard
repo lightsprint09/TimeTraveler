@@ -25,6 +25,7 @@
             <string>Montserrat-Bold</string>
             <string>Montserrat-Bold</string>
             <string>Montserrat-Bold</string>
+            <string>Montserrat-Bold</string>
         </mutableArray>
         <mutableArray key="Montserrat-Light.otf">
             <string>Montserrat-Light</string>
@@ -61,6 +62,7 @@
             <string>Montserrat-Light</string>
         </mutableArray>
         <mutableArray key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
@@ -896,7 +898,7 @@ Flughafen:</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="81.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UDt-KO-HzH">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UDt-KO-HzH">
                                                             <rect key="frame" x="88" y="15" width="28" height="28"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="ASe-Ot-10r"/>
@@ -963,7 +965,7 @@ Flughafen:</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="159.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="psA-yC-yGH">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="psA-yC-yGH">
                                                             <rect key="frame" x="88" y="3" width="28" height="28"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="28" id="vTt-VN-W66"/>
@@ -1041,7 +1043,7 @@ Flughafen:</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ppR-u5-vqA">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ppR-u5-vqA">
                                                             <rect key="frame" x="88" y="10" width="28" height="28.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="28" id="YAw-cM-PZh"/>
@@ -1078,6 +1080,60 @@ Flughafen:</string>
                                                     <outlet property="infoImageView" destination="ppR-u5-vqA" id="yPF-0p-srI"/>
                                                     <outlet property="timeLabel" destination="tAV-5j-7yI" id="1mr-Rg-0GG"/>
                                                     <outlet property="titleLabel" destination="QrB-Lh-jkj" id="QJL-zG-je0"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="trainCell" rowHeight="160" id="vsX-KB-afo" userLabel="Train" customClass="HeaderFooterCell" customModule="TimeTraveler" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="384" width="600" height="160"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vsX-KB-afo" id="hR7-jB-bK8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="159.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6JR-zT-czn">
+                                                            <rect key="frame" x="88" y="11" width="28" height="28.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="28" id="3E2-rM-0Qk"/>
+                                                                <constraint firstAttribute="width" constant="28" id="i4n-An-hjg"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zugfahrt zum Ceck-In" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ieR-0P-sil">
+                                                            <rect key="frame" x="132" y="8" width="452" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:55" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w8j-5r-dVL">
+                                                            <rect key="frame" x="23" y="5" width="49" height="33.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="33.5" id="8iQ-9p-Khr"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="16"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcv-gc-cS3">
+                                                            <rect key="frame" x="132" y="37" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="ieR-0P-sil" firstAttribute="leading" secondItem="6JR-zT-czn" secondAttribute="trailing" constant="16" id="KzT-VV-KvL"/>
+                                                        <constraint firstItem="ieR-0P-sil" firstAttribute="top" secondItem="hR7-jB-bK8" secondAttribute="topMargin" id="U2T-jf-Due"/>
+                                                        <constraint firstItem="6JR-zT-czn" firstAttribute="leading" secondItem="hR7-jB-bK8" secondAttribute="leadingMargin" constant="80" id="b7f-TU-Fds"/>
+                                                        <constraint firstItem="6JR-zT-czn" firstAttribute="leading" secondItem="w8j-5r-dVL" secondAttribute="trailing" constant="16" id="kVo-ee-bcK"/>
+                                                        <constraint firstItem="w8j-5r-dVL" firstAttribute="leading" secondItem="hR7-jB-bK8" secondAttribute="leadingMargin" constant="15" id="kxS-Lc-we0"/>
+                                                        <constraint firstItem="6JR-zT-czn" firstAttribute="top" secondItem="hR7-jB-bK8" secondAttribute="topMargin" constant="3" id="nid-T0-01X"/>
+                                                        <constraint firstItem="w8j-5r-dVL" firstAttribute="top" secondItem="hR7-jB-bK8" secondAttribute="topMargin" constant="-3" id="njY-Q8-lMv"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="ieR-0P-sil" secondAttribute="trailing" constant="8" id="xML-PG-9VX"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="infoImageView" destination="6JR-zT-czn" id="9j0-U6-9hW"/>
+                                                    <outlet property="timeLabel" destination="w8j-5r-dVL" id="JDh-UL-0aU"/>
+                                                    <outlet property="titleLabel" destination="ieR-0P-sil" id="O0b-XS-a07"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
