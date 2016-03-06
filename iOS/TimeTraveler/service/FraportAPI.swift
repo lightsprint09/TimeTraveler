@@ -19,7 +19,7 @@ struct FraportService {
     
     let jsonFetcher = JSONFetcher()
     func fetchParkingForecast(flightReference: FlightReference, onSucces: (Array<ParkingFacility>)->(), onErrror: (JSONFetcherErrorType)->()) {
-        let url = NSURL(string: "https://timetraveler-server.herokuapp.com/parkingAvailabilityForecast")
+        let url = NSURL(string: "https://time-traveler-api.herokuapp.com/parkingAvailabilityForecast")
         func sucess(result: Array<ParkingFacility>) {
             
             dispatch_async(dispatch_get_main_queue(),{

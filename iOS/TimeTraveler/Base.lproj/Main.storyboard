@@ -130,7 +130,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYu-cM-m2G" userLabel="EnterBookingView">
                                         <rect key="frame" x="0.0" y="236" width="600" height="67"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buchungsnummer-/code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBS-Pk-Nqj">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Buchungsnummer-/code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBS-Pk-Nqj">
                                                 <rect key="frame" x="194.5" y="-0.5" width="211.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -894,28 +894,28 @@ Flughafen:</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="159.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="psA-yC-yGH">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="psA-yC-yGH">
                                                             <rect key="frame" x="88" y="3" width="28" height="28"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="28" id="vTt-VN-W66"/>
                                                                 <constraint firstAttribute="height" constant="28" id="wir-JP-rWH"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ankunft Parkauf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMl-Jk-vHA">
-                                                            <rect key="frame" x="133" y="6" width="261" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ankunft Parkauf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uMl-Jk-vHA">
+                                                            <rect key="frame" x="133" y="116" width="451" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dxj-Me-18R">
-                                                            <rect key="frame" x="133" y="33" width="230" height="98"/>
+                                                            <rect key="frame" x="132.5" y="8" width="230" height="98"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="98" id="FtT-7X-7BA"/>
                                                                 <constraint firstAttribute="width" constant="230" id="Vw4-eW-Ko6"/>
                                                             </constraints>
                                                         </mapView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CA-Tm-t0p">
-                                                            <rect key="frame" x="101" y="39" width="2" height="123"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CA-Tm-t0p">
+                                                            <rect key="frame" x="100.5" y="0.0" width="2" height="108"/>
                                                             <color key="backgroundColor" red="0.52801277619999998" green="0.52801277619999998" blue="0.52801277619999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="123" id="5r6-VL-4P6"/>
@@ -943,9 +943,11 @@ Flughafen:</string>
                                                         <constraint firstItem="1CA-Tm-t0p" firstAttribute="top" secondItem="psA-yC-yGH" secondAttribute="bottom" constant="8" id="Gtg-7W-hy4"/>
                                                         <constraint firstItem="uMl-Jk-vHA" firstAttribute="centerY" secondItem="psA-yC-yGH" secondAttribute="centerY" constant="-0.75" id="HDp-h0-zkS"/>
                                                         <constraint firstItem="psA-yC-yGH" firstAttribute="leading" secondItem="gGu-wJ-R1m" secondAttribute="leadingMargin" constant="80" id="IZz-68-K7t"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="psA-yC-yGH" secondAttribute="bottom" constant="120.5" id="Jvi-3o-4h9"/>
-                                                        <constraint firstItem="dxj-Me-18R" firstAttribute="top" secondItem="uMl-Jk-vHA" secondAttribute="bottom" constant="6.5" id="Mmf-FS-U4e"/>
-                                                        <constraint firstItem="9OH-13-B0X" firstAttribute="leading" secondItem="gGu-wJ-R1m" secondAttribute="leadingMargin" constant="34" id="Xhq-6G-Dsr"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="psA-yC-yGH" secondAttribute="bottom" constant="10.5" id="Jvi-3o-4h9"/>
+                                                        <constraint firstItem="dxj-Me-18R" firstAttribute="leading" secondItem="1CA-Tm-t0p" secondAttribute="trailing" constant="30" id="LvM-U1-tsy"/>
+                                                        <constraint firstItem="dxj-Me-18R" firstAttribute="top" secondItem="uMl-Jk-vHA" secondAttribute="bottom" constant="-128.5" id="Mmf-FS-U4e"/>
+                                                        <constraint firstItem="9OH-13-B0X" firstAttribute="leading" secondItem="gGu-wJ-R1m" secondAttribute="leadingMargin" constant="14" id="Xhq-6G-Dsr"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="uMl-Jk-vHA" secondAttribute="trailing" constant="8" id="hEy-vA-Ng2"/>
                                                         <constraint firstItem="uMl-Jk-vHA" firstAttribute="leading" secondItem="psA-yC-yGH" secondAttribute="trailing" constant="17" id="kgf-cM-R9e"/>
                                                         <constraint firstItem="9OH-13-B0X" firstAttribute="centerY" secondItem="gGu-wJ-R1m" secondAttribute="centerY" id="uFq-tO-q20"/>
                                                         <constraint firstItem="1CA-Tm-t0p" firstAttribute="leading" secondItem="gGu-wJ-R1m" secondAttribute="leadingMargin" constant="93" id="y7E-Vi-577"/>
@@ -974,7 +976,7 @@ Flughafen:</string>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:55" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAV-5j-7yI">
-                                                            <rect key="frame" x="23" y="8" width="49" height="21"/>
+                                                            <rect key="frame" x="23" y="8" width="49" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -994,14 +996,15 @@ Flughafen:</string>
                                                             <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="10"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Laufweg zum Ceck-In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrB-Lh-jkj">
-                                                            <rect key="frame" x="132" y="17" width="228" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laufweg zum Ceck-In" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QrB-Lh-jkj">
+                                                            <rect key="frame" x="132" y="17.5" width="452" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="QrB-Lh-jkj" secondAttribute="trailing" constant="8" id="0HF-J1-oK2"/>
                                                         <constraint firstItem="QrB-Lh-jkj" firstAttribute="leading" secondItem="ppR-u5-vqA" secondAttribute="trailing" constant="16" id="6dK-XB-Z9d"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="ppR-u5-vqA" secondAttribute="bottom" constant="31" id="7cd-77-dhA"/>
                                                         <constraint firstItem="tAV-5j-7yI" firstAttribute="top" secondItem="XNA-4r-KpM" secondAttribute="topMargin" id="KBN-Nn-DcY"/>

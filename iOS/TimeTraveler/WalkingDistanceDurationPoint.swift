@@ -22,7 +22,7 @@ class WalkingDistanceDurationPoint: DurationPoint {
     var walking: Walking?
     
     func asyncResolve(onSucess: (NSTimeInterval) -> (), onError: (JSONFetcherErrorType) -> ()) {
-        let urlString = "https://timetraveler-server.herokuapp.com/distance?start=\(origin)&end=\(destination)".stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)
+        let urlString = "https://time-traveler-api.herokuapp.com/distance?start=\(origin)&end=\(destination)".stringByAddingPercentEscapesUsingEncoding(NSASCIIStringEncoding)
         let url = NSURL(string: urlString!)
         func sucess(result: Walking) {
             duration = NSTimeInterval(60 * result.duration)

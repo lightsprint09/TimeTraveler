@@ -36,7 +36,7 @@ struct RMVService {
     
     let jsonFetcher = JSONFetcher()
     func fetchRMVTrip(location: Location, onSucces: (RMVRoute)->(), onErrror: (JSONFetcherErrorType)->()) {
-        let url = NSURL(string: "https://timetraveler-server.herokuapp.com/tripToAirport?originCoordLat=\(location.latitude)&originCoordLong=\(location.longitude)")
+        let url = NSURL(string: "https://time-traveler-api.herokuapp.com/tripToAirport?originCoordLat=\(location.latitude)&originCoordLong=\(location.longitude)")
         func sucess(result: Array<RMVTrip>) {
             let route = RMVRoute(trips: result)
             dispatch_async(dispatch_get_main_queue(),{

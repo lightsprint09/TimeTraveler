@@ -88,7 +88,7 @@ class TimelineContainer {
     private func update() {
         var targetDate = targetTime.date
         for(_, duration) in durationPoints.enumerate() {
-            targetDate = targetDate.dateByAddingTimeInterval(duration.duration)
+            targetDate = targetDate.dateByAddingTimeInterval(-1 * duration.duration)
             duration.targetDate = targetDate
         }
     }

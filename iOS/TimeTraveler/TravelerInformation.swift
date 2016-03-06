@@ -61,11 +61,6 @@ class TravelerInformation {
             seatNumber = flightStatus?.segments.first!.seatItem.seatNumber
             
             timeLineContainer = TimelineContainer(targetTime: targetTime)
-            let fakeWalkSecToGate: DurationPoint = FakeDurationPoint(name: "Weg zum Gate", duration: 12 * 60)
-            let fakeSecuritySec = FakeDurationPoint(name: "Security", duration: 28 * 60)
-            let fakeSecurityToSec = FakeDurationPoint(name: "Weg zur Security", duration: 8 * 60)
-            let fakeSecurityBackageDrop = FakeDurationPoint(name: "Kofferabgabe", duration: 15 * 60)
-            timeLineContainer.durationPoints.appendContentsOf([fakeWalkSecToGate, fakeSecuritySec, fakeSecurityToSec ,fakeSecurityBackageDrop])
         }
     }
     
