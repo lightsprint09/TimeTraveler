@@ -32,7 +32,7 @@ struct FlightStatusService {
     
     let jsonFetcher = JSONFetcher()
     func fetchFlightInformation(flightReference: FlightReference, onSucces: (FlightStatus)->(), onErrror: (JSONFetcherErrorType)->()) {
-        let url = NSURL(string: "https://timetraveler-server.herokuapp.com/flightInfo/\(flightReference.boockingReferenceID)")
+        let url = NSURL(string: "https://time-traveler-api.herokuapp.com/flightInfo/\(flightReference.boockingReferenceID)")
         func sucess(result: FlightStatusSegment) {
             let flightStatus = FlightStatus(segments: [result])
             dispatch_async(dispatch_get_main_queue(),{
@@ -45,7 +45,7 @@ struct FlightStatusService {
     }
     
     func fetchFlightStatus(status: FlightStatus, onSucces: (FlightStatusInfo)->(), onErrror: (JSONFetcherErrorType)->()) {
-        let url = NSURL(string: "https://timetraveler-server.herokuapp.com/flightStatus?airline_code=LH&flight_number=\(status.segments.first!.marketingCarrier.flightNumber)&departure_date=2016-03-05")
+        let url = NSURL(string: "https://time-traveler-api.herokuapp.com/flightStatus?airline_code=LH&flight_number=\(status.segments.first!.marketingCarrier.flightNumber)&departure_date=2016-03-05")
         func sucess(result: FlightStatusInfo) {
             
             dispatch_async(dispatch_get_main_queue(),{

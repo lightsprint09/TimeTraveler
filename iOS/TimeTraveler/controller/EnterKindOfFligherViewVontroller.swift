@@ -71,18 +71,23 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
     }
 
     @IBAction func finishEnteringData(sender: AnyObject) {
+        guard let gateName = travelerInformation.flightStatusInfo?.gate else { return }
+        let gate = gateName.substringToIndex(gateName.startIndex.successor())
         if laguageType == .Both || laguageType == .BigBag {
-            guard let gateName = travelerInformation.flightStatusInfo?.gate else { return }
-            let gate = gateName.substringToIndex(gateName.startIndex)
-            WalkingDistanceDurationPoint(origin: "Central Security-Check A", destination: "\(gate)-Gates")
-            FakeDurationPoint(name: "Security Check", duration: 60 * 28)
-            FakeDurationPoint(name: "Ceck-In & Gepäckabgabe", duration: 60 * 24)
+            let walk1:DurationPoint = WalkingDistanceDurationPoint(origin: "Central Security-Check A", destination: "\(gate)-Gates")
+            let walk2 = FakeDurationPoint(name: "Security Check", duration: 60 * 28)
+            let walk3 = FakeDurationPoint(name: "Ceck-In & Gepäckabgabe", duration: 60 * 24)
+            travelerInformation.timeLineContainer.durationPoints.appendContentsOf([walk1, walk2, walk3])
             
             //Zu Gate Laufen
             //Security
             //Cecking
             //Gepäck
         }else {
+            let walk1:DurationPoint = WalkingDistanceDurationPoint(origin: "Central Security-Check A", destination: "\(gate)-Gates")
+            let walk2 = FakeDurationPoint(name: "Security Check", duration: 60 * 28)
+            let walk3 = FakeDurationPoint(name: "Ceck-In", duration: 60 * 18)
+            travelerInformation.timeLineContainer.durationPoints.appendContentsOf([walk1, walk2, walk3])
             //Security
             //Cecking
         }
