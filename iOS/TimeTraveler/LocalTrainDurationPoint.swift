@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class LocalTrainDurationPoint: DurationPoint {
     var duration: NSTimeInterval {
@@ -15,6 +16,11 @@ class LocalTrainDurationPoint: DurationPoint {
     
     let name =  "Zugfahrt zum Flughafen"
     var subtitle: String?
+    
+    var targetDate: NSDate!
+    var passed = false
+    
+    var image = UIImage(named: "Icon Train")!
     
     let tabelCellID = "standardtcell"
     let rmvTrip: RMVTrip

@@ -10,7 +10,7 @@ import Foundation
 
 enum LaguageType {
     case Handbag
-    case BigBag(Int?)
+    case BigBag
     case Both
 }
 
@@ -50,8 +50,7 @@ class TravelerInformation {
             let fakeSecuritySec = FakeDurationPoint(name: "Security", duration: 28 * 60)
             let fakeSecurityToSec = FakeDurationPoint(name: "Weg zur Security", duration: 8 * 60)
             let fakeSecurityBackageDrop = FakeDurationPoint(name: "Kofferabgabe", duration: 15 * 60)
-            let fakeSecurityToBackage = FakeDurationPoint(name: "Weg zur Kofferabgabe", duration: 20 * 60)
-            timeLineContainer.durationPoints.appendContentsOf([fakeWalkSecToGate, fakeSecuritySec, fakeSecurityToSec ,fakeSecurityBackageDrop, fakeSecurityToBackage])
+            timeLineContainer.durationPoints.appendContentsOf([fakeWalkSecToGate, fakeSecuritySec, fakeSecurityToSec ,fakeSecurityBackageDrop])
         }
     }
     

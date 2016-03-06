@@ -41,7 +41,7 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
     
     
     @IBAction func onCheckinLuggage(sender: AnyObject) {
-        laguageType = .BigBag(nil)
+        laguageType = .BigBag
         checkinLuggageOn = !checkinLuggageOn
         if checkinLuggageOn && handLuggageOn {
             laguageType = .Both
@@ -71,6 +71,21 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
     }
 
     @IBAction func finishEnteringData(sender: AnyObject) {
+        if laguageType == .Both || laguageType == .BigBag {
+            guard let gateName = travelerInformation.flightStatusInfo?.gate else { return }
+            let gate = gateName.substringToIndex(gateName.startIndex)
+            WalkingDistanceDurationPoint(origin: "Central Security-Check A", destination: "\(gate)-Gates")
+            FakeDurationPoint(name: "Security Check", duration: 60 * 28)
+            FakeDurationPoint(name: "Ceck-In & Gepäckabgabe", duration: 60 * 24)
+            
+            //Zu Gate Laufen
+            //Security
+            //Cecking
+            //Gepäck
+        }else {
+            //Security
+            //Cecking
+        }
         travelerInformation.laguageType = laguageType
         travelerInformation.travelSpeed = travelSpeed
         passToNextViewController()

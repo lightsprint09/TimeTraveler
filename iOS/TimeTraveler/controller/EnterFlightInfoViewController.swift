@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate {
     @IBOutlet var logoImage: UIImageView!
@@ -26,6 +27,7 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
     @IBOutlet var flightStatusLabel: UILabel!
     
     let flightStatusService = FlightStatusService()
+    let locationManager = CLLocationManager()
     
 
     @IBAction func didChangeBoockingRederence(sender: UITextField) {
@@ -45,6 +47,8 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
         logoImage.image = logoImage.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
 
         logoImage.tintColor = UIColor.whiteColor()
+        
+        locationManager.requestAlwaysAuthorization()
     }
     
     func isInvalidFlightID(error: JSONFetcherErrorType) {

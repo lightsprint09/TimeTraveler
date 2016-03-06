@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let URLCache = NSURLCache(memoryCapacity: 4 * 1024 * 1024, diskCapacity: 20 * 1024 * 1024, diskPath: nil)
         NSURLCache.setSharedURLCache(URLCache)
+        
+        let notification = UILocalNotification()
+        notification.alertBody = "Du bist jetzt im Bahnhof"
+        
+        let uuid = NSUUID(UUIDString: "BDC2CCD7-FCA3-43E6-A64F-6610351B1A5C")
+        let major = UInt16(2200)
+        let minor = UInt16(2)
+        notification.region = CLBeaconRegion(proximityUUID: uuid!, major: major, minor: minor, identifier: "train_station")
+        notification.regionTriggersOnce = true
+        application.cancelAllLocalNotifications()
+        application.scheduleLocalNotification(notification)
 
         return true
     }
@@ -53,6 +65,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    let center = NSNotificationCenter.defaultCenter()
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        guard let id = notification.region?.identifier else { return }
+        
+        center.postNotificationName("beacon", object: id)
+        
     }
 
 

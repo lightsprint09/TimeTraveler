@@ -14,6 +14,8 @@ class CarDriveDurationPoint: DurationPoint {
     var duration: NSTimeInterval = 0
     let name = "Autofahrt zum Flughafen"
     var subtitle: String?
+    var targetDate: NSDate!
+    var passed = false
     
     let tabelCellID = "routeCell"
     

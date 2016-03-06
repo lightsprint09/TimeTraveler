@@ -106,7 +106,6 @@ class SignUpPageViewController: UIPageViewController, StandardPageViewController
     }
     
     func nextProgress(){
-        
         progressIndicatorView.setProgress(currentControllerIndex, completed: true, sender: self)
         currentControllerIndex += 1
         

@@ -33,13 +33,7 @@ extension JourneyViewController: UITableViewDataSource, UITableViewDelegate {
     func durationPointAtIndex(indexPath: NSIndexPath) -> DurationPoint {
         return timeLinecontainer.durationPoints.reverse()[indexPath.row]
     }
-    
-//    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        let dataPoint = durationPointAtIndex(indexPath)
-//        print(heightForCellID(dataPoint.tabelCellID))
-//        return heightForCellID(dataPoint.tabelCellID)
-//    }
-    
+
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let dataPoint = durationPointAtIndex(indexPath)
         return heightForCellID(dataPoint.tabelCellID)
@@ -69,9 +63,16 @@ class JourneyViewController: UIViewController {
     var parentVC: SignUpPageViewController?
     let maxY:CGFloat = 591
     let minY:CGFloat = 691
+    let center = NSNotificationCenter.defaultCenter()
     
     @IBOutlet weak var tableView: UITableView!
+    
+    func update() {
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
+        center.addObserver(self, selector: "update", name: "update", object: nil)
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.dataSource = self
@@ -87,24 +88,24 @@ class JourneyViewController: UIViewController {
 //        for cell in tableView.visibleCells {
 //            
 //        }
-        for (var row = 0; row < tableView.numberOfRowsInSection(0); row++)
-        {
-            
-            let indexPath = NSIndexPath(forRow: row, inSection: 0)
-            
-            let cell :UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-            
-          //  let delayTime: Float = row * 0.1
-           //cell.contentView.alpha = 0
-            
-            let view = cell.contentView
-            view.alpha = 0.1
-            
-            UIView.animateWithDuration(2.5, delay: 5, options: [], animations: { () -> Void in
-                view.alpha = 1
-                }, completion: nil)
-            
-        }
+//        for (var row = 0; row < tableView.numberOfRowsInSection(0); row++)
+//        {
+//            
+//            let indexPath = NSIndexPath(forRow: row, inSection: 0)
+//            
+//            let cell :UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+//            
+//          //  let delayTime: Float = row * 0.1
+//           //cell.contentView.alpha = 0
+//            
+//            let view = cell.contentView
+//            view.alpha = 0.1
+//            
+//            UIView.animateWithDuration(2.5, delay: 5, options: [], animations: { () -> Void in
+//                view.alpha = 1
+//                }, completion: nil)
+//            
+//        }
 
         
         

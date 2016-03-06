@@ -34,33 +34,15 @@ extension EnterTransportTypeViewController: UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let cell = tableView.cellForRowAtIndexPath(indexPath) as? ParkingTableViewCell where transportType == .Car {
             didSelectNewTimePoint(cell.carTimePoint)
-            cell.holderImage.image = UIImage(named: "Selected Layer")
-            cell.dottedLine.image = UIImage(named: "Selection Way")
+            selectedParking = parkingFacilitys[indexPath.row]
         }
         
         if let cell = tableView.cellForRowAtIndexPath(indexPath) as? TrainTripTableViewCell where transportType == .PlublicTransport {
             didSelectNewTimePoint(cell.trainTripDuration)
-            cell.holderImage.image = UIImage(named: "Selected Layer")
-            cell.dottedLine.image = UIImage(named: "Selection Way")
         }
         nextButton.backgroundColor = .orangeUIColor()
         nextButton.enabled = true
 
-    }
-    
-    
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? ParkingTableViewCell where transportType == .Car {
-            cell.holderImage.image = UIImage(named: "Unselected Layer")
-            cell.dottedLine.image = UIImage(named: "Unselected Way")
-        }
-        
-        if let cell = tableView.cellForRowAtIndexPath(indexPath) as? TrainTripTableViewCell where transportType == .PlublicTransport {
-            cell.holderImage.image = UIImage(named: "Unselected Layer")
-            cell.dottedLine.image = UIImage(named: "Unselected Way")
-        }
-
-        
     }
 
 
@@ -81,6 +63,9 @@ class EnterTransportTypeViewController: EnteringViewController {
     let rmvService = RMVService()
     let parkingService = FraportService()
     var localTransportTrips = Array<RMVTrip>()
+    
+    var selectedParking: ParkingFacility!
+    
     
     @IBOutlet var endView: UIView!
     @IBOutlet var startView: UIView!
@@ -193,6 +178,15 @@ class EnterTransportTypeViewController: EnteringViewController {
     @IBAction func onJourney(sender: AnyObject) {
         let parentController = self.parentViewController as? SignUpPageViewController
         parentController?.nextProgress()
+        if transportType == .Car {
+            let walking = WalkingDistanceDurationPoint(origin: selectedParking.name, destination: "Check-In A")
+            travelerInformation.timeLineContainer.durationPoints.insert(walking, atIndex: travelerInformation.timeLineContainer.durationPoints.count - 1)
+        }
+        if transportType == .PlublicTransport {
+            let walking = WalkingDistanceDurationPoint(origin: "Regional Train Station", destination: "Check-In A")
+            travelerInformation.timeLineContainer.durationPoints.insert(walking, atIndex: travelerInformation.timeLineContainer.durationPoints.count - 1)
+            
+        }
         
         let vc: JourneyViewController = instantiateViewControllerWithIdentifier("JourneyStoryboard")
         vc.travelerInformation = travelerInformation
