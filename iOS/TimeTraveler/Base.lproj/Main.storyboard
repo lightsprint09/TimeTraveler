@@ -684,13 +684,13 @@ Flughafen:</string>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zuhause" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ERm-ya-CVW">
-                                                            <rect key="frame" x="119" y="15" width="204" height="20.5"/>
+                                                            <rect key="frame" x="119" y="13" width="204" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="17"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0MA-Yx-F9n">
-                                                            <rect key="frame" x="119" y="35" width="201" height="20.5"/>
+                                                            <rect key="frame" x="119" y="33" width="201" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="13"/>
                                                             <color key="textColor" red="0.99215686270000003" green="0.64705882349999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -706,7 +706,7 @@ Flughafen:</string>
                                                     <constraints>
                                                         <constraint firstItem="0MA-Yx-F9n" firstAttribute="top" secondItem="ERm-ya-CVW" secondAttribute="bottom" constant="-0.5" id="QEU-iB-On4"/>
                                                         <constraint firstItem="0MA-Yx-F9n" firstAttribute="leading" secondItem="91K-TP-ZWN" secondAttribute="trailing" constant="59" id="R6Y-DY-jbJ"/>
-                                                        <constraint firstItem="ERm-ya-CVW" firstAttribute="top" secondItem="kAE-Gr-4Y8" secondAttribute="topMargin" constant="7" id="Rct-Av-dOe"/>
+                                                        <constraint firstItem="ERm-ya-CVW" firstAttribute="top" secondItem="kAE-Gr-4Y8" secondAttribute="topMargin" constant="5" id="Rct-Av-dOe"/>
                                                         <constraint firstItem="XGJ-g6-cFS" firstAttribute="centerY" secondItem="kAE-Gr-4Y8" secondAttribute="centerY" id="T2A-jp-yRA"/>
                                                         <constraint firstItem="XGJ-g6-cFS" firstAttribute="leading" secondItem="kAE-Gr-4Y8" secondAttribute="leadingMargin" constant="62" id="XkO-aJ-aR2"/>
                                                         <constraint firstItem="ERm-ya-CVW" firstAttribute="trailing" secondItem="XGJ-g6-cFS" secondAttribute="trailing" constant="-24" id="ckw-bw-AZH"/>
