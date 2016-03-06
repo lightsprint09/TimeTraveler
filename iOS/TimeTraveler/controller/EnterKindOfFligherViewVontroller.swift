@@ -86,17 +86,19 @@ class EnterKindOfFligherViewVontroller: EnteringViewController {
     @IBAction func finishEnteringData(sender: AnyObject) {
         guard let gateName = travelerInformation.flightStatusInfo?.gate else { return }
         let gate = gateName.substringToIndex(gateName.startIndex.successor())
+        let boaring = FakeDurationPoint(name: "Boarding", duration: 60 * 25)
+        let checkInToSec = WalkingDistanceDurationPoint(origin: "Check-In A", destination: "Central Security-Check A")
+        let fromSecToGate: DurationPoint = WalkingDistanceDurationPoint(origin: "Central Security-Check A", destination: "\(gate)-Gates")
+        let security = FakeDurationPoint(name: "Security Check", duration: 60 * 28)
+        var checkin: DurationPoint
         if laguageType == .Both || laguageType == .BigBag {
-            let walk1:DurationPoint = WalkingDistanceDurationPoint(origin: "Central Security-Check A", destination: "\(gate)-Gates")
-            let walk2 = FakeDurationPoint(name: "Security Check", duration: 60 * 28)
-            let walk3 = FakeDurationPoint(name: "Ceck-In & Gepäckabgabe", duration: 60 * 24)
-            travelerInformation.timeLineContainer.durationPoints.appendContentsOf([walk1, walk2, walk3])
+            checkin = FakeDurationPoint(name: "Ceck-In & Gepäckabgabe", duration: 60 * 24)
+            
         }else {
-            let walk1:DurationPoint = WalkingDistanceDurationPoint(origin: "Central Security-Check A", destination: "\(gate)-Gates")
-            let walk2 = FakeDurationPoint(name: "Security Check", duration: 60 * 28)
-            let walk3 = FakeDurationPoint(name: "Ceck-In", duration: 60 * 18)
-            travelerInformation.timeLineContainer.durationPoints.appendContentsOf([walk1, walk2, walk3])
+            checkin = FakeDurationPoint(name: "Ceck-In", duration: 60 * 18)
         }
+        travelerInformation.timeLineContainer.durationPoints.appendContentsOf([boaring, fromSecToGate, security, checkInToSec, checkin])
+        
         travelerInformation.laguageType = laguageType
         travelerInformation.travelSpeed = travelSpeed
         passToNextViewController()

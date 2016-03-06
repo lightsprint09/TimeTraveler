@@ -18,7 +18,7 @@ class WalkingDistanceDurationPoint: DurationPoint {
     let tabelCellID = "standardtcell"
     var targetDate: NSDate!
     
-    var image = UIImage(named: "Bullet Point")!
+    var image = UIImage(named: "Walking")!
     var walking: Walking?
     
     func asyncResolve(onSucess: (NSTimeInterval) -> (), onError: (JSONFetcherErrorType) -> ()) {

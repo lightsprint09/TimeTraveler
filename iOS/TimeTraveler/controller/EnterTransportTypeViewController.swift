@@ -95,6 +95,7 @@ class EnterTransportTypeViewController: EnteringViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ETAFlightLabel.text = FlightStatusService.timeFormatter.stringFromDate(travelerInformation.timeLineContainer.currentResultTime.date) + " Ankunft am Flughafen"
         backgroundView.backgroundColor = UIColor.clearColor()
         nextButton.layer.cornerRadius = 5
         nextButton.backgroundColor = .grayColor()

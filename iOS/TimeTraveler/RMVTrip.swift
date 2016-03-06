@@ -22,7 +22,7 @@ struct RMVRoute {
     
     init(trips: Array<RMVTrip>) {
         self.trips = trips.filter({trip in
-            return trip.legs.last?.destination?.name != "Frankfurt (Main) Griesheim Bahnhof"
+            return trip.legs.last?.destination?.name == "Frankfurt (Main) Flughafen Regionalbahnhof"
         })
     }
 }

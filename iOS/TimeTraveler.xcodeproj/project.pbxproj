@@ -51,6 +51,7 @@
 		944A32021C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A32011C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift */; };
 		944A32041C8B71AE00D2AA9F /* StandardTimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A32031C8B71AE00D2AA9F /* StandardTimeLineCell.swift */; };
 		944A32061C8B9C9D00D2AA9F /* LocalTrainDurationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A32051C8B9C9D00D2AA9F /* LocalTrainDurationPoint.swift */; };
+		944A32081C8BD0F800D2AA9F /* HeaderFooterDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A32071C8BD0F800D2AA9F /* HeaderFooterDuration.swift */; };
 		94B939F91C7F294200F36C2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B939F81C7F294200F36C2D /* AppDelegate.swift */; };
 		94B939FE1C7F294200F36C2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B939FC1C7F294200F36C2D /* Main.storyboard */; };
 		94B93A031C7F294200F36C2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B93A011C7F294200F36C2D /* LaunchScreen.storyboard */; };
@@ -162,6 +163,7 @@
 		944A32011C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingDistanceDurationPoint.swift; sourceTree = "<group>"; };
 		944A32031C8B71AE00D2AA9F /* StandardTimeLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardTimeLineCell.swift; sourceTree = "<group>"; };
 		944A32051C8B9C9D00D2AA9F /* LocalTrainDurationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalTrainDurationPoint.swift; sourceTree = "<group>"; };
+		944A32071C8BD0F800D2AA9F /* HeaderFooterDuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderFooterDuration.swift; sourceTree = "<group>"; };
 		94B939F51C7F294200F36C2D /* TimeTraveler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTraveler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B939F81C7F294200F36C2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94B939FD1C7F294200F36C2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				944A31FB1C8B21A800D2AA9F /* FakeDurationPoint.swift */,
 				944A32011C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift */,
 				944A32051C8B9C9D00D2AA9F /* LocalTrainDurationPoint.swift */,
+				944A32071C8BD0F800D2AA9F /* HeaderFooterDuration.swift */,
 			);
 			name = DurationPoint;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				94B939F91C7F294200F36C2D /* AppDelegate.swift in Sources */,
 				94F196D21C8ACDE500ED526E /* RMVService.swift in Sources */,
 				94F196DA1C8B07C800ED526E /* FraportAPI.swift in Sources */,
+				944A32081C8BD0F800D2AA9F /* HeaderFooterDuration.swift in Sources */,
 				944A32021C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift in Sources */,
 				94F196D41C8ACDF200ED526E /* RMVTrip.swift in Sources */,
 				36054A961C8ADDFB00877412 /* JourneyViewController.swift in Sources */,

@@ -52,6 +52,18 @@ class TimelineContainer {
     var durationPoints = Array<DurationPoint>()
     let center = NSNotificationCenter.defaultCenter()
     
+    var addedHeader:  Array<DurationPoint> {
+        var durations = durationPoints
+        let origin = HeaderFooterDuration(name: "Abktueller Ort - Abfahrt", image: UIImage(named: "Location")!)
+        origin.targetDate = currentResultTime.date
+        durations.append(origin)
+        let boarding = HeaderFooterDuration(name: "Take Off", image: UIImage(named: "Flight")!)
+        boarding.targetDate = targetTime.date
+        durations.insert(boarding, atIndex: 0)
+        
+        return durations
+    }
+    
     init(targetTime: TargetTime) {
         self.targetTime = targetTime
         center.addObserver(self, selector: Selector("recieve"), name: "beacon", object: nil)
