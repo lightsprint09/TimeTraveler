@@ -24,6 +24,7 @@ protocol DurationPoint: class, Displayable {
     
     var targetDate: NSDate! { get set }
     var passed: Bool { get set }
+
 }
 
 

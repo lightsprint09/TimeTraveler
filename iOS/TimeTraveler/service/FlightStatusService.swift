@@ -74,6 +74,7 @@ extension FlightStatusSegment: JSONParsable {
         self.arrival = TimePoint(JSON: JSON["Arrival"] as! Dictionary<String, AnyObject>)
         self.depature =  TimePoint(JSON: JSON["Departure"] as! Dictionary<String, AnyObject>)
         self.marketingCarrier = MarketingCarrier(JSON: JSON["MarketingCarrier"] as! Dictionary<String, AnyObject>)
+        self.seatItem = SeatItem(JSON: JSON["SeatItem"] as! Dictionary<String, AnyObject>)
     }
 }
 
@@ -85,6 +86,14 @@ extension TimePoint: JSONParsable {
     }
 }
 
+extension SeatItem: JSONParsable {
+    init(JSON: Dictionary<String, AnyObject>) {        
+        self.seatColumn =  (JSON["Location"] as! Dictionary<String, AnyObject>)["Column"] as! String
+        self.seatRow = (JSON["Location"] as! Dictionary<String, AnyObject>)["Row"]!["Number"] as! Int
+        
+       
+    }
+}
 extension MarketingCarrier: JSONParsable {
     init(JSON: Dictionary<String, AnyObject>) {
         self.airlineID = JSON["AirlineID"] as! String

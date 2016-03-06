@@ -57,7 +57,6 @@
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
-            <string>Montserrat-Light</string>
         </mutableArray>
         <mutableArray key="Montserrat-Regular.otf">
             <string>Montserrat-Regular</string>
@@ -310,6 +309,7 @@
                         <outlet property="depatureAirportLabel" destination="vgi-x0-l0H" id="aIP-gq-KL3"/>
                         <outlet property="depatureTimeLabel" destination="5X7-xf-yow" id="mKL-8f-nLh"/>
                         <outlet property="flightCodeLabel" destination="Asd-XZ-qfd" id="7xs-AQ-MUd"/>
+                        <outlet property="flightDate" destination="BiM-nU-1ey" id="b3o-CX-XqR"/>
                         <outlet property="flightIDInput" destination="19R-aS-RIX" id="TNK-5m-WLU"/>
                         <outlet property="flightStatusLabel" destination="Tgm-sw-LUD" id="oYN-o0-J1A"/>
                         <outlet property="flightViewContainer" destination="Y1h-I3-9P1" id="K8f-8G-vxT"/>
@@ -594,10 +594,10 @@ Flughafen:</string>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fTN-pq-IqR">
-                                        <rect key="frame" x="99" y="305" width="403" height="183"/>
+                                        <rect key="frame" x="99" y="320" width="403" height="176"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="183" id="RkB-G0-Dh7"/>
+                                            <constraint firstAttribute="height" constant="176" id="RkB-G0-Dh7"/>
                                             <constraint firstAttribute="width" constant="403" id="n2u-80-jA7"/>
                                         </constraints>
                                         <prototypes>
@@ -787,7 +787,7 @@ Flughafen:</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbh-7m-Trp">
-                                        <rect key="frame" x="143" y="486" width="309" height="33"/>
+                                        <rect key="frame" x="143" y="510" width="309" height="33"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15:30 Abfahrt vom Aufenthaltsort" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkh-Xo-xFU">
                                                 <rect key="frame" x="45" y="5" width="267" height="21"/>
@@ -813,11 +813,11 @@ Flughafen:</string>
                                     <constraint firstItem="sXP-Op-YSM" firstAttribute="top" secondItem="0Hq-qU-Kg7" secondAttribute="bottom" constant="-1" id="92T-eu-XWN"/>
                                     <constraint firstItem="sbh-7m-Trp" firstAttribute="centerX" secondItem="YLh-Zh-FbQ" secondAttribute="centerX" constant="-2.5" id="HOq-vg-RIC"/>
                                     <constraint firstItem="zSh-Wq-0jr" firstAttribute="centerX" secondItem="YLh-Zh-FbQ" secondAttribute="centerX" constant="-3" id="Oza-Pd-1w5"/>
-                                    <constraint firstItem="sbh-7m-Trp" firstAttribute="top" secondItem="fTN-pq-IqR" secondAttribute="bottom" constant="-2" id="Rzs-Fk-T5s"/>
+                                    <constraint firstItem="sbh-7m-Trp" firstAttribute="top" secondItem="fTN-pq-IqR" secondAttribute="bottom" constant="14" id="Rzs-Fk-T5s"/>
                                     <constraint firstItem="u5U-Yc-ehs" firstAttribute="centerX" secondItem="YLh-Zh-FbQ" secondAttribute="centerX" id="Xz6-ex-4Zx"/>
                                     <constraint firstItem="cmM-zp-xiM" firstAttribute="leading" secondItem="fjY-zI-zrn" secondAttribute="leading" id="bxw-Hi-VBF"/>
                                     <constraint firstItem="u5U-Yc-ehs" firstAttribute="top" secondItem="YLh-Zh-FbQ" secondAttribute="top" constant="31" id="frR-1F-XN1"/>
-                                    <constraint firstItem="fTN-pq-IqR" firstAttribute="top" secondItem="0Hq-qU-Kg7" secondAttribute="bottom" constant="42" id="goY-PG-KnG"/>
+                                    <constraint firstItem="fTN-pq-IqR" firstAttribute="top" secondItem="0Hq-qU-Kg7" secondAttribute="bottom" constant="57" id="goY-PG-KnG"/>
                                     <constraint firstItem="u5U-Yc-ehs" firstAttribute="centerX" secondItem="0Hq-qU-Kg7" secondAttribute="centerX" id="hJC-dP-bss"/>
                                     <constraint firstItem="0Hq-qU-Kg7" firstAttribute="top" secondItem="u5U-Yc-ehs" secondAttribute="bottom" constant="20" id="oKi-t8-hwZ"/>
                                     <constraint firstItem="zSh-Wq-0jr" firstAttribute="top" secondItem="fTN-pq-IqR" secondAttribute="bottom" constant="44" id="rjE-eQ-hGc"/>
@@ -886,7 +886,7 @@ Flughafen:</string>
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="486"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="routeCell" rowHeight="160" id="EbM-oT-VqV" customClass="RouteCell" customModule="TimeTraveler" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="routeCell" rowHeight="160" id="EbM-oT-VqV" customClass="RouteCell" customModule="TimeTraveler" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="92" width="600" height="160"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EbM-oT-VqV" id="gGu-wJ-R1m">
@@ -966,7 +966,7 @@ Flughafen:</string>
                                                     <outlet property="titleLabel" destination="uMl-Jk-vHA" id="aQe-7o-Ht3"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="standardtcell" rowHeight="82" id="CnH-q2-LUY" userLabel="standardcell" customClass="StandardTimeLineCell" customModule="TimeTraveler" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="standardtcell" rowHeight="82" id="CnH-q2-LUY" userLabel="standardcell" customClass="StandardTimeLineCell" customModule="TimeTraveler" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="252" width="600" height="82"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CnH-q2-LUY" id="XNA-4r-KpM">
@@ -976,8 +976,8 @@ Flughafen:</string>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ppR-u5-vqA">
                                                             <rect key="frame" x="88" y="15" width="28" height="28"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="28" id="4E6-0B-IdD"/>
-                                                                <constraint firstAttribute="width" constant="28" id="vea-1n-Vvn"/>
+                                                                <constraint firstAttribute="height" constant="28" id="YAw-cM-PZh"/>
+                                                                <constraint firstAttribute="width" constant="28" id="v1f-4s-3cy"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:55" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAV-5j-7yI">
@@ -1083,21 +1083,9 @@ Flughafen:</string>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Flight icon black" translatesAutoresizingMaskIntoConstraints="NO" id="REP-fQ-E6z">
                                                 <rect key="frame" x="151" y="52" width="25" height="25"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="03.03.2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtK-Q5-mq1">
-                                                <rect key="frame" x="107" y="82" width="107" height="21"/>
-                                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="11"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10:00AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnI-4u-IKC">
                                                 <rect key="frame" x="5" y="75" width="126" height="21"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terminal 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFp-De-emq">
-                                                <rect key="frame" x="5" y="92" width="126" height="21"/>
-                                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
-                                                <color key="textColor" red="0.52801277619999998" green="0.52801277619999998" blue="0.52801277619999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LH454" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6O-pX-gD7">
@@ -1134,8 +1122,14 @@ Flughafen:</string>
                                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terminal 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ln-NL-D0j">
-                                                <rect key="frame" x="186" y="92" width="139" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="03.03.2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtK-Q5-mq1">
+                                                <rect key="frame" x="110" y="76" width="107" height="21"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="11"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terminal 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFp-De-emq">
+                                                <rect key="frame" x="103" y="89" width="126" height="21"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
                                                 <color key="textColor" red="0.52801277619999998" green="0.52801277619999998" blue="0.52801277619999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1191,6 +1185,16 @@ Flughafen:</string>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="arrivalTime" destination="Csf-Zf-KAy" id="77i-om-P5N"/>
+                        <outlet property="departureTerminal" destination="ZFp-De-emq" id="W5i-vF-9Fo"/>
+                        <outlet property="flightArrivalDestination" destination="Sbh-3d-MOZ" id="jnG-gt-hpG"/>
+                        <outlet property="flightDate" destination="AtK-Q5-mq1" id="lLZ-bm-ztr"/>
+                        <outlet property="flightDepartureDestination" destination="oPm-Ov-moU" id="ffE-b6-P1t"/>
+                        <outlet property="flightNumber" destination="e6O-pX-gD7" id="JbE-ej-PsD"/>
+                        <outlet property="flightStatus" destination="Xvy-KR-rVn" id="HBt-EB-LVK"/>
+                        <outlet property="flightTime" destination="vnI-4u-IKC" id="alK-cc-607"/>
+                        <outlet property="revealButton" destination="tk5-OC-Zhb" id="VjJ-Bj-Oyf"/>
+                        <outlet property="seatNumber" destination="xyL-pa-Lzu" id="ZDj-ef-NVj"/>
                         <outlet property="tableView" destination="u6e-Ot-w4b" id="1i0-og-E53"/>
                         <outlet property="ticketView" destination="xQm-kX-mr0" id="S33-Jx-dfI"/>
                     </connections>

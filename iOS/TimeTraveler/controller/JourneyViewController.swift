@@ -51,14 +51,26 @@ extension JourneyViewController: UITableViewDataSource, UITableViewDelegate {
 
 class JourneyViewController: UIViewController {
     @IBOutlet var ticketView: UIView!
+    var ticketOpened: Bool = true
+    
+    @IBOutlet var arrivalTerminal: UILabel!
+    @IBOutlet var arrivalTime: UILabel!
+    @IBOutlet var seatNumber: UILabel!
+    @IBOutlet var departureTerminal: UILabel!
+    @IBOutlet var flightTime: UILabel!
+    @IBOutlet var flightDate: UILabel!
+    @IBOutlet var flightArrivalDestination: UILabel!
+    @IBOutlet var flightDepartureDestination: UILabel!
+    @IBOutlet var flightStatus: UILabel!
+    @IBOutlet var flightNumber: UILabel!
     var travelerInformation: TravelerInformation!
     
+    @IBOutlet var revealButton: UIButton!
     var timeLinecontainer: TimelineContainer {
         return travelerInformation.timeLineContainer
     }
-    @IBAction func onBoardingCard(sender: AnyObject) {
-        
-    }
+
+  
  
     var parentVC: SignUpPageViewController?
     let maxY:CGFloat = 591
@@ -74,6 +86,19 @@ class JourneyViewController: UIViewController {
     override func viewDidLoad() {
         center.addObserver(self, selector: "update", name: "update", object: nil)
         super.viewDidLoad()
+        
+        flightStatus.text = travelerInformation?.flightStatusInfo?.status == "OT" ? "SCHEDULED" : "UNSCHEDULED"
+        
+        flightNumber.text = travelerInformation?.flightNumber
+        
+        departureTerminal.text = "Terminal " + (travelerInformation?.flightStatusInfo?.terminal)!
+        flightDate.text = travelerInformation?.flightDate
+        flightDepartureDestination.text = travelerInformation?.departureAirport
+        flightArrivalDestination.text = travelerInformation?.arrivalAirport
+        flightTime.text = travelerInformation?.departureTime
+        arrivalTime.text = travelerInformation?.arrivalTime
+        seatNumber.text = travelerInformation?.seatNumber
+        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.dataSource = self
         tableView.delegate = self
@@ -84,28 +109,7 @@ class JourneyViewController: UIViewController {
             }, onError: { err in })
         setupNavbar()
         
-        
-//        for cell in tableView.visibleCells {
-//            
-//        }
-//        for (var row = 0; row < tableView.numberOfRowsInSection(0); row++)
-//        {
-//            
-//            let indexPath = NSIndexPath(forRow: row, inSection: 0)
-//            
-//            let cell :UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-//            
-//          //  let delayTime: Float = row * 0.1
-//           //cell.contentView.alpha = 0
-//            
-//            let view = cell.contentView
-//            view.alpha = 0.1
-//            
-//            UIView.animateWithDuration(2.5, delay: 5, options: [], animations: { () -> Void in
-//                view.alpha = 1
-//                }, completion: nil)
-//            
-//        }
+
 
         
         
@@ -116,13 +120,35 @@ class JourneyViewController: UIViewController {
         ticketView.layer.shadowPath = UIBezierPath(rect: ticketView.bounds).CGPath
         
         self.ticketView.frame = CGRectMake(0, 451, self.ticketView.frame.size.width, self.ticketView.frame.size.height)
+
+        revealButton.hidden = true
+
         UIView.animateWithDuration(0.3, delay: 1.0, options: UIViewAnimationOptions.TransitionNone
             , animations: {
             self.ticketView.frame = CGRectMake(0, 550, self.ticketView.frame.size.width, self.ticketView.frame.size.height)
 
-            
-            }, completion: nil)
+
+            }, completion: {
+                (value: Bool) in
+                self.revealButton.hidden = false
+        })
       
+    }
+    
+    @IBAction func onBoardingCard(sender: AnyObject) {
+        
+        
+       
+        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.TransitionNone
+            , animations: {
+                self.ticketView.frame = CGRectMake(0, 520, self.ticketView.frame.size.width, self.ticketView.frame.size.height)
+                
+                
+            }, completion: {
+                (value: Bool) in
+                self.revealButton.hidden = true
+        })
+        
     }
     
     @IBAction func onPanTicket(sender: UIPanGestureRecognizer) {
@@ -145,7 +171,10 @@ class JourneyViewController: UIViewController {
                 sender.view?.center=CGPointMake(self.view.frame.size.width / 2, (newY > 620 ? self.minY : self.maxY))
                 sender.setTranslation(CGPointZero, inView: self.view)
                 
-                }, completion: nil)
+                }, completion: {
+                    (value: Bool) in
+                    self.revealButton.hidden = (newY > 620 ? false : true)
+            })
         }
         
     }

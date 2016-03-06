@@ -37,6 +37,13 @@ class TravelerInformation {
     var transportType: TransportType?
     var travelSpeed: TravelSpeed?
     var flightStatusInfo: FlightStatusInfo?
+    var flightNumber: String?
+    var arrivalAirport: String?
+    var arrivalTime: String?
+    var departureTime: String?
+    var departureAirport: String?
+    var flightDate: String?
+    var seatNumber: String?
     
     var timeLineContainer: TimelineContainer!
     
@@ -45,6 +52,14 @@ class TravelerInformation {
     var flightStatus: FlightStatus? {
         didSet {
             flightReference?.isValid = true
+            flightNumber =  (flightStatus?.segments.first!.marketingCarrier.airlineID)! + (flightStatus?.segments.first!.marketingCarrier.flightNumber)!
+            departureAirport = flightStatus?.from?.airportCode
+            departureTime = flightStatus?.from?.timeString
+            flightDate = flightStatus?.from?.dateString
+            arrivalAirport = flightStatus?.to?.airportCode
+            arrivalTime = flightStatus?.to?.timeString
+            seatNumber = flightStatus?.segments.first!.seatItem.seatNumber
+            
             timeLineContainer = TimelineContainer(targetTime: targetTime)
             let fakeWalkSecToGate: DurationPoint = FakeDurationPoint(name: "Weg zum Gate", duration: 12 * 60)
             let fakeSecuritySec = FakeDurationPoint(name: "Security", duration: 28 * 60)
