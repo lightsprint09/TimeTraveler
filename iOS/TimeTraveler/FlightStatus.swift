@@ -27,7 +27,7 @@ struct TimePoint {
     
     private static var dateFormatter: NSDateFormatter = {
         let dateParser = NSDateFormatter()
-        dateParser.dateFormat = "yyyy-MM-dd"
+        dateParser.dateFormat = "dd MMM yyyy"
         
         return dateParser
     }()
@@ -39,6 +39,10 @@ struct TimePoint {
         return dateParser
     }()
     
+    var dateString: String {
+        return TimePoint.dateFormatter.stringFromDate(date)
+    }
+    
     var timeString: String {
         return TimePoint.timeFormatter.stringFromDate(date)
     }
@@ -49,6 +53,8 @@ struct FlightStatusSegment {
     let arrival: TimePoint
     let depature: TimePoint
     let marketingCarrier: MarketingCarrier
+    let seatItem: SeatItem
+    
 }
 
 struct FlightStatusInfo {
@@ -63,5 +69,14 @@ struct MarketingCarrier {
     
     var flight: String {
         return airlineID + flightNumber
+    }
+}
+
+struct SeatItem {
+    let seatRow: Int
+    let seatColumn: String
+    
+    var seatNumber: String{
+        return seatColumn + String(seatRow)
     }
 }

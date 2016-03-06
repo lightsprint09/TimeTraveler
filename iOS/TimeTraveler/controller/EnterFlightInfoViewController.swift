@@ -25,6 +25,7 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
     @IBOutlet var flightCodeLabel: UILabel!
     @IBOutlet var flightStatusLabel: UILabel!
     
+    @IBOutlet var flightDate: UILabel!
     let flightStatusService = FlightStatusService()
     
 
@@ -75,6 +76,8 @@ class EnterFlightInfoViewController: EnteringViewController, UITextFieldDelegate
         depatureTimeLabel.text = flightStatus.from?.timeString
         
         arrivalAirportLabel.text = flightStatus.to?.airportCode
+        flightDate.text = flightStatus.from?.dateString
+        
         arrivaleTimeLabel.text = flightStatus.to?.timeString
        // flightCode.text = flightStatus.
     }

@@ -58,7 +58,6 @@
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
-            <string>Montserrat-Light</string>
         </mutableArray>
         <mutableArray key="Montserrat-Regular.otf">
             <string>Montserrat-Regular</string>
@@ -311,6 +310,7 @@
                         <outlet property="depatureAirportLabel" destination="vgi-x0-l0H" id="aIP-gq-KL3"/>
                         <outlet property="depatureTimeLabel" destination="5X7-xf-yow" id="mKL-8f-nLh"/>
                         <outlet property="flightCodeLabel" destination="Asd-XZ-qfd" id="7xs-AQ-MUd"/>
+                        <outlet property="flightDate" destination="BiM-nU-1ey" id="b3o-CX-XqR"/>
                         <outlet property="flightIDInput" destination="19R-aS-RIX" id="TNK-5m-WLU"/>
                         <outlet property="flightStatusLabel" destination="Tgm-sw-LUD" id="oYN-o0-J1A"/>
                         <outlet property="flightViewContainer" destination="Y1h-I3-9P1" id="K8f-8G-vxT"/>
@@ -1086,21 +1086,9 @@ Flughafen:</string>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Flight icon black" translatesAutoresizingMaskIntoConstraints="NO" id="REP-fQ-E6z">
                                                 <rect key="frame" x="151" y="52" width="25" height="25"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="03.03.2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtK-Q5-mq1">
-                                                <rect key="frame" x="107" y="82" width="107" height="21"/>
-                                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="11"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10:00AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnI-4u-IKC">
                                                 <rect key="frame" x="5" y="75" width="126" height="21"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terminal 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFp-De-emq">
-                                                <rect key="frame" x="5" y="92" width="126" height="21"/>
-                                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
-                                                <color key="textColor" red="0.52801277619999998" green="0.52801277619999998" blue="0.52801277619999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LH454" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6O-pX-gD7">
@@ -1137,8 +1125,14 @@ Flughafen:</string>
                                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terminal 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ln-NL-D0j">
-                                                <rect key="frame" x="186" y="92" width="139" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="03.03.2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtK-Q5-mq1">
+                                                <rect key="frame" x="110" y="76" width="107" height="21"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="11"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terminal 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFp-De-emq">
+                                                <rect key="frame" x="103" y="89" width="126" height="21"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
                                                 <color key="textColor" red="0.52801277619999998" green="0.52801277619999998" blue="0.52801277619999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1188,7 +1182,6 @@ Flughafen:</string>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="arrivalTerminal" destination="9ln-NL-D0j" id="8hW-Hl-tcU"/>
                         <outlet property="arrivalTime" destination="Csf-Zf-KAy" id="77i-om-P5N"/>
                         <outlet property="departureTerminal" destination="ZFp-De-emq" id="W5i-vF-9Fo"/>
                         <outlet property="flightArrivalDestination" destination="Sbh-3d-MOZ" id="jnG-gt-hpG"/>

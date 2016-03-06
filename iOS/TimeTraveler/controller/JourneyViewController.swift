@@ -91,11 +91,12 @@ class JourneyViewController: UIViewController {
         flightNumber.text = travelerInformation?.flightNumber
         
         departureTerminal.text = "Terminal " + (travelerInformation?.flightStatusInfo?.terminal)!
-        
+        flightDate.text = travelerInformation?.flightDate
         flightDepartureDestination.text = travelerInformation?.departureAirport
         flightArrivalDestination.text = travelerInformation?.arrivalAirport
         flightTime.text = travelerInformation?.departureTime
         arrivalTime.text = travelerInformation?.arrivalTime
+        seatNumber.text = travelerInformation?.seatNumber
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.dataSource = self
