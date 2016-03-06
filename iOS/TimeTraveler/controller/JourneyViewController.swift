@@ -71,12 +71,11 @@ class JourneyViewController: UIViewController {
     @IBOutlet var flightNumber: UILabel!
     var travelerInformation: TravelerInformation!
     
+    @IBOutlet var revealButton: UIButton!
     var timeLinecontainer: TimelineContainer {
         return travelerInformation.timeLineContainer
     }
-    @IBAction func onBoardingCard(sender: AnyObject) {
-        
-    }
+    
  
     var parentVC: SignUpPageViewController?
     let maxY:CGFloat = 591
@@ -141,14 +140,33 @@ class JourneyViewController: UIViewController {
         
         self.ticketView.frame = CGRectMake(0, 451, self.ticketView.frame.size.width, self.ticketView.frame.size.height)
         
-        
+        revealButton.hidden = true
         UIView.animateWithDuration(0.3, delay: 1.0, options: UIViewAnimationOptions.TransitionNone
             , animations: {
             self.ticketView.frame = CGRectMake(0, 550, self.ticketView.frame.size.width, self.ticketView.frame.size.height)
 
             
-            }, completion: nil)
+            }, completion: {
+                (value: Bool) in
+                self.revealButton.hidden = false
+        })
       
+    }
+    
+    @IBAction func onBoardingCard(sender: AnyObject) {
+        
+        
+       
+        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.TransitionNone
+            , animations: {
+                self.ticketView.frame = CGRectMake(0, 520, self.ticketView.frame.size.width, self.ticketView.frame.size.height)
+                
+                
+            }, completion: {
+                (value: Bool) in
+                self.revealButton.hidden = true
+        })
+        
     }
     
     @IBAction func onPanTicket(sender: UIPanGestureRecognizer) {
@@ -171,7 +189,10 @@ class JourneyViewController: UIViewController {
                 sender.view?.center=CGPointMake(self.view.frame.size.width / 2, (newY > 620 ? self.minY : self.maxY))
                 sender.setTranslation(CGPointZero, inView: self.view)
                 
-                }, completion: nil)
+                }, completion: {
+                    (value: Bool) in
+                    self.revealButton.hidden = (newY > 620 ? false : true)
+            })
         }
         
     }

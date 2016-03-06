@@ -1137,6 +1137,12 @@ Flughafen:</string>
                                                 <color key="textColor" red="0.52801277619999998" green="0.52801277619999998" blue="0.52801277619999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCP-WU-Kyf">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                <connections>
+                                                    <action selector="onBoardingCard:" destination="Qwa-1V-kTp" eventType="touchUpInside" id="fW9-2n-2nG"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1190,6 +1196,7 @@ Flughafen:</string>
                         <outlet property="flightNumber" destination="e6O-pX-gD7" id="JbE-ej-PsD"/>
                         <outlet property="flightStatus" destination="Xvy-KR-rVn" id="HBt-EB-LVK"/>
                         <outlet property="flightTime" destination="vnI-4u-IKC" id="alK-cc-607"/>
+                        <outlet property="revealButton" destination="YCP-WU-Kyf" id="lQV-mu-4DP"/>
                         <outlet property="seatNumber" destination="xyL-pa-Lzu" id="ZDj-ef-NVj"/>
                         <outlet property="tableView" destination="u6e-Ot-w4b" id="1i0-og-E53"/>
                         <outlet property="ticketView" destination="xQm-kX-mr0" id="S33-Jx-dfI"/>
