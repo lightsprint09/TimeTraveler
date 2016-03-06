@@ -179,6 +179,8 @@ class EnterTransportTypeViewController: EnteringViewController {
     @IBAction func onJourney(sender: AnyObject) {
         let parentController = self.parentViewController as? SignUpPageViewController
         parentController?.nextProgress()
+        
+        
         if transportType == .Car {
             let walking = WalkingDistanceDurationPoint(origin: selectedParking.name, destination: "Check-In A")
             travelerInformation.timeLineContainer.durationPoints.insert(walking, atIndex: travelerInformation.timeLineContainer.durationPoints.count - 1)

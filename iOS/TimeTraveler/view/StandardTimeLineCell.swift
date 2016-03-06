@@ -48,13 +48,15 @@ class RouteCell: UITableViewCell, DurationPointDisplayable {
         guard let carPoint = durationPoint as? CarDriveDurationPoint else { return }
         
         
-        
-        for route in carPoint.routes as [MKRoute] {
-            
-            mapView.addOverlay(route.polyline,
-                level: MKOverlayLevel.AboveRoads)
-            
-            
+        if(carPoint.routes.count > 0){
+            for route in carPoint.routes as [MKRoute] {
+                
+                mapView.addOverlay(route.polyline,
+                    level: MKOverlayLevel.AboveRoads)
+                
+                
+            }
+  
         }
         
         if let first = mapView.overlays.first {
