@@ -7,15 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36054A961C8ADDFB00877412 /* JourneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36054A951C8ADDFB00877412 /* JourneyViewController.swift */; };
+		36054A981C8AFA4D00877412 /* Progress.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36054A971C8AFA4D00877412 /* Progress.xib */; };
+		36054A9A1C8AFB5100877412 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36054A991C8AFB5100877412 /* ProgressView.swift */; };
+		36054A9C1C8B70A100877412 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36054A9B1C8B70A100877412 /* Assets.xcassets */; };
+		3688197D1C8A3F3400665DA3 /* opening_compressed.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3688197C1C8A3F3400665DA3 /* opening_compressed.mp4 */; };
+		368819861C8A3FC200665DA3 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 368819801C8A3FC200665DA3 /* Montserrat-Bold.otf */; };
+		368819871C8A3FC200665DA3 /* Montserrat-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 368819811C8A3FC200665DA3 /* Montserrat-Hairline.otf */; };
+		368819881C8A3FC200665DA3 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 368819821C8A3FC200665DA3 /* Montserrat-Light.otf */; };
+		368819891C8A3FC200665DA3 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 368819831C8A3FC200665DA3 /* Montserrat-Regular.otf */; };
+		3688198A1C8A3FC200665DA3 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 368819841C8A3FC200665DA3 /* Montserrat-SemiBold.otf */; };
+		3688198B1C8A3FC200665DA3 /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 368819851C8A3FC200665DA3 /* Montserrat-UltraLight.otf */; };
+		3688198D1C8A47F200665DA3 /* UIFont+CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3688198C1C8A47F200665DA3 /* UIFont+CustomFonts.swift */; };
+		941DE6F01C8A292400F4A4A4 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 941DE6EE1C8A292400F4A4A4 /* Interface.storyboard */; };
+		941DE6F21C8A292400F4A4A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 941DE6F11C8A292400F4A4A4 /* Assets.xcassets */; };
+		941DE6F91C8A292400F4A4A4 /* TimeTraveler Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 941DE6F81C8A292400F4A4A4 /* TimeTraveler Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		941DE7001C8A292400F4A4A4 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE6FF1C8A292400F4A4A4 /* InterfaceController.swift */; };
+		941DE7021C8A292400F4A4A4 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7011C8A292400F4A4A4 /* ExtensionDelegate.swift */; };
+		941DE7041C8A292400F4A4A4 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7031C8A292400F4A4A4 /* NotificationController.swift */; };
+		941DE7061C8A292400F4A4A4 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7051C8A292400F4A4A4 /* GlanceController.swift */; };
+		941DE7081C8A292400F4A4A4 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7071C8A292400F4A4A4 /* ComplicationController.swift */; };
+		941DE70A1C8A292400F4A4A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 941DE7091C8A292400F4A4A4 /* Assets.xcassets */; };
+		941DE70E1C8A292400F4A4A4 /* TimeTraveler Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 941DE6EC1C8A292400F4A4A4 /* TimeTraveler Watch.app */; };
+		941DE7181C8A299300F4A4A4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941DE7171C8A299300F4A4A4 /* Alamofire.framework */; };
+		941DE71A1C8A29A900F4A4A4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941DE7191C8A29A900F4A4A4 /* Alamofire.framework */; };
+		941DE7201C8A32F000F4A4A4 /* EnterFlightInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE71F1C8A32F000F4A4A4 /* EnterFlightInfoViewController.swift */; };
+		941DE7231C8A330500F4A4A4 /* StandardPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7211C8A330500F4A4A4 /* StandardPageViewController.swift */; };
+		941DE7241C8A330500F4A4A4 /* ViewController+Instatiation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7221C8A330500F4A4A4 /* ViewController+Instatiation.swift */; };
+		941DE7261C8A335300F4A4A4 /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7251C8A335300F4A4A4 /* SignUpPageViewController.swift */; };
+		941DE7291C8A346100F4A4A4 /* UIColor+StandardColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7281C8A346100F4A4A4 /* UIColor+StandardColors.swift */; };
+		941DE72C1C8A35D700F4A4A4 /* EnterKindOfFligherViewVontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE72B1C8A35D700F4A4A4 /* EnterKindOfFligherViewVontroller.swift */; };
+		941DE72E1C8A361900F4A4A4 /* EnterTransportTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE72D1C8A361900F4A4A4 /* EnterTransportTypeViewController.swift */; };
+		941DE7311C8A3D6D00F4A4A4 /* TravelerInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7301C8A3D6D00F4A4A4 /* TravelerInformation.swift */; };
+		941DE7331C8A424C00F4A4A4 /* EnteringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7321C8A424C00F4A4A4 /* EnteringViewController.swift */; };
+		941DE7361C8A43A000F4A4A4 /* FlightStatusService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7351C8A43A000F4A4A4 /* FlightStatusService.swift */; };
+		941DE7381C8A43E800F4A4A4 /* FlightStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941DE7371C8A43E800F4A4A4 /* FlightStatus.swift */; };
+		944A31F51C8B117800D2AA9F /* TimeLineContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31F41C8B117800D2AA9F /* TimeLineContainer.swift */; };
+		944A31F71C8B13A100D2AA9F /* AsyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31F61C8B13A100D2AA9F /* AsyncManager.swift */; };
+		944A31FA1C8B17D600D2AA9F /* CarDriveDurationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31F91C8B17D600D2AA9F /* CarDriveDurationPoint.swift */; };
+		944A31FC1C8B21A800D2AA9F /* FakeDurationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31FB1C8B21A800D2AA9F /* FakeDurationPoint.swift */; };
+		944A31FE1C8B322200D2AA9F /* ParkingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31FD1C8B322200D2AA9F /* ParkingTableViewCell.swift */; };
+		944A32001C8B352500D2AA9F /* LocationConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A31FF1C8B352500D2AA9F /* LocationConstant.swift */; };
+		944A32021C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A32011C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift */; };
+		944A32041C8B71AE00D2AA9F /* StandardTimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A32031C8B71AE00D2AA9F /* StandardTimeLineCell.swift */; };
+		944A32061C8B9C9D00D2AA9F /* LocalTrainDurationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A32051C8B9C9D00D2AA9F /* LocalTrainDurationPoint.swift */; };
+		944A32081C8BD0F800D2AA9F /* HeaderFooterDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A32071C8BD0F800D2AA9F /* HeaderFooterDuration.swift */; };
 		94B939F91C7F294200F36C2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B939F81C7F294200F36C2D /* AppDelegate.swift */; };
-		94B939FB1C7F294200F36C2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B939FA1C7F294200F36C2D /* ViewController.swift */; };
 		94B939FE1C7F294200F36C2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B939FC1C7F294200F36C2D /* Main.storyboard */; };
-		94B93A001C7F294200F36C2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94B939FF1C7F294200F36C2D /* Assets.xcassets */; };
 		94B93A031C7F294200F36C2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94B93A011C7F294200F36C2D /* LaunchScreen.storyboard */; };
 		94B93A0E1C7F294300F36C2D /* TimeTravelerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B93A0D1C7F294300F36C2D /* TimeTravelerTests.swift */; };
+		94F196D21C8ACDE500ED526E /* RMVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F196D11C8ACDE500ED526E /* RMVService.swift */; };
+		94F196D41C8ACDF200ED526E /* RMVTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F196D31C8ACDF200ED526E /* RMVTrip.swift */; };
+		94F196D61C8ACF2400ED526E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F196D51C8ACF2400ED526E /* Location.swift */; };
+		94F196D81C8AE36A00ED526E /* Location+CLLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F196D71C8AE36A00ED526E /* Location+CLLocation.swift */; };
+		94F196DA1C8B07C800ED526E /* FraportAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F196D91C8B07C800ED526E /* FraportAPI.swift */; };
+		94F196DC1C8B086A00ED526E /* ParkingFacility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F196DB1C8B086A00ED526E /* ParkingFacility.swift */; };
+		94F8C3FA1C8AA96E00A6A911 /* JSONFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F8C3F91C8AA96E00A6A911 /* JSONFetcher.swift */; };
+		94F8C3FC1C8ABBFF00A6A911 /* FlightInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F8C3FB1C8ABBFF00A6A911 /* FlightInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		941DE6FA1C8A292400F4A4A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94B939ED1C7F294200F36C2D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 941DE6F71C8A292400F4A4A4;
+			remoteInfo = "TimeTraveler Watch Extension";
+		};
+		941DE70C1C8A292400F4A4A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94B939ED1C7F294200F36C2D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 941DE6EB1C8A292400F4A4A4;
+			remoteInfo = "TimeTraveler Watch";
+		};
 		94B93A0A1C7F294300F36C2D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 94B939ED1C7F294200F36C2D /* Project object */;
@@ -25,24 +90,112 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		941DE7141C8A292400F4A4A4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				941DE6F91C8A292400F4A4A4 /* TimeTraveler Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		941DE7161C8A292400F4A4A4 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				941DE70E1C8A292400F4A4A4 /* TimeTraveler Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		36054A951C8ADDFB00877412 /* JourneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JourneyViewController.swift; sourceTree = "<group>"; };
+		36054A971C8AFA4D00877412 /* Progress.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Progress.xib; sourceTree = "<group>"; };
+		36054A991C8AFB5100877412 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		36054A9B1C8B70A100877412 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3688197C1C8A3F3400665DA3 /* opening_compressed.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = opening_compressed.mp4; sourceTree = "<group>"; };
+		368819801C8A3FC200665DA3 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		368819811C8A3FC200665DA3 /* Montserrat-Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Hairline.otf"; sourceTree = "<group>"; };
+		368819821C8A3FC200665DA3 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		368819831C8A3FC200665DA3 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		368819841C8A3FC200665DA3 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		368819851C8A3FC200665DA3 /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
+		3688198C1C8A47F200665DA3 /* UIFont+CustomFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+CustomFonts.swift"; sourceTree = "<group>"; };
+		941DE6EC1C8A292400F4A4A4 /* TimeTraveler Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TimeTraveler Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		941DE6EF1C8A292400F4A4A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		941DE6F11C8A292400F4A4A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		941DE6F31C8A292400F4A4A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		941DE6F81C8A292400F4A4A4 /* TimeTraveler Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TimeTraveler Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		941DE6FE1C8A292400F4A4A4 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		941DE6FF1C8A292400F4A4A4 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		941DE7011C8A292400F4A4A4 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		941DE7031C8A292400F4A4A4 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		941DE7051C8A292400F4A4A4 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		941DE7071C8A292400F4A4A4 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		941DE7091C8A292400F4A4A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		941DE70B1C8A292400F4A4A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		941DE7171C8A299300F4A4A4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		941DE7191C8A29A900F4A4A4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/watchOS/Alamofire.framework; sourceTree = "<group>"; };
+		941DE71F1C8A32F000F4A4A4 /* EnterFlightInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterFlightInfoViewController.swift; sourceTree = "<group>"; };
+		941DE7211C8A330500F4A4A4 /* StandardPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardPageViewController.swift; sourceTree = "<group>"; };
+		941DE7221C8A330500F4A4A4 /* ViewController+Instatiation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Instatiation.swift"; sourceTree = "<group>"; };
+		941DE7251C8A335300F4A4A4 /* SignUpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
+		941DE7281C8A346100F4A4A4 /* UIColor+StandardColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+StandardColors.swift"; sourceTree = "<group>"; };
+		941DE72B1C8A35D700F4A4A4 /* EnterKindOfFligherViewVontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterKindOfFligherViewVontroller.swift; sourceTree = "<group>"; };
+		941DE72D1C8A361900F4A4A4 /* EnterTransportTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterTransportTypeViewController.swift; sourceTree = "<group>"; };
+		941DE7301C8A3D6D00F4A4A4 /* TravelerInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelerInformation.swift; sourceTree = "<group>"; };
+		941DE7321C8A424C00F4A4A4 /* EnteringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnteringViewController.swift; sourceTree = "<group>"; };
+		941DE7351C8A43A000F4A4A4 /* FlightStatusService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightStatusService.swift; sourceTree = "<group>"; };
+		941DE7371C8A43E800F4A4A4 /* FlightStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightStatus.swift; sourceTree = "<group>"; };
+		944A31F41C8B117800D2AA9F /* TimeLineContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineContainer.swift; sourceTree = "<group>"; };
+		944A31F61C8B13A100D2AA9F /* AsyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncManager.swift; sourceTree = "<group>"; };
+		944A31F91C8B17D600D2AA9F /* CarDriveDurationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarDriveDurationPoint.swift; sourceTree = "<group>"; };
+		944A31FB1C8B21A800D2AA9F /* FakeDurationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeDurationPoint.swift; sourceTree = "<group>"; };
+		944A31FD1C8B322200D2AA9F /* ParkingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingTableViewCell.swift; sourceTree = "<group>"; };
+		944A31FF1C8B352500D2AA9F /* LocationConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationConstant.swift; sourceTree = "<group>"; };
+		944A32011C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingDistanceDurationPoint.swift; sourceTree = "<group>"; };
+		944A32031C8B71AE00D2AA9F /* StandardTimeLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardTimeLineCell.swift; sourceTree = "<group>"; };
+		944A32051C8B9C9D00D2AA9F /* LocalTrainDurationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalTrainDurationPoint.swift; sourceTree = "<group>"; };
+		944A32071C8BD0F800D2AA9F /* HeaderFooterDuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderFooterDuration.swift; sourceTree = "<group>"; };
 		94B939F51C7F294200F36C2D /* TimeTraveler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTraveler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B939F81C7F294200F36C2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		94B939FA1C7F294200F36C2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		94B939FD1C7F294200F36C2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		94B939FF1C7F294200F36C2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94B93A021C7F294200F36C2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94B93A041C7F294200F36C2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94B93A091C7F294300F36C2D /* TimeTravelerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTravelerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B93A0D1C7F294300F36C2D /* TimeTravelerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelerTests.swift; sourceTree = "<group>"; };
 		94B93A0F1C7F294300F36C2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94F196D11C8ACDE500ED526E /* RMVService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMVService.swift; sourceTree = "<group>"; };
+		94F196D31C8ACDF200ED526E /* RMVTrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMVTrip.swift; sourceTree = "<group>"; };
+		94F196D51C8ACF2400ED526E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		94F196D71C8AE36A00ED526E /* Location+CLLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CLLocation.swift"; sourceTree = "<group>"; };
+		94F196D91C8B07C800ED526E /* FraportAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FraportAPI.swift; sourceTree = "<group>"; };
+		94F196DB1C8B086A00ED526E /* ParkingFacility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingFacility.swift; sourceTree = "<group>"; };
+		94F8C3F91C8AA96E00A6A911 /* JSONFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFetcher.swift; sourceTree = "<group>"; };
+		94F8C3FB1C8ABBFF00A6A911 /* FlightInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		941DE6F51C8A292400F4A4A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941DE71A1C8A29A900F4A4A4 /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94B939F21C7F294200F36C2D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				941DE7181C8A299300F4A4A4 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,11 +209,150 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		368819791C8A3E7F00665DA3 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				3688197C1C8A3F3400665DA3 /* opening_compressed.mp4 */,
+			);
+			name = video;
+			sourceTree = "<group>";
+		};
+		3688197E1C8A3F9600665DA3 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				3688197F1C8A3FA100665DA3 /* fonts */,
+				368819791C8A3E7F00665DA3 /* video */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		3688197F1C8A3FA100665DA3 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				368819801C8A3FC200665DA3 /* Montserrat-Bold.otf */,
+				368819811C8A3FC200665DA3 /* Montserrat-Hairline.otf */,
+				368819821C8A3FC200665DA3 /* Montserrat-Light.otf */,
+				368819831C8A3FC200665DA3 /* Montserrat-Regular.otf */,
+				368819841C8A3FC200665DA3 /* Montserrat-SemiBold.otf */,
+				368819851C8A3FC200665DA3 /* Montserrat-UltraLight.otf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
+		941DE6ED1C8A292400F4A4A4 /* TimeTraveler Watch */ = {
+			isa = PBXGroup;
+			children = (
+				941DE6EE1C8A292400F4A4A4 /* Interface.storyboard */,
+				941DE6F11C8A292400F4A4A4 /* Assets.xcassets */,
+				941DE6F31C8A292400F4A4A4 /* Info.plist */,
+			);
+			path = "TimeTraveler Watch";
+			sourceTree = "<group>";
+		};
+		941DE6FC1C8A292400F4A4A4 /* TimeTraveler Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				941DE6FF1C8A292400F4A4A4 /* InterfaceController.swift */,
+				941DE7011C8A292400F4A4A4 /* ExtensionDelegate.swift */,
+				941DE7031C8A292400F4A4A4 /* NotificationController.swift */,
+				941DE7051C8A292400F4A4A4 /* GlanceController.swift */,
+				941DE7071C8A292400F4A4A4 /* ComplicationController.swift */,
+				941DE7091C8A292400F4A4A4 /* Assets.xcassets */,
+				941DE70B1C8A292400F4A4A4 /* Info.plist */,
+				941DE6FD1C8A292400F4A4A4 /* Supporting Files */,
+			);
+			path = "TimeTraveler Watch Extension";
+			sourceTree = "<group>";
+		};
+		941DE6FD1C8A292400F4A4A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				941DE6FE1C8A292400F4A4A4 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		941DE71E1C8A328200F4A4A4 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				941DE72A1C8A356500F4A4A4 /* helpers */,
+				941DE71F1C8A32F000F4A4A4 /* EnterFlightInfoViewController.swift */,
+				36054A951C8ADDFB00877412 /* JourneyViewController.swift */,
+				941DE7251C8A335300F4A4A4 /* SignUpPageViewController.swift */,
+				941DE72B1C8A35D700F4A4A4 /* EnterKindOfFligherViewVontroller.swift */,
+				941DE72D1C8A361900F4A4A4 /* EnterTransportTypeViewController.swift */,
+				941DE7321C8A424C00F4A4A4 /* EnteringViewController.swift */,
+				36054A991C8AFB5100877412 /* ProgressView.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		941DE7271C8A343D00F4A4A4 /* constant */ = {
+			isa = PBXGroup;
+			children = (
+				941DE7281C8A346100F4A4A4 /* UIColor+StandardColors.swift */,
+				3688198C1C8A47F200665DA3 /* UIFont+CustomFonts.swift */,
+				944A31FF1C8B352500D2AA9F /* LocationConstant.swift */,
+			);
+			path = constant;
+			sourceTree = "<group>";
+		};
+		941DE72A1C8A356500F4A4A4 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				941DE7211C8A330500F4A4A4 /* StandardPageViewController.swift */,
+				941DE7221C8A330500F4A4A4 /* ViewController+Instatiation.swift */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		941DE72F1C8A3D4B00F4A4A4 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				94F196D71C8AE36A00ED526E /* Location+CLLocation.swift */,
+				94F196D51C8ACF2400ED526E /* Location.swift */,
+				941DE7301C8A3D6D00F4A4A4 /* TravelerInformation.swift */,
+				941DE7371C8A43E800F4A4A4 /* FlightStatus.swift */,
+				94F196D31C8ACDF200ED526E /* RMVTrip.swift */,
+				94F196DB1C8B086A00ED526E /* ParkingFacility.swift */,
+				944A31F41C8B117800D2AA9F /* TimeLineContainer.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		941DE7341C8A437500F4A4A4 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				944A31F61C8B13A100D2AA9F /* AsyncManager.swift */,
+				94F8C3F91C8AA96E00A6A911 /* JSONFetcher.swift */,
+				941DE7351C8A43A000F4A4A4 /* FlightStatusService.swift */,
+				94F196D11C8ACDE500ED526E /* RMVService.swift */,
+				94F196D91C8B07C800ED526E /* FraportAPI.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		944A31F81C8B17A500D2AA9F /* DurationPoint */ = {
+			isa = PBXGroup;
+			children = (
+				944A31F91C8B17D600D2AA9F /* CarDriveDurationPoint.swift */,
+				944A31FB1C8B21A800D2AA9F /* FakeDurationPoint.swift */,
+				944A32011C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift */,
+				944A32051C8B9C9D00D2AA9F /* LocalTrainDurationPoint.swift */,
+				944A32071C8BD0F800D2AA9F /* HeaderFooterDuration.swift */,
+			);
+			name = DurationPoint;
+			sourceTree = "<group>";
+		};
 		94B939EC1C7F294200F36C2D = {
 			isa = PBXGroup;
 			children = (
+				941DE7191C8A29A900F4A4A4 /* Alamofire.framework */,
+				941DE7171C8A299300F4A4A4 /* Alamofire.framework */,
 				94B939F71C7F294200F36C2D /* TimeTraveler */,
 				94B93A0C1C7F294300F36C2D /* TimeTravelerTests */,
+				941DE6ED1C8A292400F4A4A4 /* TimeTraveler Watch */,
+				941DE6FC1C8A292400F4A4A4 /* TimeTraveler Watch Extension */,
 				94B939F61C7F294200F36C2D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +362,8 @@
 			children = (
 				94B939F51C7F294200F36C2D /* TimeTraveler.app */,
 				94B93A091C7F294300F36C2D /* TimeTravelerTests.xctest */,
+				941DE6EC1C8A292400F4A4A4 /* TimeTraveler Watch.app */,
+				941DE6F81C8A292400F4A4A4 /* TimeTraveler Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,12 +371,19 @@
 		94B939F71C7F294200F36C2D /* TimeTraveler */ = {
 			isa = PBXGroup;
 			children = (
+				944A31F81C8B17A500D2AA9F /* DurationPoint */,
+				941DE7341C8A437500F4A4A4 /* service */,
+				3688197E1C8A3F9600665DA3 /* assets */,
+				941DE72F1C8A3D4B00F4A4A4 /* model */,
+				941DE7271C8A343D00F4A4A4 /* constant */,
+				94F8C3FD1C8ABC0A00A6A911 /* view */,
+				941DE71E1C8A328200F4A4A4 /* controller */,
 				94B939F81C7F294200F36C2D /* AppDelegate.swift */,
-				94B939FA1C7F294200F36C2D /* ViewController.swift */,
 				94B939FC1C7F294200F36C2D /* Main.storyboard */,
-				94B939FF1C7F294200F36C2D /* Assets.xcassets */,
+				36054A971C8AFA4D00877412 /* Progress.xib */,
 				94B93A011C7F294200F36C2D /* LaunchScreen.storyboard */,
 				94B93A041C7F294200F36C2D /* Info.plist */,
+				36054A9B1C8B70A100877412 /* Assets.xcassets */,
 			);
 			path = TimeTraveler;
 			sourceTree = "<group>";
@@ -96,9 +397,54 @@
 			path = TimeTravelerTests;
 			sourceTree = "<group>";
 		};
+		94F8C3FD1C8ABC0A00A6A911 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				94F8C3FB1C8ABBFF00A6A911 /* FlightInfoView.swift */,
+				944A31FD1C8B322200D2AA9F /* ParkingTableViewCell.swift */,
+				944A32031C8B71AE00D2AA9F /* StandardTimeLineCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		941DE6EB1C8A292400F4A4A4 /* TimeTraveler Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 941DE7151C8A292400F4A4A4 /* Build configuration list for PBXNativeTarget "TimeTraveler Watch" */;
+			buildPhases = (
+				941DE6EA1C8A292400F4A4A4 /* Resources */,
+				941DE7141C8A292400F4A4A4 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				941DE6FB1C8A292400F4A4A4 /* PBXTargetDependency */,
+			);
+			name = "TimeTraveler Watch";
+			productName = "TimeTraveler Watch";
+			productReference = 941DE6EC1C8A292400F4A4A4 /* TimeTraveler Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		941DE6F71C8A292400F4A4A4 /* TimeTraveler Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 941DE7131C8A292400F4A4A4 /* Build configuration list for PBXNativeTarget "TimeTraveler Watch Extension" */;
+			buildPhases = (
+				941DE6F41C8A292400F4A4A4 /* Sources */,
+				941DE6F51C8A292400F4A4A4 /* Frameworks */,
+				941DE6F61C8A292400F4A4A4 /* Resources */,
+				941DE71D1C8A2ADE00F4A4A4 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TimeTraveler Watch Extension";
+			productName = "TimeTraveler Watch Extension";
+			productReference = 941DE6F81C8A292400F4A4A4 /* TimeTraveler Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		94B939F41C7F294200F36C2D /* TimeTraveler */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94B93A121C7F294300F36C2D /* Build configuration list for PBXNativeTarget "TimeTraveler" */;
@@ -106,10 +452,13 @@
 				94B939F11C7F294200F36C2D /* Sources */,
 				94B939F21C7F294200F36C2D /* Frameworks */,
 				94B939F31C7F294200F36C2D /* Resources */,
+				941DE7161C8A292400F4A4A4 /* Embed Watch Content */,
+				941DE71C1C8A29E500F4A4A4 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				941DE70D1C8A292400F4A4A4 /* PBXTargetDependency */,
 			);
 			name = TimeTraveler;
 			productName = TimeTraveler;
@@ -144,12 +493,18 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Lukas Schmidt";
 				TargetAttributes = {
+					941DE6EB1C8A292400F4A4A4 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					941DE6F71C8A292400F4A4A4 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 					94B939F41C7F294200F36C2D = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 2UNP9S73JZ;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -174,18 +529,45 @@
 			targets = (
 				94B939F41C7F294200F36C2D /* TimeTraveler */,
 				94B93A081C7F294300F36C2D /* TimeTravelerTests */,
+				941DE6EB1C8A292400F4A4A4 /* TimeTraveler Watch */,
+				941DE6F71C8A292400F4A4A4 /* TimeTraveler Watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		941DE6EA1C8A292400F4A4A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941DE6F21C8A292400F4A4A4 /* Assets.xcassets in Resources */,
+				941DE6F01C8A292400F4A4A4 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		941DE6F61C8A292400F4A4A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941DE70A1C8A292400F4A4A4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94B939F31C7F294200F36C2D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				94B93A031C7F294200F36C2D /* LaunchScreen.storyboard in Resources */,
-				94B93A001C7F294200F36C2D /* Assets.xcassets in Resources */,
+				3688198B1C8A3FC200665DA3 /* Montserrat-UltraLight.otf in Resources */,
+				36054A9C1C8B70A100877412 /* Assets.xcassets in Resources */,
+				368819871C8A3FC200665DA3 /* Montserrat-Hairline.otf in Resources */,
+				3688197D1C8A3F3400665DA3 /* opening_compressed.mp4 in Resources */,
+				36054A981C8AFA4D00877412 /* Progress.xib in Resources */,
 				94B939FE1C7F294200F36C2D /* Main.storyboard in Resources */,
+				368819861C8A3FC200665DA3 /* Montserrat-Bold.otf in Resources */,
+				368819881C8A3FC200665DA3 /* Montserrat-Light.otf in Resources */,
+				368819891C8A3FC200665DA3 /* Montserrat-Regular.otf in Resources */,
+				3688198A1C8A3FC200665DA3 /* Montserrat-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,13 +580,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		941DE71C1C8A29E500F4A4A4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		941DE71D1C8A2ADE00F4A4A4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/watchOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		941DE6F41C8A292400F4A4A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941DE7041C8A292400F4A4A4 /* NotificationController.swift in Sources */,
+				941DE7021C8A292400F4A4A4 /* ExtensionDelegate.swift in Sources */,
+				941DE7081C8A292400F4A4A4 /* ComplicationController.swift in Sources */,
+				941DE7001C8A292400F4A4A4 /* InterfaceController.swift in Sources */,
+				941DE7061C8A292400F4A4A4 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94B939F11C7F294200F36C2D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94B939FB1C7F294200F36C2D /* ViewController.swift in Sources */,
 				94B939F91C7F294200F36C2D /* AppDelegate.swift in Sources */,
+				94F196D21C8ACDE500ED526E /* RMVService.swift in Sources */,
+				94F196DA1C8B07C800ED526E /* FraportAPI.swift in Sources */,
+				944A32081C8BD0F800D2AA9F /* HeaderFooterDuration.swift in Sources */,
+				944A32021C8B53B700D2AA9F /* WalkingDistanceDurationPoint.swift in Sources */,
+				94F196D41C8ACDF200ED526E /* RMVTrip.swift in Sources */,
+				36054A961C8ADDFB00877412 /* JourneyViewController.swift in Sources */,
+				941DE72C1C8A35D700F4A4A4 /* EnterKindOfFligherViewVontroller.swift in Sources */,
+				94F196D61C8ACF2400ED526E /* Location.swift in Sources */,
+				941DE7311C8A3D6D00F4A4A4 /* TravelerInformation.swift in Sources */,
+				941DE7381C8A43E800F4A4A4 /* FlightStatus.swift in Sources */,
+				94F8C3FC1C8ABBFF00A6A911 /* FlightInfoView.swift in Sources */,
+				94F196D81C8AE36A00ED526E /* Location+CLLocation.swift in Sources */,
+				941DE7361C8A43A000F4A4A4 /* FlightStatusService.swift in Sources */,
+				36054A9A1C8AFB5100877412 /* ProgressView.swift in Sources */,
+				941DE7231C8A330500F4A4A4 /* StandardPageViewController.swift in Sources */,
+				944A32041C8B71AE00D2AA9F /* StandardTimeLineCell.swift in Sources */,
+				941DE7291C8A346100F4A4A4 /* UIColor+StandardColors.swift in Sources */,
+				944A32061C8B9C9D00D2AA9F /* LocalTrainDurationPoint.swift in Sources */,
+				941DE7201C8A32F000F4A4A4 /* EnterFlightInfoViewController.swift in Sources */,
+				941DE72E1C8A361900F4A4A4 /* EnterTransportTypeViewController.swift in Sources */,
+				941DE7241C8A330500F4A4A4 /* ViewController+Instatiation.swift in Sources */,
+				3688198D1C8A47F200665DA3 /* UIFont+CustomFonts.swift in Sources */,
+				941DE7331C8A424C00F4A4A4 /* EnteringViewController.swift in Sources */,
+				941DE7261C8A335300F4A4A4 /* SignUpPageViewController.swift in Sources */,
+				944A31FE1C8B322200D2AA9F /* ParkingTableViewCell.swift in Sources */,
+				94F8C3FA1C8AA96E00A6A911 /* JSONFetcher.swift in Sources */,
+				944A31FC1C8B21A800D2AA9F /* FakeDurationPoint.swift in Sources */,
+				94F196DC1C8B086A00ED526E /* ParkingFacility.swift in Sources */,
+				944A31F71C8B13A100D2AA9F /* AsyncManager.swift in Sources */,
+				944A31FA1C8B17D600D2AA9F /* CarDriveDurationPoint.swift in Sources */,
+				944A32001C8B352500D2AA9F /* LocationConstant.swift in Sources */,
+				944A31F51C8B117800D2AA9F /* TimeLineContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +675,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		941DE6FB1C8A292400F4A4A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 941DE6F71C8A292400F4A4A4 /* TimeTraveler Watch Extension */;
+			targetProxy = 941DE6FA1C8A292400F4A4A4 /* PBXContainerItemProxy */;
+		};
+		941DE70D1C8A292400F4A4A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 941DE6EB1C8A292400F4A4A4 /* TimeTraveler Watch */;
+			targetProxy = 941DE70C1C8A292400F4A4A4 /* PBXContainerItemProxy */;
+		};
 		94B93A0B1C7F294300F36C2D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 94B939F41C7F294200F36C2D /* TimeTraveler */;
@@ -227,6 +693,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		941DE6EE1C8A292400F4A4A4 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				941DE6EF1C8A292400F4A4A4 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		94B939FC1C7F294200F36C2D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -246,6 +720,84 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		941DE70F1C8A292400F4A4A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = TimeTraveler_Watch_Extension;
+				INFOPLIST_FILE = "TimeTraveler Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.timetraveler.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		941DE7101C8A292400F4A4A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = TimeTraveler_Watch_Extension;
+				INFOPLIST_FILE = "TimeTraveler Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.timetraveler.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		941DE7111C8A292400F4A4A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = "TimeTraveler Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.timetraveler.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		941DE7121C8A292400F4A4A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
+				INFOPLIST_FILE = "TimeTraveler Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.timetraveler.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
 		94B93A101C7F294300F36C2D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -333,7 +885,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TimeTraveler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.timetraveler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -347,7 +904,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TimeTraveler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.freiraum.timetraveler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -382,6 +944,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		941DE7131C8A292400F4A4A4 /* Build configuration list for PBXNativeTarget "TimeTraveler Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				941DE7111C8A292400F4A4A4 /* Debug */,
+				941DE7121C8A292400F4A4A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		941DE7151C8A292400F4A4A4 /* Build configuration list for PBXNativeTarget "TimeTraveler Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				941DE70F1C8A292400F4A4A4 /* Debug */,
+				941DE7101C8A292400F4A4A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		94B939F01C7F294200F36C2D /* Build configuration list for PBXProject "TimeTraveler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "0720"
+   version = "2.0">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "941DE6EB1C8A292400F4A4A4"
+               BuildableName = "TimeTraveler Watch.app"
+               BlueprintName = "TimeTraveler Watch"
+               ReferencedContainer = "container:TimeTraveler.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "941DE6F71C8A292400F4A4A4"
+               BuildableName = "TimeTraveler Watch Extension.appex"
+               BlueprintName = "TimeTraveler Watch Extension"
+               ReferencedContainer = "container:TimeTraveler.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "94B939F41C7F294200F36C2D"
+               BuildableName = "TimeTraveler.app"
+               BlueprintName = "TimeTraveler"
+               ReferencedContainer = "container:TimeTraveler.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <Testables>
+      </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "941DE6EB1C8A292400F4A4A4"
+            BuildableName = "TimeTraveler Watch.app"
+            BlueprintName = "TimeTraveler Watch"
+            ReferencedContainer = "container:TimeTraveler.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </TestAction>
+   <LaunchAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
+      allowLocationSimulation = "YES"
+      launchAutomaticallySubstyle = "32">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.carousel"
+         RemotePath = "/TimeTraveler">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "941DE6EB1C8A292400F4A4A4"
+            BuildableName = "TimeTraveler Watch.app"
+            BlueprintName = "TimeTraveler Watch"
+            ReferencedContainer = "container:TimeTraveler.xcodeproj">
+         </BuildableReference>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "941DE6EB1C8A292400F4A4A4"
+            BuildableName = "TimeTraveler Watch.app"
+            BlueprintName = "TimeTraveler Watch"
+            ReferencedContainer = "container:TimeTraveler.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </LaunchAction>
+   <ProfileAction
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES"
+      launchAutomaticallySubstyle = "32">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.carousel"
+         RemotePath = "/TimeTraveler">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "941DE6EB1C8A292400F4A4A4"
+            BuildableName = "TimeTraveler Watch.app"
+            BlueprintName = "TimeTraveler Watch"
+            ReferencedContainer = "container:TimeTraveler.xcodeproj">
+         </BuildableReference>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "941DE6EB1C8A292400F4A4A4"
+            BuildableName = "TimeTraveler Watch.app"
+            BlueprintName = "TimeTraveler Watch"
+            ReferencedContainer = "container:TimeTraveler.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>
